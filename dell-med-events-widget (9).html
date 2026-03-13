@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dell Med Internal Events</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --burnt-orange: #BF5700;
+    --dark-orange: #9D4600;
+    --light-orange: #FDF0E6;
+    --warm-white: #FDFAF7;
+    --charcoal: #1C1C1C;
+    --mid-gray: #6B6B6B;
+    --border: #E8DDD3;
+    --row-hover: #FFF5EC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    background: var(--burnt-orange);
+    padding: 13px 18px 11px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 3px solid var(--dark-orange);
+    flex-shrink: 0;
+  }
+
+  .header-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  .live-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #7FDB8A;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+    margin-left: 4px;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .header-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .ticker-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ticker-viewport::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, var(--warm-white));
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .ticker-track {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    transition: top 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .ticker-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    transition: background 0.15s;
+    min-height: 52px;
+  }
+
+  .ticker-row:hover { background: var(--row-hover); }
+
+  .row-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    flex-shrink: 0;
+    background: var(--light-orange);
+    border-right: 1px solid var(--border);
+    padding: 6px 4px;
+  }
+
+  .row-month {
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--burnt-orange);
+    line-height: 1;
+  }
+
+  .row-day {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .row-body {
+    flex: 1;
+    padding: 8px 10px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .row-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+
+  .ticker-row:hover .row-title { color: var(--burnt-orange); }
+
+  .row-meta {
+    font-size: 0.68rem;
+    color: var(--mid-gray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .badge-today {
+    display: inline-block;
+    background: var(--burnt-orange);
+    color: #fff;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .row-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 4px;
+    flex-shrink: 0;
+    color: var(--mid-gray);
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .ticker-row:hover .row-arrow { opacity: 1; }
+
+  .page-footer {
+    border-top: 1px solid var(--border);
+    background: #fff;
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .footer-count {
+    font-size: 0.65rem;
+    color: var(--mid-gray);
+  }
+
+  .pause-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 9px;
+    font-size: 0.65rem;
+    color: var(--mid-gray);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s, color 0.15s;
+  }
+  .pause-btn:hover { background: var(--light-orange); color: var(--burnt-orange); border-color: var(--burnt-orange); }
+
+  .footer-link {
+    font-size: 0.68rem;
+    color: var(--burnt-orange);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .footer-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">Internal Events</div>
+  <div class="live-dot"></div>
+  <div class="header-sub">Dell Medical School · Cerebrum</div>
+</div>
+
+<div class="ticker-viewport" id="viewport">
+  <div class="ticker-track" id="track"></div>
+</div>
+
+<div class="page-footer">
+  <span class="footer-count" id="footer-count"></span>
+  <button class="pause-btn" id="pause-btn">⏸ Pause</button>
+  <a class="footer-link" href="https://intranet.dellmed.utexas.edu/events" target="_blank">
+    View all on Cerebrum
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+  </a>
+</div>
+
+<script>
+const RAW_EVENTS = [
+  { date:"2026-03-12", time:"All Day",           title:"The Undiagnosed Initiative - Photo Exhibition",         url:"https://intranet.dellmed.utexas.edu/event/998437/2026/03/12",  location:"HLB & HTB 1st Floors" },
+  { date:"2026-03-12", time:"8:00am – 12:00pm",  title:"IT Office Hour (DPRI)",                                url:"https://intranet.dellmed.utexas.edu/event/864131/2026/03/12",  location:"3.708A" },
+  { date:"2026-03-12", time:"12:00pm – 1:00pm",  title:"Schwartz Rounds: \"High Stakes, Thin Margins\"",       url:"https://intranet.dellmed.utexas.edu/event/994885/",            location:"HDB 1.208 Auditorium" },
+  { date:"2026-03-12", time:"12:00pm – 1:00pm",  title:"UT Health Austin Lunch & Learn",                       url:"https://intranet.dellmed.utexas.edu/event/998619/",            location:"HTB 10.114 or Teams" },
+  { date:"2026-03-16", time:"7:00am – 9:00am",   title:"Health Workforce Well-Being Day @ ASMCA",              url:"https://intranet.dellmed.utexas.edu/event/1003891/",           location:"GME Lounge (Seton Main)" },
+  { date:"2026-03-18", time:"7:00am – 7:45am",   title:"Get Ready for Epic: Provider Virtual Town Hall",       url:"https://intranet.dellmed.utexas.edu/event/987308/",            location:"MS Teams" },
+  { date:"2026-03-18", time:"7:00am – 1:00pm",   title:"Health Workforce Well-Being Day @ Dell Med & DCMC",   url:"https://intranet.dellmed.utexas.edu/event/1004526/",           location:"HDB 1.202" },
+  { date:"2026-03-19", time:"12:00pm – 1:00pm",  title:"Medical Education Research Office Hours",              url:"https://intranet.dellmed.utexas.edu/event/766328/2026/03/19", location:"Zoom" },
+  { date:"2026-03-19", time:"1:30pm – 2:30pm",   title:"Bi-Monthly Office of Research Office Hours",           url:"https://intranet.dellmed.utexas.edu/event/993169/2026/03/19", location:"Zoom" },
+  { date:"2026-03-24", time:"12:00pm – 1:00pm",  title:"Cybersecurity Office Hours",                           url:"https://intranet.dellmed.utexas.edu/event/978795/2026/03/24", location:"MS Teams" },
+  { date:"2026-03-25", time:"3:00pm – 4:00pm",   title:"Office of Faculty Academic Affairs Office Hours",      url:"https://intranet.dellmed.utexas.edu/event/739952/2026/03/25", location:"Zoom" },
+  { date:"2026-03-25", time:"3:00pm – 4:00pm",   title:"IT Office Hour (HDB & Zoom)",                         url:"https://intranet.dellmed.utexas.edu/event/864130/2026/03/25", location:"HDB 8.000 & Zoom" },
+  { date:"2026-03-26", time:"7:30am – 8:30am",   title:"Best Practices in Medical Education Grand Rounds",     url:"https://intranet.dellmed.utexas.edu/event/1002380/",           location:"Zoom" },
+  { date:"2026-03-26", time:"11:30am – 12:00pm", title:"EAP Monthly Mindfulness Workshop",                     url:"https://intranet.dellmed.utexas.edu/event/986238/",            location:"HDB 1.204" },
+  { date:"2026-03-26", time:"3:00pm – 4:00pm",   title:"Supervisor Toolkit: Setting Expectations & Feedback",  url:"https://intranet.dellmed.utexas.edu/event/988821/",            location:"Virtual (Zoom)" },
+  { date:"2026-03-27", time:"12:00pm – 1:00pm",  title:"DPRI Grand Rounds: \"A Conversation With a Survivor\"", url:"https://intranet.dellmed.utexas.edu/event/997982/",          location:"Zoom" },
+  { date:"2026-03-31", time:"12:00pm – 1:00pm",  title:"DSPC Discovery and Investigation Seminar Series",      url:"https://intranet.dellmed.utexas.edu/event/984965/",            location:"HDB 6.110 or Zoom" },
+  { date:"2026-04-02", time:"11:00am – 12:00pm", title:"Bi-Monthly Office of Research Office Hours",           url:"https://intranet.dellmed.utexas.edu/event/993170/",            location:"Zoom" },
+  { date:"2026-04-02", time:"12:00pm – 1:00pm",  title:"Cybersecurity Office Hours",                           url:"https://intranet.dellmed.utexas.edu/event/978800/",            location:"MS Teams" },
+  { date:"2026-04-08", time:"12:00pm – 1:00pm",  title:"UT Health Austin Lunch & Learn",                       url:"https://intranet.dellmed.utexas.edu/event/975843/",            location:"HTB 10.114 or Teams" },
+  { date:"2026-04-09", time:"12:00pm – 1:00pm",  title:"Medical Education Research Office Hours",              url:"https://intranet.dellmed.utexas.edu/event/766329/",            location:"Zoom" },
+  { date:"2026-04-14", time:"4:00pm – 5:00pm",   title:"DSPC Discovery and Investigation Seminar Series",      url:"https://intranet.dellmed.utexas.edu/event/984966/",            location:"HDB 6.110 or Zoom" },
+  { date:"2026-04-17", time:"7:30am – 8:30am",   title:"Best Practices in Medical Education Grand Rounds",     url:"https://intranet.dellmed.utexas.edu/event/1002381/",           location:"Zoom" },
+  { date:"2026-04-22", time:"3:00pm – 4:30pm",   title:"LGBTQIA+ Health Speaker Event",                        url:"https://intranet.dellmed.utexas.edu/event/1004190/",           location:"HDB 1.208 Auditorium" },
+  { date:"2026-04-23", time:"12:00pm – 1:00pm",  title:"UT Health Austin Lunch & Learn (April)",               url:"https://intranet.dellmed.utexas.edu/event/975844/",            location:"HTB 10.114 or Teams" },
+  { date:"2026-04-24", time:"1:30pm – 5:00pm",   title:"Biomedical Writing Workshop",                          url:"https://intranet.dellmed.utexas.edu/event/995317/",            location:"HLB 5.201 Boardroom" },
+  { date:"2026-04-30", time:"12:00pm – 1:30pm",  title:"Longhorns Listen: Suicide Prevention Training",        url:"https://intranet.dellmed.utexas.edu/event/1003108/",           location:"HDB 1.202" },
+  { date:"2026-04-30", time:"4:30pm – 5:00pm",   title:"EAP Monthly Mindfulness Workshop (April)",             url:"https://intranet.dellmed.utexas.edu/event/986239/",            location:"HDB 1.202" },
+  { date:"2026-05-13", time:"4:00pm – 5:00pm",   title:"DSPC Discovery and Investigation Seminar Series (May)", url:"https://intranet.dellmed.utexas.edu/event/984968/",           location:"HDB 6.110 or Zoom" },
+  { date:"2026-05-19", time:"11:00am – 12:00pm", title:"In Conversation: Professional Mentorship & Coaching",  url:"https://intranet.dellmed.utexas.edu/event/1002985/",           location:"Zoom" },
+  { date:"2026-07-15", time:"7:30am – 9:30am",   title:"Annual Dell Med Resource Fair",                        url:"https://intranet.dellmed.utexas.edu/event/1004986/",           location:"HDB Courtyard, First Floor Atrium" },
+];
+
+const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+function parseDate(s) { const [y,m,d]=s.split('-').map(Number); const dt=new Date(y,m-1,d); dt.setHours(0,0,0,0); return dt; }
+
+const today = new Date(); today.setHours(0,0,0,0);
+// Timezone-safe: build YYYY-MM-DD from local date parts, not UTC
+const todayStr = today.getFullYear() + '-'
+  + String(today.getMonth()+1).padStart(2,'0') + '-'
+  + String(today.getDate()).padStart(2,'0');
+
+const events = RAW_EVENTS
+  .filter(e => parseDate(e.date) >= today)
+  .sort((a,b) => parseDate(a.date) - parseDate(b.date));
+
+const track = document.getElementById('track');
+
+events.forEach(ev => {
+  const [,m,d] = ev.date.split('-').map(Number);
+  const isToday = ev.date === todayStr;
+
+  const a = document.createElement('a');
+  a.className = 'ticker-row';
+  a.href = ev.url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+
+  // Date badge
+  const dateDiv = document.createElement('div');
+  dateDiv.className = 'row-date';
+  const monthSpan = document.createElement('span');
+  monthSpan.className = 'row-month';
+  monthSpan.textContent = MONTHS[m-1];
+  const daySpan = document.createElement('span');
+  daySpan.className = 'row-day';
+  daySpan.textContent = d;
+  dateDiv.appendChild(monthSpan);
+  dateDiv.appendChild(daySpan);
+
+  // Body
+  const bodyDiv = document.createElement('div');
+  bodyDiv.className = 'row-body';
+
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'row-title';
+  titleDiv.textContent = ev.title;
+  if (isToday) {
+    const badge = document.createElement('span');
+    badge.className = 'badge-today';
+    badge.textContent = 'Today';
+    titleDiv.appendChild(badge);
+  }
+
+  const metaDiv = document.createElement('div');
+  metaDiv.className = 'row-meta';
+  metaDiv.textContent = ev.time + (ev.location ? ' · ' + ev.location : '');
+
+  bodyDiv.appendChild(titleDiv);
+  bodyDiv.appendChild(metaDiv);
+
+  // Arrow
+  const arrowDiv = document.createElement('div');
+  arrowDiv.className = 'row-arrow';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('width','12'); svg.setAttribute('height','12');
+  svg.setAttribute('viewBox','0 0 24 24'); svg.setAttribute('fill','none');
+  svg.setAttribute('stroke','currentColor'); svg.setAttribute('stroke-width','2.5');
+  svg.setAttribute('stroke-linecap','round'); svg.setAttribute('stroke-linejoin','round');
+  const poly = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  poly.setAttribute('points','9 18 15 12 9 6');
+  svg.appendChild(poly);
+  arrowDiv.appendChild(svg);
+
+  a.appendChild(dateDiv);
+  a.appendChild(bodyDiv);
+  a.appendChild(arrowDiv);
+  track.appendChild(a);
+});
+
+document.getElementById('footer-count').textContent =
+  events.length + ' upcoming event' + (events.length !== 1 ? 's' : '');
+
+// ── Ticker scroll ──
+const viewport = document.getElementById('viewport');
+const ROW_H = 52;
+const INTERVAL = 1300;
+let row = 0;
+let paused = false;
+
+function maxRow() {
+  return Math.max(0, events.length - Math.floor(viewport.clientHeight / ROW_H));
+}
+
+function goTo(r) {
+  track.style.top = (-r * ROW_H) + 'px';
+}
+
+function advance() {
+  if (paused) return;
+  row++;
+  if (row > maxRow()) {
+    row = 0;
+    track.style.transition = 'none';
+    goTo(0);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      track.style.transition = 'top 0.55s cubic-bezier(0.25,0.46,0.45,0.94)';
+    }));
+    return;
+  }
+  goTo(row);
+}
+
+function togglePause() {
+  paused = !paused;
+  document.getElementById('pause-btn').textContent = paused ? '▶ Resume' : '⏸ Pause';
+}
+
+document.getElementById('pause-btn').addEventListener('click', togglePause);
+viewport.addEventListener('mouseenter', () => { paused = true; });
+viewport.addEventListener('mouseleave', () => {
+  paused = false;
+  document.getElementById('pause-btn').textContent = '⏸ Pause';
+});
+
+setInterval(advance, INTERVAL);
+</script>
+</body>
+</html>
