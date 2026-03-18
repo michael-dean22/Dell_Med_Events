@@ -35,7 +35,7 @@ def fetch_rss_links(url):
     """Fetch RSS feed and return list of (title, link) tuples."""
     resp = requests.get(url, timeout=15)
     resp.raise_for_status()
-    soup = BeautifulSoup(resp.content, "xml")
+    soup = BeautifulSoup(resp.content, "lxml-xml")
     items = []
     for item in soup.find_all("item"):
         title = item.find("title")
