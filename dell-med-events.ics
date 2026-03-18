@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Dell Medical School//Dell Med Events//EN
+X-WR-CALNAME:Dell Med Events
+X-WR-CALDESC:Events from Dell Medical School at UT Austin
+X-WR-TIMEZONE:America/Chicago
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+END:VCALENDAR
