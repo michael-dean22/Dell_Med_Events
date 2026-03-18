@@ -127,7 +127,7 @@
       <h2 class="events-title">Upcoming Events</h2>
       <span class="events-count" id="events-count"></span>
     </div>
-    <div class="updated-note">Last updated: March 18, 2026 at 09:04 PM UTC</div>
+    <div class="updated-note">Last updated: March 18, 2026 at 09:11 PM UTC</div>
     <div id="events-container"></div>
   </div>
 
@@ -209,12 +209,21 @@ function switchTab(id) {
   document.getElementById('tab-' + id).classList.add('active');
 }
 
-function formatTime(isoStr) {
-  const d = new Date(isoStr);
-  let h = d.getHours(), m = d.getMinutes();
-  const ampm = h >= 12 ? 'p.m.' : 'a.m.';
-  h = h % 12 || 12;
-  return m === 0 ? h + ' ' + ampm : h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
+// Parse "Tuesday, April 14, 2026" or "April 14, 2026"
+function parseDateStr(s) {
+  if (!s) return null;
+  // Strip leading day-of-week if present
+  s = s.replace(/^[A-Za-z]+,\s*/, '').trim();
+  const d = new Date(s);
+  if (!isNaN(d)) return d;
+  return null;
+}
+
+// Parse "12–1 p.m." or "8 a.m.–9 a.m." → display string
+function parseTimeStr(s) {
+  if (!s || s.toLowerCase() === 'all day') return '';
+  // Normalize dashes
+  return s.replace(/[–—]/g, '–');
 }
 
 function render() {
@@ -222,14 +231,14 @@ function render() {
   const todayStr = today.toDateString();
 
   const upcoming = EVENTS
-    .map(e => { 
-      const dt = new Date(e.start);
-      // Normalize to start of day for comparison
+    .map(e => {
+      const dt = parseDateStr(e.date_str);
+      if (!dt) return null;
       const dayOnly = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
       return { ...e, dtstart: dt, dayOnly };
     })
-    .filter(e => e.dayOnly >= today)
-    .sort((a,b) => a.dtstart - b.dtstart);
+    .filter(e => e && e.dayOnly >= today)
+    .sort((a,b) => a.dayOnly - b.dayOnly);
 
   document.getElementById('events-count').textContent =
     upcoming.length + ' upcoming event' + (upcoming.length !== 1 ? 's' : '');
@@ -283,11 +292,10 @@ function render() {
       const meta = document.createElement('div');
       meta.className = 'ev-meta';
 
-      if (!ev.allDay && ev.start) {
+      const timeDisplay = parseTimeStr(ev.time_str);
+      if (timeDisplay) {
         const timeEl = document.createElement('span'); timeEl.className = 'ev-meta-item';
-        let t = formatTime(ev.start);
-        if (ev.end) t += ' – ' + formatTime(ev.end);
-        timeEl.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + t;
+        timeEl.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + timeDisplay;
         meta.appendChild(timeEl);
       }
       if (ev.location) {
