@@ -304,11 +304,12 @@ def build_calendar_html(events):
         if dtstart is None:
             continue
         if all_day:
-            start_iso = str(dtstart)
-            end_iso   = str(dtend)
+            # Use noon UTC to avoid any timezone-shifting the date backward
+            start_iso = f"{dtstart.year}-{dtstart.month:02d}-{dtstart.day:02d}T12:00:00"
+            end_iso   = f"{dtend.year}-{dtend.month:02d}-{dtend.day:02d}T12:00:00"
         else:
-            start_iso = dtstart.isoformat()
-            end_iso   = dtend.isoformat() if dtend else None
+            start_iso = dtstart.strftime("%Y-%m-%dT%H:%M:%S")
+            end_iso   = dtend.strftime("%Y-%m-%dT%H:%M:%S") if dtend else None
 
         # Extract clean description (first paragraph only for display)
         desc_lines = ev.get("description","").replace("\\n","\n").split("\n")
@@ -551,8 +552,13 @@ function render() {{
   const todayStr = today.toDateString();
 
   const upcoming = EVENTS
-    .map(e => ({{ ...e, dtstart: new Date(e.start) }}))
-    .filter(e => e.dtstart >= today)
+    .map(e => {{ 
+      const dt = new Date(e.start);
+      // Normalize to start of day for comparison
+      const dayOnly = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+      return {{ ...e, dtstart: dt, dayOnly }};
+    }})
+    .filter(e => e.dayOnly >= today)
     .sort((a,b) => a.dtstart - b.dtstart);
 
   document.getElementById('events-count').textContent =
@@ -583,7 +589,7 @@ function render() {{
     groupEl.appendChild(label);
 
     for (const ev of group.events) {{
-      const isToday = ev.dtstart.toDateString() === todayStr;
+      const isToday = ev.dayOnly.toDateString() === todayStr;
       const card = document.createElement('a');
       card.className = 'event-card';
       card.href = ev.url || '#';
