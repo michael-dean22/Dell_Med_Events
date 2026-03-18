@@ -24,10 +24,10 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 lxml pytz
 
-      - name: Generate ICS calendar
+      - name: Generate ICS calendar and HTML page
         run: python generate_calendar.py
 
-      - name: Commit and push updated calendar
+      - name: Commit and push updated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
