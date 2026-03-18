@@ -297,31 +297,25 @@ def build_calendar_html(events):
     MONTHS_LONG  = ["January","February","March","April","May","June",
                     "July","August","September","October","November","December"]
 
-    # Build JSON-serializable event list
+    # Build JSON-serializable event list — pass raw strings, parse in JS
     ev_list = []
     for ev in events:
-        dtstart, dtend, all_day = parse_date_time(ev["date_str"], ev["time_str"])
-        if dtstart is None:
+        if not ev.get("date_str"):
+            print(f"  ⚠ No date found for: {ev['title']} — skipping from HTML")
             continue
-        if all_day:
-            # Use noon UTC to avoid any timezone-shifting the date backward
-            start_iso = f"{dtstart.year}-{dtstart.month:02d}-{dtstart.day:02d}T12:00:00"
-            end_iso   = f"{dtend.year}-{dtend.month:02d}-{dtend.day:02d}T12:00:00"
-        else:
-            start_iso = dtstart.strftime("%Y-%m-%dT%H:%M:%S")
-            end_iso   = dtend.strftime("%Y-%m-%dT%H:%M:%S") if dtend else None
 
         # Extract clean description (first paragraph only for display)
         desc_lines = ev.get("description","").replace("\\n","\n").split("\n")
         desc_short = next((l for l in desc_lines if len(l) > 40), "")
 
+        print(f"  ✓ {ev['title'][:50]} | date='{ev['date_str']}' time='{ev['time_str']}'")
+
         ev_list.append({
             "title":    ev["title"],
             "url":      ev["url"],
             "location": ev.get("location",""),
-            "start":    start_iso,
-            "end":      end_iso,
-            "allDay":   all_day,
+            "date_str": ev["date_str"],
+            "time_str": ev["time_str"],
             "desc":     desc_short[:200],
         })
 
@@ -539,12 +533,21 @@ function switchTab(id) {{
   document.getElementById('tab-' + id).classList.add('active');
 }}
 
-function formatTime(isoStr) {{
-  const d = new Date(isoStr);
-  let h = d.getHours(), m = d.getMinutes();
-  const ampm = h >= 12 ? 'p.m.' : 'a.m.';
-  h = h % 12 || 12;
-  return m === 0 ? h + ' ' + ampm : h + ':' + String(m).padStart(2,'0') + ' ' + ampm;
+// Parse "Tuesday, April 14, 2026" or "April 14, 2026"
+function parseDateStr(s) {{
+  if (!s) return null;
+  // Strip leading day-of-week if present
+  s = s.replace(/^[A-Za-z]+,\s*/, '').trim();
+  const d = new Date(s);
+  if (!isNaN(d)) return d;
+  return null;
+}}
+
+// Parse "12–1 p.m." or "8 a.m.–9 a.m." → display string
+function parseTimeStr(s) {{
+  if (!s || s.toLowerCase() === 'all day') return '';
+  // Normalize dashes
+  return s.replace(/[–—]/g, '–');
 }}
 
 function render() {{
@@ -552,14 +555,14 @@ function render() {{
   const todayStr = today.toDateString();
 
   const upcoming = EVENTS
-    .map(e => {{ 
-      const dt = new Date(e.start);
-      // Normalize to start of day for comparison
+    .map(e => {{
+      const dt = parseDateStr(e.date_str);
+      if (!dt) return null;
       const dayOnly = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
       return {{ ...e, dtstart: dt, dayOnly }};
     }})
-    .filter(e => e.dayOnly >= today)
-    .sort((a,b) => a.dtstart - b.dtstart);
+    .filter(e => e && e.dayOnly >= today)
+    .sort((a,b) => a.dayOnly - b.dayOnly);
 
   document.getElementById('events-count').textContent =
     upcoming.length + ' upcoming event' + (upcoming.length !== 1 ? 's' : '');
@@ -613,11 +616,10 @@ function render() {{
       const meta = document.createElement('div');
       meta.className = 'ev-meta';
 
-      if (!ev.allDay && ev.start) {{
+      const timeDisplay = parseTimeStr(ev.time_str);
+      if (timeDisplay) {{
         const timeEl = document.createElement('span'); timeEl.className = 'ev-meta-item';
-        let t = formatTime(ev.start);
-        if (ev.end) t += ' – ' + formatTime(ev.end);
-        timeEl.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + t;
+        timeEl.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + timeDisplay;
         meta.appendChild(timeEl);
       }}
       if (ev.location) {{
