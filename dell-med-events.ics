@@ -6,4 +6,599 @@ X-WR-CALDESC:Events from Dell Medical School at UT Austin
 X-WR-TIMEZONE:America/Chicago
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
+BEGIN:VEVENT
+UID:d900f5f8-71f0-5d8d-aad6-21374fb5e304
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260414T130000
+DTEND;TZID=America/Chicago:20260414T140000
+SUMMARY:CPAN Series: What Every PCP Should Know About Autism Spectrum Disor
+ ders
+LOCATION:Virtual
+DESCRIPTION:In this installment of the CPAN Webinar Series\, Jane Ripperger
+ -Suhler \, M.D.\, presents “Autism Spectrum Disorders: What Every PCP Shou
+ ld Know.” Suhler is an associate professor in the Department of Psychiatry
+  and Behavioral Sciences at Dell Medical School. Register to attend. The s
+ eries is a program of the Texas Child Mental Health Care Consortium ’s Chi
+ ld Psychiatry Access Network and is designed for primary care providers or
+  individuals working in pediatric care environments. This series aims to e
+ nhance primary care physicians’ capabilities in recognizing and managing m
+ ental health conditions to improve outcomes for youth within their clinica
+ l practice. PCPs currently demonstrate a significant gap in knowledge and 
+ clinical competence regarding the identification and management of mental 
+ health disorders in youth. This professional practice gap is primarily att
+ ributed to insufficient training and limited access to mental health resou
+ rces. As a result\, PCPs often serve as the first point of contact for fam
+ ilies dealing with adolescent mental and behavioral health issues\, yet th
+ ey report lacking the necessary skills to effectively screen\, assess and 
+ treat conditions such as depression\, anxiety\, suicidal ideation and beha
+ vioral disorders. For more information about the event\, email cpd@bcm.edu
+  .\\n\\nRegister: https://events.teams.microsoft.com/event/e226cefe-d74b-4
+ 5ad-b253-659e2e10fde7@a83dba53-124d-4d32-88f0-b72889a9e926\\n\\nEvent page
+ : https://dellmed.utexas.edu/events/cpan-series-what-every-pcp-should-know
+ -about-autism-spectrum-disorders
+URL:https://dellmed.utexas.edu/events/cpan-series-what-every-pcp-should-kno
+ w-about-autism-spectrum-disorders
+END:VEVENT
+BEGIN:VEVENT
+UID:2bff8ec3-d7b8-574f-bc88-1e7643704ee7
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260331T170000
+DTEND;TZID=America/Chicago:20260331T180000
+SUMMARY:Neurosurgery Grand Rounds: Brain Trauma Foundation Penetrating Head
+  Injury Guidelines
+LOCATION:Zoom
+DESCRIPTION:In this installment of Neurosurgery Grand Rounds\, Ryan Kitagaw
+ a \, M.D.\, presents “Brain Trauma Foundation Penetrating Head Injury Guid
+ elines.” Kitagawa is an associate professor in the Vivian L. Smith Departm
+ ent of Neurosurgery at McGovern Medical School. Email Matthew Philbrook fo
+ r the Zoom information.\\n\\nEvent page: https://dellmed.utexas.edu/events
+ /neurosurgery-grand-rounds-brain-trauma-foundation-penetrating-head-injury
+ -guidelines
+URL:https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-brain-traum
+ a-foundation-penetrating-head-injury-guidelines
+END:VEVENT
+BEGIN:VEVENT
+UID:20be2310-b08f-56f1-ae44-7f8b34dba1fe
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260407T170000
+DTEND;TZID=America/Chicago:20260407T180000
+SUMMARY:Neurosurgery Grand Rounds: Surgical Immunotherapy Clinical Trials f
+ or Glioblastoma
+LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom
+DESCRIPTION:In this installment of Neurosurgery Grand Rounds\, Nino Chiocca
+  \, M.D.\, Ph.D.\, presents “Surgical Immunotherapy Clinical Trials for Gl
+ ioblastoma.” Chiocca serves as the Harvey W. Cushing Professor of Neurosur
+ gery at Harvard Medical School. Email Matthew Philbrook for the Zoom infor
+ mation.\\n\\nEvent page: https://dellmed.utexas.edu/events/neurosurgery-gr
+ and-rounds-surgical-immunotherapy-clinical-trials-for-glioblastoma
+URL:https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-surgical-im
+ munotherapy-clinical-trials-for-glioblastoma
+END:VEVENT
+BEGIN:VEVENT
+UID:db03470e-d88a-5487-a020-12401a0cbc75
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260326T190000
+DTEND;TZID=America/Chicago:20260326T200000
+SUMMARY:AMPATH/MAPAS México Monthly Seminar: Nutrition Intervention in Rura
+ l Mexico
+LOCATION:Zoom
+DESCRIPTION:\\nRegister: https://dellmed-utexas.zoom.us/webinar/register/WN
+ _3oM12Gt6QYGZSt5zd5izlg#/registration\\n\\nEvent page: https://dellmed.ute
+ xas.edu/events/ampath-mapas-m%C3%A9xico-monthly-seminar-nutrition-interven
+ tion-in-rural-mexico
+URL:https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-semi
+ nar-nutrition-intervention-in-rural-mexico
+END:VEVENT
+BEGIN:VEVENT
+UID:d9f8ec81-e159-5b90-af95-d16d2413862a
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260421T083000
+DTEND;TZID=America/Chicago:20260421T093000
+SUMMARY:Neurology Department Lecture: Pain From Acute to Chronic
+LOCATION:Zoom
+DESCRIPTION:In this installment of Neurology Grand Rounds\, Stephanie Wottr
+ ich \, M.D.\, presents “Pain\, From A to C (Acute to Chronic).” Wottrich i
+ s a fourth-year adult neurology resident at Dell Medical School. Email Sha
+ ron Green for the Zoom information.\\n\\nEvent page: https://dellmed.utexa
+ s.edu/events/neurology-department-lecture-pain-from-acute-to-chronic
+URL:https://dellmed.utexas.edu/events/neurology-department-lecture-pain-fro
+ m-acute-to-chronic
+END:VEVENT
+BEGIN:VEVENT
+UID:4c3d1829-d76b-5b04-a038-040ef733fe7d
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260507T203000
+DTEND;TZID=America/Chicago:20260507T213000
+SUMMARY:Class of 2026 Commencement
+LOCATION:Livestream
+DESCRIPTION:Recognize and congratulate Dell Medical School’s next generatio
+ n of physician leaders\, ready to transform health and care in communities
+  across the nation. All are welcome to watch the ceremony via livestream —
+  link forthcoming. For more information\, email Aubrie McKernan .\\n\\nEve
+ nt page: https://dellmed.utexas.edu/events/class-of-2026-commencement
+URL:https://dellmed.utexas.edu/events/class-of-2026-commencement
+END:VEVENT
+BEGIN:VEVENT
+UID:2ad12bc0-7e6b-5d34-8a26-69d405b7b483
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260326T083000
+DTEND;TZID=America/Chicago:20260326T093000
+SUMMARY:Best Practices in Medical Education Grand Rounds: Facilitators and 
+ Barriers to Effective Learning
+LOCATION:Zoom
+DESCRIPTION:In this installment of Best Practices in Medical Education Gran
+ d Rounds\, Veronica Yan \, Ph.D.\, presents “Facilitators and Barriers to 
+ Effective Learning.” Yan is an associate professor in the Department of Ed
+ ucational Psychology within UT’s College of Education. Email Jennifer Brah
+ am for the Zoom information. Best Practices in Medical Education Grand Rou
+ nds is generously supported by the Massey Family Endowed Excellence Fund f
+ or Dell Medical School.\\n\\nEvent page: https://dellmed.utexas.edu/events
+ /best-practices-in-medical-education-grand-rounds-facilitators-and-barrier
+ s-to-effective-learning
+URL:https://dellmed.utexas.edu/events/best-practices-in-medical-education-g
+ rand-rounds-facilitators-and-barriers-to-effective-learning
+END:VEVENT
+BEGIN:VEVENT
+UID:c69fa1b9-bf8e-592d-a351-81da5fd3e912
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260418T153000
+DTEND;TZID=America/Chicago:20260418T163000
+SUMMARY:Austin Pediatric Echo Conference
+LOCATION:Dell Children’s Medical Center\, Signe Auditorium
+DESCRIPTION:The Austin Pediatric Echo Conference brings together leading pe
+ diatric and neonatal echocardiography specialists to deliver a focused\, h
+ ands-on introduction to imaging the developing heart. Attendees learn prac
+ tical scanning skills\, understand key differences between pediatric and a
+ dult echo and observe live demonstrations from experts in congenital heart
+  disease and advanced cardiac imaging. This one-day program is designed to
+  strengthen confidence\, deepen clinical insight and provide immediately a
+ pplicable skills for frontline providers. The experience emphasizes real-w
+ orld application\, collaborative learning\, and direct mentorship from spe
+ cialists at the Texas Center for Pediatric and Congenital Heart Disease\, 
+ a clinical partnership between UT Health Austin and Dell Children’s Medica
+ l Center. The conference is intended for: Pediatric residents exploring ca
+ rdiology Neonatologists Adult echo technologists expanding into pediatric 
+ imaging Advanced practice providers PICU providers seeking stronger echo p
+ roficiency Sandhya Ramlogan \, MBChB\, presents the keynote address. Ramlo
+ gan is a board-certified pediatric cardiologist and medical director of th
+ e Echocardiography Laboratory at the Texas Center for Pediatric and Congen
+ ital Heart Disease. She is also an associate professor in the Department o
+ f Pediatrics at Dell Med. For more information\, email Sofia Hobbs . Upon 
+ request\, Dell Med will provide interpretation services at this event. Ple
+ ase notify Sofia by April 3\, 2026\, if interpretation is needed.\\n\\nEve
+ nt page: https://dellmed.utexas.edu/events/austin-pediatric-echo-conferenc
+ e-041826
+URL:https://dellmed.utexas.edu/events/austin-pediatric-echo-conference-0418
+ 26
+END:VEVENT
+BEGIN:VEVENT
+UID:61889c2a-b3f7-5ff1-9690-96b049665e84
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260421T083000
+DTEND;TZID=America/Chicago:20260421T093000
+SUMMARY:Neurology Grand Rounds: Pain from Acute to Chronic
+LOCATION:Virtual
+DESCRIPTION:In this installment of Neurology Grand Rounds\, Stephanie Wottr
+ ich\, M.D.\, presents “Pain\, from A to C (Acute to Chronic).” Wottrich is
+  a 4th-year Adult Neurology resident at Dell Medical School. Email Sharon 
+ Green for the Zoom information.\\n\\nEvent page: https://dellmed.utexas.ed
+ u/events/neurology-grand-rounds-pain-from-acute-to-chronic
+URL:https://dellmed.utexas.edu/events/neurology-grand-rounds-pain-from-acut
+ e-to-chronic
+END:VEVENT
+BEGIN:VEVENT
+UID:2cb1b69c-e6f8-509f-b944-affcb9a6afb8
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260420T130000
+DTEND;TZID=America/Chicago:20260420T140000
+SUMMARY:Health Social Work Grand Rounds: Advocacy is for Everyone
+LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom
+DESCRIPTION:In this installment of Health Social Work Grand Rounds\, Meliss
+ a McRoy Shearer\, J.D.\, LBSW\, presents “Advocacy is for Everyone: Micro\
+ , Mezzo and Macro Practices That Sustain Practitioners and the Communities
+  We Serve.” Shearer is the mental health public defender at the Travis Cou
+ nty Mental Health Division. Register to attend. For in-person attendees\, 
+ lunch will be provided at 11:30 a.m. with the lecture to follow at noon. F
+ or more information\, contact Vicki Wooten .\\n\\nRegister »: https://app.
+ smartsheet.com/b/form/5d28071219a840eaab53d7b9cdb047a2\\nRegister: http://
+ app.smartsheet.com/b/form/5d28071219a840eaab53d7b9cdb047a2\\n\\nEvent page
+ : https://dellmed.utexas.edu/events/health-social-work-grand-rounds-advoca
+ cy-is-for-everyone
+URL:https://dellmed.utexas.edu/events/health-social-work-grand-rounds-advoc
+ acy-is-for-everyone
+END:VEVENT
+BEGIN:VEVENT
+UID:08cad251-c1e3-54df-817a-fe9983e4bdb3
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260312T190000
+DTEND;TZID=America/Chicago:20260312T200000
+SUMMARY:Ophthalmology Continuing Medical Education Series: Ischemic Optic N
+ europathies
+LOCATION:Health Discovery Building Auditorium (HDB 1.208)
+DESCRIPTION:In this installment of the Department of Ophthalmology and Mitc
+ hel and Shannon Wong Eye Institute’s Continuing Medical Education Series\,
+  Neil R. Miller \, M.D.\, presents “Ischemic Optic Neuropathies: Classific
+ ation\, Diagnosis and Management.” Miller is a professor emeritus of ophth
+ almology\, neurology and neurosurgery at Johns Hopkins University School o
+ f Medicine. In-person attendees are encouraged to attend at 5:30 p.m. for 
+ a reception prior to the lecture that begins at 6 p.m. Email Nicole Groote
+  for more information.\\n\\nEvent page: https://dellmed.utexas.edu/events/
+ ophthalmology-continuing-medical-education-series-ischemic-optic-neuropath
+ ies
+URL:https://dellmed.utexas.edu/events/ophthalmology-continuing-medical-educ
+ ation-series-ischemic-optic-neuropathies
+END:VEVENT
+BEGIN:VEVENT
+UID:ba9a987b-0da2-5cd4-87b3-093eaa19b8bd
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260402T100000
+DTEND;TZID=America/Chicago:20260402T110000
+SUMMARY:Research Nuts & Bolts: Ascension Seton Site Approval
+LOCATION:Zoom
+DESCRIPTION:The Health Transformation Research Institute ’s The Nuts and Bo
+ lts of Executing a Clinical or Population Research Study series consists o
+ f one-hour forums focusing on topics related to the execution of clinical 
+ and population research. The target audience is faculty and staff involved
+  in clinical and/or population research. In this installment\, Reggie Loui
+ s \, M.S.\, presents “Ascension Seton Site Approval: Submission Through Cl
+ osure.” Louis is a clinical research project manager for research support 
+ services at Ascension Seton. Register to attend. Email Leta Moser for more
+  information.\\n\\nRegister »: https://dellmed-utexas.zoom.us/meeting/regi
+ ster/IN4URYuZROWi9nfFMFS3Nw\\nRegister: http://dellmed-utexas.zoom.us/meet
+ ing/register/IN4URYuZROWi9nfFMFS3Nw\\n\\nEvent page: https://dellmed.utexa
+ s.edu/events/research-nuts-bolts-ascension-seton-site-approval-040226
+URL:https://dellmed.utexas.edu/events/research-nuts-bolts-ascension-seton-s
+ ite-approval-040226
+END:VEVENT
+BEGIN:VEVENT
+UID:d6f0ede5-d3e7-578e-8b14-95bbfdf30c6f
+DTSTAMP:20260318T215923Z
+DTSTART;VALUE=DATE:20260312
+DTEND;VALUE=DATE:20260313
+SUMMARY:The Undiagnosed Initiative - Photo Exhibition
+LOCATION:HLB & HTB 1st Floors
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/998437/2026/03/12
+URL:https://intranet.dellmed.utexas.edu/event/998437/2026/03/12
+END:VEVENT
+BEGIN:VEVENT
+UID:191159fb-09c3-5e94-acda-0f5e1e9dc852
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260312T080000
+DTEND;TZID=America/Chicago:20260312T120000
+SUMMARY:IT Office Hour (DPRI)
+LOCATION:3.708A
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/864131/2026/03/12
+URL:https://intranet.dellmed.utexas.edu/event/864131/2026/03/12
+END:VEVENT
+BEGIN:VEVENT
+UID:f919824a-c71b-58a1-8162-60e51e747753
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260312T120000
+DTEND;TZID=America/Chicago:20260312T130000
+SUMMARY:Schwartz Rounds: "High Stakes\, Thin Margins"
+LOCATION:HDB 1.208 Auditorium
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/994885/
+URL:https://intranet.dellmed.utexas.edu/event/994885/
+END:VEVENT
+BEGIN:VEVENT
+UID:8b60b0c6-5b3c-527d-965a-37c5f4ccbdee
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260312T120000
+DTEND;TZID=America/Chicago:20260312T130000
+SUMMARY:UT Health Austin Lunch & Learn
+LOCATION:HTB 10.114 or Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/998619/
+URL:https://intranet.dellmed.utexas.edu/event/998619/
+END:VEVENT
+BEGIN:VEVENT
+UID:032745f1-4940-5779-aba6-a497c4e86327
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260316T070000
+DTEND;TZID=America/Chicago:20260316T090000
+SUMMARY:Health Workforce Well-Being Day @ ASMCA
+LOCATION:GME Lounge (Seton Main)
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1003891/
+URL:https://intranet.dellmed.utexas.edu/event/1003891/
+END:VEVENT
+BEGIN:VEVENT
+UID:54d1394f-6c60-55b7-aae5-4901f5fb0c6e
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260318T070000
+DTEND;TZID=America/Chicago:20260318T074500
+SUMMARY:Get Ready for Epic: Provider Virtual Town Hall
+LOCATION:MS Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/987308/
+URL:https://intranet.dellmed.utexas.edu/event/987308/
+END:VEVENT
+BEGIN:VEVENT
+UID:c6a5cf63-2d7e-5d79-8473-900b664c5f89
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260318T070000
+DTEND;TZID=America/Chicago:20260318T130000
+SUMMARY:Health Workforce Well-Being Day @ Dell Med & DCMC
+LOCATION:HDB 1.202
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1004526/
+URL:https://intranet.dellmed.utexas.edu/event/1004526/
+END:VEVENT
+BEGIN:VEVENT
+UID:d5172df6-7111-5a5c-bd36-0ea39907ae95
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260319T120000
+DTEND;TZID=America/Chicago:20260319T130000
+SUMMARY:Medical Education Research Office Hours
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/766328/2026/03/19
+URL:https://intranet.dellmed.utexas.edu/event/766328/2026/03/19
+END:VEVENT
+BEGIN:VEVENT
+UID:6b0f3d2a-68e5-5bb5-a033-4446212b1a86
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260319T133000
+DTEND;TZID=America/Chicago:20260319T143000
+SUMMARY:Bi-Monthly Office of Research Office Hours
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/993169/2026/03/19
+URL:https://intranet.dellmed.utexas.edu/event/993169/2026/03/19
+END:VEVENT
+BEGIN:VEVENT
+UID:ed30d1a0-2857-586c-8b06-574b3f6476f7
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260324T120000
+DTEND;TZID=America/Chicago:20260324T130000
+SUMMARY:Cybersecurity Office Hours
+LOCATION:MS Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/978795/2026/03/24
+URL:https://intranet.dellmed.utexas.edu/event/978795/2026/03/24
+END:VEVENT
+BEGIN:VEVENT
+UID:9bb08e4c-4611-5f89-9292-3f53dc349e67
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260325T150000
+DTEND;TZID=America/Chicago:20260325T160000
+SUMMARY:Office of Faculty Academic Affairs Office Hours
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/739952/2026/03/25
+URL:https://intranet.dellmed.utexas.edu/event/739952/2026/03/25
+END:VEVENT
+BEGIN:VEVENT
+UID:c0baeab8-d8d0-5b66-a899-fef26eef0c64
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260325T150000
+DTEND;TZID=America/Chicago:20260325T160000
+SUMMARY:IT Office Hour (HDB & Zoom)
+LOCATION:HDB 8.000 & Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/864130/2026/03/25
+URL:https://intranet.dellmed.utexas.edu/event/864130/2026/03/25
+END:VEVENT
+BEGIN:VEVENT
+UID:7681c078-904b-5371-bba3-d6a07a13ffb4
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260326T073000
+DTEND;TZID=America/Chicago:20260326T083000
+SUMMARY:Best Practices in Medical Education Grand Rounds
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1002380/
+URL:https://intranet.dellmed.utexas.edu/event/1002380/
+END:VEVENT
+BEGIN:VEVENT
+UID:13eb5cbc-d628-5863-8e50-050ab822f456
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260326T113000
+DTEND;TZID=America/Chicago:20260326T120000
+SUMMARY:EAP Monthly Mindfulness Workshop
+LOCATION:HDB 1.204
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/986238/
+URL:https://intranet.dellmed.utexas.edu/event/986238/
+END:VEVENT
+BEGIN:VEVENT
+UID:4778a756-3764-5c1a-a805-5dddddf00609
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260326T150000
+DTEND;TZID=America/Chicago:20260326T160000
+SUMMARY:Supervisor Toolkit: Setting Expectations & Feedback
+LOCATION:Virtual (Zoom)
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/988821/
+URL:https://intranet.dellmed.utexas.edu/event/988821/
+END:VEVENT
+BEGIN:VEVENT
+UID:448c88a3-fc76-533f-ab2d-49639a2d2178
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260327T120000
+DTEND;TZID=America/Chicago:20260327T130000
+SUMMARY:DPRI Grand Rounds: "A Conversation With a Survivor"
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/997982/
+URL:https://intranet.dellmed.utexas.edu/event/997982/
+END:VEVENT
+BEGIN:VEVENT
+UID:89a9db2f-c689-5bc5-bb8f-bccd5148dd4f
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260331T120000
+DTEND;TZID=America/Chicago:20260331T130000
+SUMMARY:DSPC Discovery and Investigation Seminar Series
+LOCATION:HDB 6.110 or Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/984965/
+URL:https://intranet.dellmed.utexas.edu/event/984965/
+END:VEVENT
+BEGIN:VEVENT
+UID:225c7130-5ca4-5ff5-86b7-5b1bf440aea8
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260402T110000
+DTEND;TZID=America/Chicago:20260402T120000
+SUMMARY:Bi-Monthly Office of Research Office Hours
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/993170/
+URL:https://intranet.dellmed.utexas.edu/event/993170/
+END:VEVENT
+BEGIN:VEVENT
+UID:1fa52d56-2c90-56cc-bc8d-1e181e6647ea
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260402T120000
+DTEND;TZID=America/Chicago:20260402T130000
+SUMMARY:Cybersecurity Office Hours
+LOCATION:MS Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/978800/
+URL:https://intranet.dellmed.utexas.edu/event/978800/
+END:VEVENT
+BEGIN:VEVENT
+UID:a2864741-70c2-563b-8f00-b32a84dd97d2
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260408T120000
+DTEND;TZID=America/Chicago:20260408T130000
+SUMMARY:UT Health Austin Lunch & Learn
+LOCATION:HTB 10.114 or Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/975843/
+URL:https://intranet.dellmed.utexas.edu/event/975843/
+END:VEVENT
+BEGIN:VEVENT
+UID:8c25442e-695d-5b29-9723-c9114e8d768a
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260409T120000
+DTEND;TZID=America/Chicago:20260409T130000
+SUMMARY:Medical Education Research Office Hours
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/766329/
+URL:https://intranet.dellmed.utexas.edu/event/766329/
+END:VEVENT
+BEGIN:VEVENT
+UID:0b4950bd-e5c4-5b1c-996b-17835606c60d
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260414T160000
+DTEND;TZID=America/Chicago:20260414T170000
+SUMMARY:DSPC Discovery and Investigation Seminar Series
+LOCATION:HDB 6.110 or Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/984966/
+URL:https://intranet.dellmed.utexas.edu/event/984966/
+END:VEVENT
+BEGIN:VEVENT
+UID:9b631751-bdc4-5bcf-8a64-2d5fe801c41a
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260417T073000
+DTEND;TZID=America/Chicago:20260417T083000
+SUMMARY:Best Practices in Medical Education Grand Rounds
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1002381/
+URL:https://intranet.dellmed.utexas.edu/event/1002381/
+END:VEVENT
+BEGIN:VEVENT
+UID:a9df7a42-023c-532e-beb6-5789bcbcbc5c
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260422T150000
+DTEND;TZID=America/Chicago:20260422T163000
+SUMMARY:LGBTQIA+ Health Speaker Event
+LOCATION:HDB 1.208 Auditorium
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1004190/
+URL:https://intranet.dellmed.utexas.edu/event/1004190/
+END:VEVENT
+BEGIN:VEVENT
+UID:4ccbedec-ab0b-594d-94f7-80ef3cae2b1e
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260423T120000
+DTEND;TZID=America/Chicago:20260423T130000
+SUMMARY:UT Health Austin Lunch & Learn (April)
+LOCATION:HTB 10.114 or Teams
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/975844/
+URL:https://intranet.dellmed.utexas.edu/event/975844/
+END:VEVENT
+BEGIN:VEVENT
+UID:68b2af10-b898-564a-9ba6-8a343b60d3e4
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260424T133000
+DTEND;TZID=America/Chicago:20260424T170000
+SUMMARY:Biomedical Writing Workshop
+LOCATION:HLB 5.201 Boardroom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/995317/
+URL:https://intranet.dellmed.utexas.edu/event/995317/
+END:VEVENT
+BEGIN:VEVENT
+UID:452e056f-5240-566a-b8cf-0fe91742a107
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260430T120000
+DTEND;TZID=America/Chicago:20260430T133000
+SUMMARY:Longhorns Listen: Suicide Prevention Training
+LOCATION:HDB 1.202
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1003108/
+URL:https://intranet.dellmed.utexas.edu/event/1003108/
+END:VEVENT
+BEGIN:VEVENT
+UID:59bbe982-ba5c-5878-a97c-035c65fd326f
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260430T163000
+DTEND;TZID=America/Chicago:20260430T170000
+SUMMARY:EAP Monthly Mindfulness Workshop (April)
+LOCATION:HDB 1.202
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/986239/
+URL:https://intranet.dellmed.utexas.edu/event/986239/
+END:VEVENT
+BEGIN:VEVENT
+UID:46457414-a414-5518-b51a-89099ca3cb71
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260513T160000
+DTEND;TZID=America/Chicago:20260513T170000
+SUMMARY:DSPC Discovery and Investigation Seminar Series (May)
+LOCATION:HDB 6.110 or Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/984968/
+URL:https://intranet.dellmed.utexas.edu/event/984968/
+END:VEVENT
+BEGIN:VEVENT
+UID:560fe5b5-538d-546f-ade5-5dd77c925b94
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260519T110000
+DTEND;TZID=America/Chicago:20260519T120000
+SUMMARY:In Conversation: Professional Mentorship & Coaching
+LOCATION:Zoom
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1002985/
+URL:https://intranet.dellmed.utexas.edu/event/1002985/
+END:VEVENT
+BEGIN:VEVENT
+UID:24ef7906-9af3-5395-9d9b-f61af05b04ae
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260715T073000
+DTEND;TZID=America/Chicago:20260715T093000
+SUMMARY:Annual Dell Med Resource Fair
+LOCATION:HDB Courtyard\, First Floor Atrium
+DESCRIPTION:Internal Dell Med event\\n\\nEvent page: https://intranet.dellm
+ ed.utexas.edu/event/1004986/
+URL:https://intranet.dellmed.utexas.edu/event/1004986/
+END:VEVENT
+BEGIN:VEVENT
+UID:4623a175-4bbf-5c4e-bc1e-ad7b54c89140
+DTSTAMP:20260318T215923Z
+DTSTART;TZID=America/Chicago:20260401T120000
+DTEND;TZID=America/Chicago:20260401T130000
+SUMMARY:Example: Add any extra internal event here
+LOCATION:Zoom
+DESCRIPTION:Add a description here.
+URL:https://intranet.dellmed.utexas.edu/events
+END:VEVENT
 END:VCALENDAR
