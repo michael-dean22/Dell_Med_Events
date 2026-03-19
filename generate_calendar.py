@@ -422,7 +422,7 @@ def build_calendar_html(events):
   .header-title{{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:10px;}}
   .header-sub{{font-size:0.9rem;color:rgba(255,255,255,0.75);font-weight:300;max-width:520px;}}
   .subscribe-section{{background:var(--orange-dark);border-bottom:3px solid rgba(0,0,0,0.15);}}
-  .subscribe-inner{{max-width:960px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}}
+  .subscribe-inner{{max-width:960px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}}
   .subscribe-icon{{width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
   .subscribe-text{{flex:1;min-width:200px;}}
   .subscribe-label{{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2px;}}
@@ -430,6 +430,15 @@ def build_calendar_html(events):
   .copy-btn{{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:0.78rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;white-space:nowrap;flex-shrink:0;}}
   .copy-btn:hover{{background:rgba(255,255,255,0.25);}}
   .copy-btn.copied{{background:rgba(127,219,138,0.3);border-color:#7FDB8A;}}
+  .how-to{{max-width:960px;margin:0 auto;padding:18px 24px 20px;}}
+  .how-to-title{{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:12px;}}
+  .how-to-steps{{display:flex;gap:0;flex-wrap:wrap;}}
+  .how-step{{display:flex;align-items:flex-start;gap:8px;flex:1;min-width:160px;padding:0 16px 0 0;position:relative;}}
+  .how-step:not(:last-child)::after{{content:'→';position:absolute;right:4px;top:2px;color:rgba(255,255,255,0.3);font-size:0.8rem;}}
+  .how-step-num{{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.2);color:#fff;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}}
+  .how-step-text{{flex:1;}}
+  .how-step-title{{font-size:0.72rem;font-weight:600;color:#fff;margin-bottom:2px;}}
+  .how-step-desc{{font-size:0.65rem;color:rgba(255,255,255,0.65);line-height:1.4;}}
   .filter-bar{{max-width:960px;margin:0 auto;padding:16px 24px 0;display:flex;gap:8px;flex-wrap:wrap;}}
   .filter-btn{{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}}
   .filter-btn.active{{background:var(--orange);color:#fff;border-color:var(--orange);}}
@@ -496,7 +505,7 @@ def build_calendar_html(events):
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <div class="header-eyebrow">Dell Medical School · UT Austin</div>
+    <div class="header-eyebrow">Department of Medicine</div>
     <h1 class="header-title">Events Calendar</h1>
     <p class="header-sub">Upcoming public and internal events from Dell Med. Subscribe to add all events to your Outlook calendar.</p>
   </div>
@@ -509,6 +518,15 @@ def build_calendar_html(events):
       <div class="subscribe-url" id="ics-url">{ics_url}</div>
     </div>
     <button class="copy-btn" id="copy-btn">Copy Link</button>
+  </div>
+  <div class="how-to">
+    <div class="how-to-title">How to subscribe in Outlook</div>
+    <div class="how-to-steps">
+      <div class="how-step"><div class="how-step-num">1</div><div class="how-step-text"><div class="how-step-title">Copy the URL</div><div class="how-step-desc">Click Copy Link above</div></div></div>
+      <div class="how-step"><div class="how-step-num">2</div><div class="how-step-text"><div class="how-step-title">Open Account Settings</div><div class="how-step-desc">File → Account Settings → Account Settings</div></div></div>
+      <div class="how-step"><div class="how-step-num">3</div><div class="how-step-text"><div class="how-step-title">Add Internet Calendar</div><div class="how-step-desc">Internet Calendars tab → New → paste URL → Add</div></div></div>
+      <div class="how-step"><div class="how-step-num">4</div><div class="how-step-text"><div class="how-step-title">Done!</div><div class="how-step-desc">Events appear under Other Calendars and sync daily</div></div></div>
+    </div>
   </div>
 </div>
 <div class="filter-bar">
@@ -526,36 +544,6 @@ def build_calendar_html(events):
     <div id="events-container"></div>
   </div>
   <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-card-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C3E00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><div class="sidebar-card-title">How to Subscribe</div></div>
-      <div class="sidebar-card-body">
-        <p style="font-size:0.78rem;color:var(--gray);margin-bottom:14px;line-height:1.5;">Subscribe once and all Dell Med events appear automatically in your Outlook — updated daily.</p>
-        <div class="platform-tab">
-          <button class="tab-btn active" onclick="switchTab('desktop')">Outlook Desktop</button>
-          <button class="tab-btn" onclick="switchTab('web')">Outlook Web</button>
-          <button class="tab-btn" onclick="switchTab('mac')">Mac Calendar</button>
-        </div>
-        <div class="tab-panel active" id="tab-desktop">
-          <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Copy the subscribe URL</div><div class="step-desc">Click <strong>Copy Link</strong> at the top of this page.</div></div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Open Account Settings</div><div class="step-desc">In Outlook, go to <code>File → Account Settings → Account Settings</code></div></div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Add Internet Calendar</div><div class="step-desc">Click <code>Internet Calendars</code> tab → <code>New</code> → paste URL → click <code>Add</code></div></div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Done!</div><div class="step-desc">Events appear under <strong>Other Calendars</strong>. Syncs automatically.</div></div></div>
-        </div>
-        <div class="tab-panel" id="tab-web">
-          <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Copy the subscribe URL</div><div class="step-desc">Click <strong>Copy Link</strong> at the top of this page.</div></div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Open Outlook Calendar</div><div class="step-desc">Go to <code>outlook.office.com</code> and click the Calendar icon.</div></div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Add Calendar</div><div class="step-desc">Click <code>Add calendar</code> → <code>Subscribe from web</code> → paste URL → <code>Import</code></div></div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Done!</div><div class="step-desc">Name it <strong>Dell Med Events</strong> for easy reference.</div></div></div>
-        </div>
-        <div class="tab-panel" id="tab-mac">
-          <div class="step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Copy the subscribe URL</div><div class="step-desc">Click <strong>Copy Link</strong> at the top of this page.</div></div></div>
-          <div class="step"><div class="step-num">2</div><div class="step-content"><div class="step-title">Open Calendar app</div><div class="step-desc">Go to <code>File → New Calendar Subscription</code></div></div></div>
-          <div class="step"><div class="step-num">3</div><div class="step-content"><div class="step-title">Paste URL and subscribe</div><div class="step-desc">Paste URL → <code>Subscribe</code> → set auto-refresh to <strong>Every day</strong></div></div></div>
-          <div class="step"><div class="step-num">4</div><div class="step-content"><div class="step-title">Done!</div><div class="step-desc">Syncs to iPhone too if iCloud Calendar is enabled.</div></div></div>
-        </div>
-        <div class="info-note">💡 The calendar updates automatically every morning. New events appear within 24 hours.</div>
-      </div>
-    </div>
     <div class="sidebar-card">
       <div class="sidebar-card-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C3E00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="sidebar-card-title">Event Sources</div></div>
       <div class="sidebar-card-body">
@@ -588,12 +576,6 @@ document.getElementById('copy-btn').addEventListener('click', function(){{
     setTimeout(()=>{{ this.textContent='Copy Link'; this.classList.remove('copied'); }}, 2500);
   }});
 }});
-
-function switchTab(id){{
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',['desktop','web','mac'][i]===id));
-  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
-}}
 
 function setFilter(f){{
   activeFilter = f;
