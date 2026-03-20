@@ -1,2 +1,2 @@
-# Dell_Med_Internal_Events
-Dell Med Internal Events Widget
+# Dell_Med__Events
+Dell Med Events Widget
