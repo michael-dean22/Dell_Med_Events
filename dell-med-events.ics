@@ -8,7 +8,7 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:1e1d5da2-127f-5b66-9462-492b306cdcf6
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260410T083000
 DTEND;TZID=America/Chicago:20260410T093000
 SUMMARY:Pediatric Grand Rounds: Reflections on Parenting
@@ -27,7 +27,7 @@ URL:https://dellmed.utexas.edu/events/pediatric-grand-rounds-reflections-on
 END:VEVENT
 BEGIN:VEVENT
 UID:6484d19e-a381-5383-9be6-b2b6b8c74096
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260428T170000
 DTEND;TZID=America/Chicago:20260428T180000
 SUMMARY:Neurosurgery Grand Rounds: Neurostimulation as Network Physiology
@@ -44,7 +44,7 @@ URL:https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-neurostimul
 END:VEVENT
 BEGIN:VEVENT
 UID:d900f5f8-71f0-5d8d-aad6-21374fb5e304
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260414T130000
 DTEND;TZID=America/Chicago:20260414T140000
 SUMMARY:CPAN Series: What Every PCP Should Know About Autism Spectrum Disor
@@ -77,7 +77,7 @@ URL:https://dellmed.utexas.edu/events/cpan-series-what-every-pcp-should-kno
 END:VEVENT
 BEGIN:VEVENT
 UID:2bff8ec3-d7b8-574f-bc88-1e7643704ee7
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260331T170000
 DTEND;TZID=America/Chicago:20260331T180000
 SUMMARY:Neurosurgery Grand Rounds: Brain Trauma Foundation Penetrating Head
@@ -95,7 +95,7 @@ URL:https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-brain-traum
 END:VEVENT
 BEGIN:VEVENT
 UID:20be2310-b08f-56f1-ae44-7f8b34dba1fe
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260407T170000
 DTEND;TZID=America/Chicago:20260407T180000
 SUMMARY:Neurosurgery Grand Rounds: Surgical Immunotherapy Clinical Trials f
@@ -112,7 +112,7 @@ URL:https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-surgical-im
 END:VEVENT
 BEGIN:VEVENT
 UID:db03470e-d88a-5487-a020-12401a0cbc75
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260326T190000
 DTEND;TZID=America/Chicago:20260326T200000
 SUMMARY:AMPATH/MAPAS México Monthly Seminar: Nutrition Intervention in Rura
@@ -127,7 +127,7 @@ URL:https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-semi
 END:VEVENT
 BEGIN:VEVENT
 UID:d9f8ec81-e159-5b90-af95-d16d2413862a
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260421T083000
 DTEND;TZID=America/Chicago:20260421T093000
 SUMMARY:Neurology Department Lecture: Pain From Acute to Chronic
@@ -142,7 +142,7 @@ URL:https://dellmed.utexas.edu/events/neurology-department-lecture-pain-fro
 END:VEVENT
 BEGIN:VEVENT
 UID:4c3d1829-d76b-5b04-a038-040ef733fe7d
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260507T203000
 DTEND;TZID=America/Chicago:20260507T213000
 SUMMARY:Class of 2026 Commencement
@@ -156,7 +156,7 @@ URL:https://dellmed.utexas.edu/events/class-of-2026-commencement
 END:VEVENT
 BEGIN:VEVENT
 UID:2ad12bc0-7e6b-5d34-8a26-69d405b7b483
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260326T083000
 DTEND;TZID=America/Chicago:20260326T093000
 SUMMARY:Best Practices in Medical Education Grand Rounds: Facilitators and 
@@ -176,7 +176,7 @@ URL:https://dellmed.utexas.edu/events/best-practices-in-medical-education-g
 END:VEVENT
 BEGIN:VEVENT
 UID:c69fa1b9-bf8e-592d-a351-81da5fd3e912
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260418T153000
 DTEND;TZID=America/Chicago:20260418T163000
 SUMMARY:Austin Pediatric Echo Conference
@@ -209,7 +209,7 @@ URL:https://dellmed.utexas.edu/events/austin-pediatric-echo-conference-0418
 END:VEVENT
 BEGIN:VEVENT
 UID:61889c2a-b3f7-5ff1-9690-96b049665e84
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260421T083000
 DTEND;TZID=America/Chicago:20260421T093000
 SUMMARY:Neurology Grand Rounds: Pain from Acute to Chronic
@@ -224,7 +224,7 @@ URL:https://dellmed.utexas.edu/events/neurology-grand-rounds-pain-from-acut
 END:VEVENT
 BEGIN:VEVENT
 UID:2cb1b69c-e6f8-509f-b944-affcb9a6afb8
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260420T130000
 DTEND;TZID=America/Chicago:20260420T140000
 SUMMARY:Health Social Work Grand Rounds: Advocacy is for Everyone
@@ -245,7 +245,7 @@ URL:https://dellmed.utexas.edu/events/health-social-work-grand-rounds-advoc
 END:VEVENT
 BEGIN:VEVENT
 UID:4623a175-4bbf-5c4e-bc1e-ad7b54c89140
-DTSTAMP:20260321T074648Z
+DTSTAMP:20260322T075233Z
 DTSTART;TZID=America/Chicago:20260401T120000
 DTEND;TZID=America/Chicago:20260401T130000
 SUMMARY:Example: Add any extra internal event here
