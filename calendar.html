@@ -15,16 +15,12 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ch);min-height:100vh;}
-
-  /* Header */
   .hdr{background:var(--orange);position:relative;overflow:hidden;}
   .hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.06);}
   .hi{max-width:1100px;margin:0 auto;padding:32px 24px 28px;position:relative;z-index:1;}
   .eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px;}
   .htitle{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px;}
   .hsub{font-size:0.88rem;color:rgba(255,255,255,0.72);font-weight:300;}
-
-  /* Subscribe Bar */
   .sub-bar{background:var(--od);border-bottom:3px solid rgba(0,0,0,0.15);}
   .sub-inner{max-width:1100px;margin:0 auto;padding:16px 24px 0;}
   .sub-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.12);}
@@ -42,8 +38,6 @@
   .how-num{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.2);color:#fff;font-size:0.62rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
   .how-title{font-size:0.7rem;font-weight:600;color:#fff;margin-bottom:1px;}
   .how-desc{font-size:0.62rem;color:rgba(255,255,255,0.6);line-height:1.35;}
-
-  /* Toolbar */
   .toolbar{max-width:1100px;margin:0 auto;padding:18px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
   .filters{display:flex;gap:6px;flex-wrap:wrap;}
   .fb{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}
@@ -59,32 +53,23 @@
   .nav-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 11px;cursor:pointer;font-size:0.82rem;color:var(--gray);font-family:'DM Sans',sans-serif;transition:all 0.15s;}
   .nav-btn:hover{background:var(--ol);border-color:var(--orange);color:var(--orange);}
   .month-display{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--ch);min-width:150px;text-align:center;}
-
-  /* Admin button */
   .admin-btn{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}
   .admin-btn:hover{background:#F3F4F6;border-color:#999;}
-
-  /* Calendar Grid — 5 columns Mon–Fri */
-  .cal-wrap{max-width:1100px;margin:0 auto;padding:16px 24px 60px;}
+  .upd-note{max-width:1100px;margin:0 auto;padding:8px 24px 0;font-size:0.65rem;color:var(--gray);font-style:italic;}
+  .cal-wrap{max-width:1100px;margin:0 auto;padding:12px 24px 60px;}
   .cal-grid{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid var(--border);border-top:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,0.06);}
   .day-header{background:var(--orange);color:rgba(255,255,255,0.92);font-size:0.67rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:9px 4px;text-align:center;border-right:1px solid rgba(255,255,255,0.15);border-bottom:1px solid var(--border);}
-
-  /* Uniform cell height */
-  .cal-cell{border-right:1px solid var(--border);border-bottom:1px solid var(--border);height:130px;padding:6px 5px 5px;background:var(--white);position:relative;vertical-align:top;overflow:hidden;}
+  .cal-cell{border-right:1px solid var(--border);border-bottom:1px solid var(--border);height:130px;padding:6px 5px 5px;background:var(--white);position:relative;overflow:hidden;}
   .cal-cell.other-month{background:#F9F6F3;}
   .cal-cell.today{background:#FFF8F4;}
   .cal-cell.today .cell-num{background:var(--orange);color:#fff;}
-  .cell-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:0.75rem;font-weight:600;color:var(--gray);margin-bottom:3px;flex-shrink:0;}
+  .cell-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:0.75rem;font-weight:600;color:var(--gray);margin-bottom:3px;}
   .cal-cell.other-month .cell-num{color:#C8BFB7;}
-
-  /* Event pills */
   .ev-pill{display:block;font-size:0.6rem;font-weight:500;border-radius:3px;padding:2px 5px;margin-bottom:2px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;transition:opacity 0.15s;line-height:1.35;}
   .ev-pill:hover{opacity:0.78;}
   .ev-pill.internal{background:var(--ol);color:var(--od);}
   .ev-pill.public{background:var(--blue-light);color:#1558c0;}
   .ev-pill.more{background:var(--border);color:var(--gray);cursor:pointer;font-style:italic;}
-
-  /* Popover */
   .popover{display:none;position:fixed;z-index:999;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.15);width:310px;overflow:hidden;}
   .popover.show{display:block;}
   .pop-header{padding:12px 14px 10px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
@@ -103,8 +88,6 @@
   .pop-badge{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-top:3px;}
   .pop-badge.internal{background:var(--ol);color:var(--od);}
   .pop-badge.public{background:var(--blue-light);color:#1558c0;}
-
-  /* ── Admin Panel ── */
   .admin-panel{display:none;position:fixed;top:0;right:0;bottom:0;width:420px;background:var(--white);border-left:2px solid var(--border);box-shadow:-4px 0 24px rgba(0,0,0,0.12);z-index:1000;overflow-y:auto;flex-direction:column;}
   .admin-panel.open{display:flex;flex-direction:column;}
   .ap-header{background:var(--orange);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
@@ -115,9 +98,8 @@
   .ap-section-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);}
   .form-row{margin-bottom:12px;}
   .form-label{font-size:0.72rem;font-weight:600;color:var(--ch);margin-bottom:4px;display:block;}
-  .form-input,.form-select,.form-textarea{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:0.8rem;font-family:'DM Sans',sans-serif;color:var(--ch);background:var(--white);transition:border-color 0.15s;}
-  .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--orange);}
-  .form-textarea{resize:vertical;min-height:60px;}
+  .form-input,.form-select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:0.8rem;font-family:'DM Sans',sans-serif;color:var(--ch);background:var(--white);transition:border-color 0.15s;}
+  .form-input:focus,.form-select:focus{outline:none;border-color:var(--orange);}
   .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
   .btn-add{width:100%;padding:9px;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;margin-top:4px;}
   .btn-add:hover{background:var(--od);}
@@ -138,14 +120,12 @@
   .month-filter-row{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
   .month-filter-row label{font-size:0.72rem;font-weight:600;color:var(--ch);}
   .month-filter-row select{padding:4px 8px;border:1px solid var(--border);border-radius:5px;font-size:0.75rem;font-family:'DM Sans',sans-serif;}
-
   footer{border-top:1px solid var(--border);padding:16px 24px;text-align:center;font-size:0.7rem;color:var(--gray);}
   footer a{color:var(--orange);text-decoration:none;}
   footer a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
-
 <header class="hdr">
   <div class="hi">
     <div class="eyebrow">Department of Medicine</div>
@@ -153,7 +133,6 @@
     <p class="hsub">Upcoming public and internal events. Subscribe to add all events to your Outlook calendar.</p>
   </div>
 </header>
-
 <div class="sub-bar">
   <div class="sub-inner">
     <div class="sub-row">
@@ -173,7 +152,6 @@
     </div>
   </div>
 </div>
-
 <div class="toolbar">
   <div class="filters">
     <button class="fb on"          id="f-all"      onclick="setFilter('all')">All Events</button>
@@ -193,7 +171,7 @@
     </div>
   </div>
 </div>
-
+<div class="upd-note">Last updated: March 26, 2026 at 09:02 PM UTC</div>
 <div class="cal-wrap">
   <div class="cal-grid" id="cal-grid">
     <div class="day-header">Mon</div>
@@ -203,8 +181,6 @@
     <div class="day-header">Fri</div>
   </div>
 </div>
-
-<!-- Popover -->
 <div class="popover" id="popover">
   <div class="pop-header">
     <div class="pop-date" id="pop-date"></div>
@@ -212,137 +188,182 @@
   </div>
   <div class="pop-events" id="pop-events"></div>
 </div>
-
-<!-- Admin Panel -->
 <div class="admin-panel" id="admin-panel">
   <div class="ap-header">
     <div class="ap-title">Edit Events</div>
     <button class="ap-close" id="ap-close">✕</button>
   </div>
   <div class="ap-body">
-
-    <!-- Add / Edit Event -->
     <div class="ap-section">
       <div class="ap-section-title" id="form-section-title">Add New Event</div>
       <input type="hidden" id="edit-index" value="-1">
-      <div class="form-row">
-        <label class="form-label">Event Title *</label>
-        <input class="form-input" id="f-title" type="text" placeholder="e.g. Grand Rounds: Topic Name">
-      </div>
+      <div class="form-row"><label class="form-label">Event Title *</label><input class="form-input" id="f-title" type="text" placeholder="e.g. Grand Rounds: Topic Name"></div>
       <div class="form-row-2">
-        <div>
-          <label class="form-label">Date *</label>
-          <input class="form-input" id="f-date" type="date">
-        </div>
-        <div>
-          <label class="form-label">Source *</label>
-          <select class="form-select" id="f-source">
-            <option value="internal">🔒 Internal</option>
-            <option value="public">🌐 Public</option>
-          </select>
-        </div>
+        <div><label class="form-label">Date *</label><input class="form-input" id="f-date" type="date"></div>
+        <div><label class="form-label">Source *</label><select class="form-select" id="f-source"><option value="internal">🔒 Internal</option><option value="public">🌐 Public</option></select></div>
       </div>
-      <div class="form-row">
-        <label class="form-label">Time</label>
-        <input class="form-input" id="f-time" type="text" placeholder="e.g. 12:00pm – 1:00pm">
-      </div>
-      <div class="form-row">
-        <label class="form-label">Location</label>
-        <input class="form-input" id="f-location" type="text" placeholder="e.g. Zoom, HDB 1.208">
-      </div>
-      <div class="form-row">
-        <label class="form-label">URL</label>
-        <input class="form-input" id="f-url" type="url" placeholder="https://...">
-      </div>
+      <div class="form-row"><label class="form-label">Time</label><input class="form-input" id="f-time" type="text" placeholder="e.g. 12:00pm – 1:00pm"></div>
+      <div class="form-row"><label class="form-label">Location</label><input class="form-input" id="f-location" type="text" placeholder="e.g. Zoom, HDB 1.208"></div>
+      <div class="form-row"><label class="form-label">URL</label><input class="form-input" id="f-url" type="url" placeholder="https://..."></div>
       <button class="btn-add" id="btn-submit">Add Event</button>
       <button class="btn-add" id="btn-cancel-edit" style="display:none;background:var(--gray);margin-top:6px;">Cancel Edit</button>
     </div>
-
-    <!-- Event List -->
     <div class="ap-section">
       <div class="ap-section-title">Manage Events</div>
       <div class="month-filter-row">
         <label>Filter by month:</label>
-        <select id="ap-month-filter" onchange="renderAdminList()">
-          <option value="all">All upcoming</option>
-        </select>
+        <select id="ap-month-filter" onchange="renderAdminList()"><option value="all">All upcoming</option></select>
       </div>
       <div id="ap-ev-list"></div>
     </div>
-
-    <div class="ap-notice">
-      <strong>Note:</strong> Changes made here update the calendar on this page immediately. To make them permanent, copy the updated event list and paste it into the <code>EVENTS</code> array in the HTML file on GitHub, then commit. The calendar will reflect your changes on next page load.
-    </div>
-
+    <div class="ap-notice"><strong>Note:</strong> Changes here update the calendar immediately on this page. To make them permanent, update the <code>EVENTS</code> array in the HTML file on GitHub and commit.</div>
   </div>
 </div>
-
 <footer>
   Department of Medicine · Dell Medical School · UT Austin &nbsp;|&nbsp;
   <a href="https://dellmed.utexas.edu/events" target="_blank">Public events →</a> &nbsp;|&nbsp;
   <a href="https://intranet.dellmed.utexas.edu/events" target="_blank">Internal events (login required) →</a>
 </footer>
-
 <script>
-// ── Event Data ────────────────────────────────────────────────────────────────
 let EVENTS = [
-  // Internal Events (Cerebrum)
-  {date:"2026-03-26",time:"7:30am – 8:30am",   title:"Best Practices in Medical Education Grand Rounds",        location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/1002380/",  source:"internal"},
-  {date:"2026-03-26",time:"11:30am – 12:00pm", title:"EAP Monthly Mindfulness Workshop",                        location:"HDB 1.204",                  url:"https://intranet.dellmed.utexas.edu/event/986238/",   source:"internal"},
-  {date:"2026-03-26",time:"3:00pm – 4:00pm",   title:"Supervisor Toolkit: Setting Expectations & Feedback",     location:"Virtual (Zoom)",             url:"https://intranet.dellmed.utexas.edu/event/988821/",   source:"internal"},
-  {date:"2026-03-27",time:"12:00pm – 1:00pm",  title:"DPRI Grand Rounds: A Conversation With a Survivor",       location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/997982/",   source:"internal"},
-  {date:"2026-03-31",time:"12:00pm – 1:00pm",  title:"DSPC Discovery and Investigation Seminar Series",         location:"HDB 6.110 or Zoom",          url:"https://intranet.dellmed.utexas.edu/event/984965/",   source:"internal"},
-  {date:"2026-04-02",time:"11:00am – 12:00pm", title:"Bi-Monthly Office of Research Office Hours",              location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/993170/",   source:"internal"},
-  {date:"2026-04-02",time:"12:00pm – 1:00pm",  title:"Cybersecurity Office Hours",                              location:"MS Teams",                   url:"https://intranet.dellmed.utexas.edu/event/978800/",   source:"internal"},
-  {date:"2026-04-08",time:"12:00pm – 1:00pm",  title:"UT Health Austin Lunch & Learn",                          location:"HTB 10.114 or Teams",        url:"https://intranet.dellmed.utexas.edu/event/975843/",   source:"internal"},
-  {date:"2026-04-09",time:"12:00pm – 1:00pm",  title:"Medical Education Research Office Hours",                 location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/766329/",   source:"internal"},
-  {date:"2026-04-14",time:"4:00pm – 5:00pm",   title:"DSPC Discovery and Investigation Seminar Series",         location:"HDB 6.110 or Zoom",          url:"https://intranet.dellmed.utexas.edu/event/984966/",   source:"internal"},
-  {date:"2026-04-17",time:"7:30am – 8:30am",   title:"Best Practices in Medical Education Grand Rounds",        location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/1002381/",  source:"internal"},
-  {date:"2026-04-22",time:"3:00pm – 4:30pm",   title:"LGBTQIA+ Health Speaker Event",                           location:"HDB 1.208 Auditorium",       url:"https://intranet.dellmed.utexas.edu/event/1004190/",  source:"internal"},
-  {date:"2026-04-23",time:"12:00pm – 1:00pm",  title:"UT Health Austin Lunch & Learn (April)",                  location:"HTB 10.114 or Teams",        url:"https://intranet.dellmed.utexas.edu/event/975844/",   source:"internal"},
-  {date:"2026-04-24",time:"1:30pm – 5:00pm",   title:"Biomedical Writing Workshop",                             location:"HLB 5.201 Boardroom",        url:"https://intranet.dellmed.utexas.edu/event/995317/",   source:"internal"},
-  {date:"2026-04-30",time:"12:00pm – 1:30pm",  title:"Longhorns Listen: Suicide Prevention Training",           location:"HDB 1.202",                  url:"https://intranet.dellmed.utexas.edu/event/1003108/",  source:"internal"},
-  {date:"2026-04-30",time:"4:30pm – 5:00pm",   title:"EAP Monthly Mindfulness Workshop (April)",                location:"HDB 1.202",                  url:"https://intranet.dellmed.utexas.edu/event/986239/",   source:"internal"},
-  {date:"2026-05-13",time:"4:00pm – 5:00pm",   title:"DSPC Discovery and Investigation Seminar Series (May)",   location:"HDB 6.110 or Zoom",          url:"https://intranet.dellmed.utexas.edu/event/984968/",   source:"internal"},
-  {date:"2026-05-19",time:"11:00am – 12:00pm", title:"In Conversation: Professional Mentorship & Coaching",     location:"Zoom",                       url:"https://intranet.dellmed.utexas.edu/event/1002985/",  source:"internal"},
-  {date:"2026-07-15",time:"7:30am – 9:30am",   title:"Annual Dell Med Resource Fair",                           location:"HDB Courtyard, First Floor", url:"https://intranet.dellmed.utexas.edu/event/1004986/",  source:"internal"},
-  // Public Events (dellmed.utexas.edu)
-  {date:"2026-03-26",time:"6:00pm – 7:00pm",   title:"AMPATH/MAPAS México Monthly Seminar: Nutrition Intervention in Rural Mexico", location:"Zoom",   url:"https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-seminar-nutrition-intervention-in-rural-mexico", source:"public"},
-  {date:"2026-03-26",time:"7:30am – 8:30am",   title:"Best Practices in Medical Education Grand Rounds: Facilitators and Barriers", location:"Zoom",    url:"https://dellmed.utexas.edu/events/best-practices-in-medical-education-grand-rounds-facilitators-and-barriers-to-effective-learning", source:"public"},
-  {date:"2026-03-31",time:"4:00pm – 5:00pm",   title:"Neurosurgery Grand Rounds: Brain Trauma Foundation Penetrating Head Injury",  location:"Zoom",    url:"https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-brain-trauma-foundation-penetrating-head-injury-guidelines", source:"public"},
-  {date:"2026-04-02",time:"9:00am – 10:00am",  title:"Research Nuts & Bolts: Ascension Seton Site Approval",                       location:"Zoom",    url:"https://dellmed.utexas.edu/events/research-nuts-bolts-ascension-seton-site-approval-040226", source:"public"},
-  {date:"2026-04-07",time:"4:00pm – 5:00pm",   title:"Neurosurgery Grand Rounds: Surgical Immunotherapy Clinical Trials for Glioblastoma", location:"HDB 1.208 & Zoom", url:"https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-surgical-immunotherapy-clinical-trials-for-glioblastoma", source:"public"},
-  {date:"2026-04-14",time:"12:00pm – 1:00pm",  title:"CPAN Series: What Every PCP Should Know About Autism Spectrum Disorders",     location:"Virtual", url:"https://dellmed.utexas.edu/events/cpan-series-what-every-pcp-should-know-about-autism-spectrum-disorders", source:"public"},
-  {date:"2026-04-18",time:"All Day",            title:"Austin Pediatric Echo Conference",                                            location:"Dell Children's Medical Center", url:"https://dellmed.utexas.edu/events/austin-pediatric-echo-conference-041826", source:"public"},
-  {date:"2026-04-20",time:"12:00pm – 1:00pm",  title:"Health Social Work Grand Rounds: Advocacy is for Everyone",                   location:"HDB & Zoom", url:"https://dellmed.utexas.edu/events/health-social-work-grand-rounds-advocacy-is-for-everyone", source:"public"},
-  {date:"2026-04-21",time:"7:30am – 8:30am",   title:"Neurology Department Lecture: Pain From Acute to Chronic",                   location:"Zoom",    url:"https://dellmed.utexas.edu/events/neurology-department-lecture-pain-from-acute-to-chronic", source:"public"},
-  {date:"2026-04-21",time:"7:30am – 8:30am",   title:"Neurology Grand Rounds: Pain from Acute to Chronic",                        location:"Virtual", url:"https://dellmed.utexas.edu/events/neurology-grand-rounds-pain-from-acute-to-chronic", source:"public"},
-  {date:"2026-05-07",time:"6:30pm – 8:30pm",   title:"Class of 2026 Commencement",                                                 location:"Livestream", url:"https://dellmed.utexas.edu/events/class-of-2026-commencement", source:"public"},
+  {
+    "date": "2026-04-10",
+    "time": "8–11 a.m.",
+    "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-041026",
+    "source": "public"
+  },
+  {
+    "date": "2026-05-04",
+    "time": "2–5 p.m.",
+    "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-050426",
+    "source": "public"
+  },
+  {
+    "date": "2026-06-03",
+    "time": "8–11 a.m.",
+    "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-060326",
+    "source": "public"
+  },
+  {
+    "date": "2026-08-07",
+    "time": "8–11 a.m.",
+    "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-080726",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-10",
+    "time": "7:30–8:30 a.m.",
+    "title": "Pediatric Grand Rounds: Reflections on Parenting",
+    "location": "Hybrid: Dell Children’s Medical Center Signe Auditorium & Zoom",
+    "url": "https://dellmed.utexas.edu/events/pediatric-grand-rounds-reflections-on-parenting",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-28",
+    "time": "4–5 p.m.",
+    "title": "Neurosurgery Grand Rounds: Neurostimulation as Network Physiology",
+    "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom",
+    "url": "https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-neurostimulation-as-network-physiology",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-14",
+    "time": "12–1 p.m.",
+    "title": "CPAN Series: What Every PCP Should Know About Autism Spectrum Disorders",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/cpan-series-what-every-pcp-should-know-about-autism-spectrum-disorders",
+    "source": "public"
+  },
+  {
+    "date": "2026-03-31",
+    "time": "4–5 p.m.",
+    "title": "Neurosurgery Grand Rounds: Brain Trauma Foundation Penetrating Head Injury Guidelines",
+    "location": "Zoom",
+    "url": "https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-brain-trauma-foundation-penetrating-head-injury-guidelines",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-07",
+    "time": "4–5 p.m.",
+    "title": "Neurosurgery Grand Rounds: Surgical Immunotherapy Clinical Trials for Glioblastoma",
+    "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom",
+    "url": "https://dellmed.utexas.edu/events/neurosurgery-grand-rounds-surgical-immunotherapy-clinical-trials-for-glioblastoma",
+    "source": "public"
+  },
+  {
+    "date": "2026-03-26",
+    "time": "6–7 p.m.",
+    "title": "AMPATH/MAPAS México Monthly Seminar: Nutrition Intervention in Rural Mexico",
+    "location": "Zoom",
+    "url": "https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-seminar-nutrition-intervention-in-rural-mexico",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-21",
+    "time": "7:30–8:30 a.m.",
+    "title": "Neurology Department Lecture: Pain From Acute to Chronic",
+    "location": "Zoom",
+    "url": "https://dellmed.utexas.edu/events/neurology-department-lecture-pain-from-acute-to-chronic",
+    "source": "public"
+  },
+  {
+    "date": "2026-05-07",
+    "time": "6:30–8:30 p.m.",
+    "title": "Class of 2026 Commencement",
+    "location": "Livestream",
+    "url": "https://dellmed.utexas.edu/events/class-of-2026-commencement",
+    "source": "public"
+  },
+  {
+    "date": "2026-03-26",
+    "time": "7:30–8:30 a.m.",
+    "title": "Best Practices in Medical Education Grand Rounds: Facilitators and Barriers to Effective Learning",
+    "location": "Zoom",
+    "url": "https://dellmed.utexas.edu/events/best-practices-in-medical-education-grand-rounds-facilitators-and-barriers-to-effective-learning",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-18",
+    "time": "6–3:30 p.m.",
+    "title": "Austin Pediatric Echo Conference",
+    "location": "Dell Children’s Medical Center, Signe Auditorium",
+    "url": "https://dellmed.utexas.edu/events/austin-pediatric-echo-conference-041826",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-21",
+    "time": "7:30–8:30 a.m.",
+    "title": "Neurology Grand Rounds: Pain from Acute to Chronic",
+    "location": "Virtual",
+    "url": "https://dellmed.utexas.edu/events/neurology-grand-rounds-pain-from-acute-to-chronic",
+    "source": "public"
+  },
+  {
+    "date": "2026-04-01",
+    "time": "12:00pm – 1:00pm",
+    "title": "Example: Add any extra internal event here",
+    "location": "Zoom",
+    "url": "https://intranet.dellmed.utexas.edu/events",
+    "source": "internal"
+  }
 ];
 
-// ── State ─────────────────────────────────────────────────────────────────────
-const MONTHS_LONG = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const today = new Date(); today.setHours(0,0,0,0);
-let currentYear  = today.getFullYear();
-let currentMonth = today.getMonth();
-let activeFilter = 'all';
+const MONTHS_LONG=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const today=new Date();today.setHours(0,0,0,0);
+let currentYear=today.getFullYear(),currentMonth=today.getMonth(),activeFilter='all';
 
-function pd(s) { const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }
+function pd(s){const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);}
+function filteredEvents(){return EVENTS.filter(e=>activeFilter==='all'||(activeFilter==='public'&&e.source==='public')||(activeFilter==='internal'&&e.source==='internal'));}
+function eventsForDate(y,m,d){const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;return filteredEvents().filter(e=>e.date===iso).sort((a,b)=>a.time.localeCompare(b.time));}
 
-function filteredEvents() {
-  return EVENTS.filter(e => {
-    if (activeFilter==='public')   return e.source==='public';
-    if (activeFilter==='internal') return e.source==='internal';
-    return true;
-  });
-}
-
-function eventsForDate(y,m,d) {
-  const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-  return filteredEvents().filter(e=>e.date===iso).sort((a,b)=>a.time.localeCompare(b.time));
-}
-
-// ── Copy ──────────────────────────────────────────────────────────────────────
 document.getElementById('copy-btn').addEventListener('click',function(){
   navigator.clipboard.writeText(document.getElementById('ics-url').textContent).then(()=>{
     this.textContent='✓ Copied!';this.classList.add('copied');
@@ -350,7 +371,6 @@ document.getElementById('copy-btn').addEventListener('click',function(){
   });
 });
 
-// ── Filter ────────────────────────────────────────────────────────────────────
 function setFilter(f){
   activeFilter=f;
   document.getElementById('f-all').classList.toggle('on',f==='all');
@@ -359,120 +379,73 @@ function setFilter(f){
   renderCalendar();
 }
 
-// ── Navigation ────────────────────────────────────────────────────────────────
-document.getElementById('prev-btn').addEventListener('click',()=>{
-  currentMonth--; if(currentMonth<0){currentMonth=11;currentYear--;} renderCalendar();
-});
-document.getElementById('next-btn').addEventListener('click',()=>{
-  currentMonth++; if(currentMonth>11){currentMonth=0;currentYear++;} renderCalendar();
-});
+document.getElementById('prev-btn').addEventListener('click',()=>{currentMonth--;if(currentMonth<0){currentMonth=11;currentYear--;}renderCalendar();});
+document.getElementById('next-btn').addEventListener('click',()=>{currentMonth++;if(currentMonth>11){currentMonth=0;currentYear++;}renderCalendar();});
 
-// ── Popover ───────────────────────────────────────────────────────────────────
 const popover=document.getElementById('popover');
-const popDate=document.getElementById('pop-date');
-const popEvs=document.getElementById('pop-events');
-
-document.getElementById('pop-close').addEventListener('click',closePopover);
-document.addEventListener('click',e=>{
-  if(!popover.contains(e.target)&&!e.target.closest('.cal-cell'))closePopover();
-});
-function closePopover(){popover.classList.remove('show');}
+document.getElementById('pop-close').addEventListener('click',()=>popover.classList.remove('show'));
+document.addEventListener('click',e=>{if(!popover.contains(e.target)&&!e.target.closest('.cal-cell'))popover.classList.remove('show');});
 
 function openPopover(cell,evs,label){
-  popDate.textContent=label;
-  popEvs.innerHTML='';
+  document.getElementById('pop-date').textContent=label;
+  const pe=document.getElementById('pop-events');pe.innerHTML='';
   evs.forEach(ev=>{
     const div=document.createElement('div');div.className='pop-ev';
     const dot=document.createElement('div');dot.className=`pop-dot ${ev.source}`;
     const info=document.createElement('div');info.className='pop-info';
-    info.innerHTML=`<div class="pop-title"><a href="${ev.url||'#'}" target="_blank" rel="noopener">${ev.title}</a></div>
-      <div class="pop-meta">${ev.time}${ev.location?' · '+ev.location:''}</div>
-      <span class="pop-badge ${ev.source}">${ev.source==='internal'?'Internal':'Public'}</span>`;
-    div.append(dot,info);
-    popEvs.appendChild(div);
+    info.innerHTML=`<div class="pop-title"><a href="${ev.url||'#'}" target="_blank" rel="noopener">${ev.title}</a></div><div class="pop-meta">${ev.time}${ev.location?' · '+ev.location:''}</div><span class="pop-badge ${ev.source}">${ev.source==='internal'?'Internal':'Public'}</span>`;
+    div.append(dot,info);pe.appendChild(div);
   });
   popover.classList.add('show');
-  const rect=cell.getBoundingClientRect();
-  const pw=popover.offsetWidth, ph=popover.offsetHeight;
-  let left=rect.left+window.scrollX;
-  let top=rect.bottom+window.scrollY+4;
+  const r=cell.getBoundingClientRect(),pw=popover.offsetWidth,ph=popover.offsetHeight;
+  let left=r.left+window.scrollX,top=r.bottom+window.scrollY+4;
   if(left+pw>window.innerWidth-12)left=window.innerWidth-pw-12;
-  if(top+ph>window.scrollY+window.innerHeight-12)top=rect.top+window.scrollY-ph-4;
-  popover.style.left=left+'px';
-  popover.style.top=top+'px';
+  if(top+ph>window.scrollY+window.innerHeight-12)top=r.top+window.scrollY-ph-4;
+  popover.style.left=left+'px';popover.style.top=top+'px';
 }
 
-// ── Calendar Render ───────────────────────────────────────────────────────────
 function renderCalendar(){
   const grid=document.getElementById('cal-grid');
   while(grid.children.length>5)grid.removeChild(grid.lastChild);
-
   document.getElementById('month-display').textContent=MONTHS_LONG[currentMonth]+' '+currentYear;
 
-  // Find first Monday on or before the 1st of the month
   const firstOfMonth=new Date(currentYear,currentMonth,1);
-  const firstDayOfWeek=firstOfMonth.getDay(); // 0=Sun,1=Mon,...
-  // Days to go back to reach Monday (0=Mon offset)
-  const offsetToMonday=firstDayOfWeek===0?6:firstDayOfWeek-1;
-  const gridStart=new Date(firstOfMonth);
-  gridStart.setDate(gridStart.getDate()-offsetToMonday);
+  const dow0=firstOfMonth.getDay();
+  const offsetToMon=dow0===0?6:dow0-1;
+  const gridStart=new Date(firstOfMonth);gridStart.setDate(gridStart.getDate()-offsetToMon);
 
-  // Find last Friday on or after the last day of the month
   const lastOfMonth=new Date(currentYear,currentMonth+1,0);
-  const lastDayOfWeek=lastOfMonth.getDay();
-  const offsetToFriday=lastDayOfWeek===6?6:lastDayOfWeek===0?5:5-lastDayOfWeek;
-  const gridEnd=new Date(lastOfMonth);
-  gridEnd.setDate(gridEnd.getDate()+offsetToFriday);
+  const dowLast=lastOfMonth.getDay();
+  const offsetToFri=dowLast===6?6:dowLast===0?5:5-dowLast;
+  const gridEnd=new Date(lastOfMonth);gridEnd.setDate(gridEnd.getDate()+offsetToFri);
 
-  // Build cells — only Mon–Fri
   const cur=new Date(gridStart);
   while(cur<=gridEnd){
     const dow=cur.getDay();
-    // Skip Sat(6) and Sun(0)
     if(dow!==0&&dow!==6){
-      const y=cur.getFullYear(), m=cur.getMonth(), d=cur.getDate();
-      const cell=document.createElement('div');
-      cell.className='cal-cell';
-
-      const inCurrentMonth=(m===currentMonth&&y===currentYear);
-      if(!inCurrentMonth)cell.classList.add('other-month');
-
-      const cellDate=new Date(y,m,d);cellDate.setHours(0,0,0,0);
-      if(cellDate.getTime()===today.getTime())cell.classList.add('today');
-
-      const numEl=document.createElement('div');
-      numEl.className='cell-num';
-      numEl.textContent=d;
-      cell.appendChild(numEl);
-
+      const y=cur.getFullYear(),m=cur.getMonth(),d=cur.getDate();
+      const cell=document.createElement('div');cell.className='cal-cell';
+      if(m!==currentMonth||y!==currentYear)cell.classList.add('other-month');
+      const cd=new Date(y,m,d);cd.setHours(0,0,0,0);
+      if(cd.getTime()===today.getTime())cell.classList.add('today');
+      const numEl=document.createElement('div');numEl.className='cell-num';numEl.textContent=d;cell.appendChild(numEl);
       const dayEvs=eventsForDate(y,m,d);
-      const MAX=3;
-      dayEvs.slice(0,MAX).forEach(ev=>{
-        const pill=document.createElement('a');
-        pill.className=`ev-pill ${ev.source}`;
-        pill.href=ev.url||'#';
-        pill.target='_blank';pill.rel='noopener noreferrer';
-        pill.textContent=ev.title;
-        pill.title=ev.title+'\n'+ev.time+(ev.location?' · '+ev.location:'');
-        pill.addEventListener('click',e=>e.stopPropagation());
-        cell.appendChild(pill);
+      dayEvs.slice(0,3).forEach(ev=>{
+        const pill=document.createElement('a');pill.className=`ev-pill ${ev.source}`;
+        pill.href=ev.url||'#';pill.target='_blank';pill.rel='noopener noreferrer';
+        pill.textContent=ev.title;pill.title=ev.title+'
+'+ev.time+(ev.location?' · '+ev.location:'');
+        pill.addEventListener('click',e=>e.stopPropagation());cell.appendChild(pill);
       });
-      if(dayEvs.length>MAX){
-        const more=document.createElement('span');
-        more.className='ev-pill more';
-        more.textContent=`+${dayEvs.length-MAX} more`;
-        more.addEventListener('click',e=>{e.stopPropagation();openPopoverFromMore(cell,dayEvs,y,m,d);});
+      if(dayEvs.length>3){
+        const more=document.createElement('span');more.className='ev-pill more';
+        more.textContent=`+${dayEvs.length-3} more`;
+        more.addEventListener('click',e=>{e.stopPropagation();const d2=new Date(y,m,d);const lbl=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+', '+MONTHS_LONG[m]+' '+d+', '+y;openPopover(cell,dayEvs,lbl);});
         cell.appendChild(more);
       }
-
       if(dayEvs.length>0){
         cell.style.cursor='pointer';
-        cell.addEventListener('click',()=>{
-          const d2=new Date(y,m,d);
-          const label=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+
-            ', '+MONTHS_LONG[m]+' '+d+', '+y;
-          openPopover(cell,dayEvs,label);
-        });
+        cell.addEventListener('click',()=>{const d2=new Date(y,m,d);const lbl=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+', '+MONTHS_LONG[m]+' '+d+', '+y;openPopover(cell,dayEvs,lbl);});
       }
       grid.appendChild(cell);
     }
@@ -480,76 +453,34 @@ function renderCalendar(){
   }
 }
 
-function openPopoverFromMore(cell,evs,y,m,d){
-  const d2=new Date(y,m,d);
-  const label=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+
-    ', '+MONTHS_LONG[m]+' '+d+', '+y;
-  openPopover(cell,evs,label);
-}
-
-// ── Admin Panel ───────────────────────────────────────────────────────────────
 const adminPanel=document.getElementById('admin-panel');
-document.getElementById('admin-toggle').addEventListener('click',()=>{
-  adminPanel.classList.toggle('open');
-  if(adminPanel.classList.contains('open'))populateMonthFilter();
-});
-document.getElementById('ap-close').addEventListener('click',()=>{
-  adminPanel.classList.remove('open');
-});
+document.getElementById('admin-toggle').addEventListener('click',()=>{adminPanel.classList.toggle('open');if(adminPanel.classList.contains('open'))populateMonthFilter();});
+document.getElementById('ap-close').addEventListener('click',()=>adminPanel.classList.remove('open'));
 
 function populateMonthFilter(){
-  const sel=document.getElementById('ap-month-filter');
-  const current=sel.value;
+  const sel=document.getElementById('ap-month-filter'),cur=sel.value;
   sel.innerHTML='<option value="all">All upcoming</option>';
-  const months=new Set();
-  const t=new Date();t.setHours(0,0,0,0);
-  EVENTS.filter(e=>pd(e.date)>=t).forEach(e=>{
-    const [y,m]=e.date.split('-');
-    months.add(y+'-'+m);
-  });
-  [...months].sort().forEach(ym=>{
-    const [y,m]=ym.split('-');
-    const opt=document.createElement('option');
-    opt.value=ym;
-    opt.textContent=MONTHS_LONG[parseInt(m)-1]+' '+y;
-    sel.appendChild(opt);
-  });
-  sel.value=current;
-  renderAdminList();
+  const months=new Set(),t=new Date();t.setHours(0,0,0,0);
+  EVENTS.filter(e=>pd(e.date)>=t).forEach(e=>{const[y,m]=e.date.split('-');months.add(y+'-'+m);});
+  [...months].sort().forEach(ym=>{const[y,m]=ym.split('-');const opt=document.createElement('option');opt.value=ym;opt.textContent=MONTHS_LONG[parseInt(m)-1]+' '+y;sel.appendChild(opt);});
+  sel.value=cur;renderAdminList();
 }
 
 function renderAdminList(){
-  const list=document.getElementById('ap-ev-list');
-  const filter=document.getElementById('ap-month-filter').value;
+  const list=document.getElementById('ap-ev-list'),filter=document.getElementById('ap-month-filter').value;
   const t=new Date();t.setHours(0,0,0,0);
-
-  let evs=EVENTS.map((e,i)=>({...e,_i:i}))
-    .filter(e=>pd(e.date)>=t)
-    .sort((a,b)=>a.date.localeCompare(b.date)||a.time.localeCompare(b.time));
-
-  if(filter!=='all'){
-    evs=evs.filter(e=>e.date.startsWith(filter));
-  }
-
+  let evs=EVENTS.map((e,i)=>( {...e,_i:i} )).filter(e=>pd(e.date)>=t).sort((a,b)=>a.date.localeCompare(b.date)||a.time.localeCompare(b.time));
+  if(filter!=='all')evs=evs.filter(e=>e.date.startsWith(filter));
   list.innerHTML='';
-  if(!evs.length){
-    list.innerHTML='<div class="ap-empty">No upcoming events found.</div>';
-    return;
-  }
+  if(!evs.length){list.innerHTML='<div class="ap-empty">No upcoming events found.</div>';return;}
   evs.forEach(ev=>{
     const item=document.createElement('div');item.className='ev-list-item';
     const dot=document.createElement('div');dot.className=`ev-list-dot ${ev.source}`;
     const info=document.createElement('div');info.className='ev-list-info';
-    info.innerHTML=`<div class="ev-list-title">${ev.title}</div>
-      <div class="ev-list-meta">${ev.date} · ${ev.time}${ev.location?' · '+ev.location:''}</div>`;
-    const editBtn=document.createElement('button');
-    editBtn.className='ev-list-edit';editBtn.textContent='Edit';
-    editBtn.addEventListener('click',()=>startEdit(ev._i));
-    const delBtn=document.createElement('button');
-    delBtn.className='ev-list-del';delBtn.textContent='✕';
-    delBtn.addEventListener('click',()=>deleteEvent(ev._i));
-    item.append(dot,info,editBtn,delBtn);
-    list.appendChild(item);
+    info.innerHTML=`<div class="ev-list-title">${ev.title}</div><div class="ev-list-meta">${ev.date} · ${ev.time}${ev.location?' · '+ev.location:''}</div>`;
+    const editBtn=document.createElement('button');editBtn.className='ev-list-edit';editBtn.textContent='Edit';editBtn.addEventListener('click',()=>startEdit(ev._i));
+    const delBtn=document.createElement('button');delBtn.className='ev-list-del';delBtn.textContent='✕';delBtn.addEventListener('click',()=>deleteEvent(ev._i));
+    item.append(dot,info,editBtn,delBtn);list.appendChild(item);
   });
 }
 
@@ -570,11 +501,7 @@ function startEdit(idx){
 
 function cancelEdit(){
   document.getElementById('edit-index').value='-1';
-  document.getElementById('f-title').value='';
-  document.getElementById('f-date').value='';
-  document.getElementById('f-time').value='';
-  document.getElementById('f-location').value='';
-  document.getElementById('f-url').value='';
+  ['f-title','f-date','f-time','f-location','f-url'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('f-source').value='internal';
   document.getElementById('form-section-title').textContent='Add New Event';
   document.getElementById('btn-submit').textContent='Add Event';
@@ -582,38 +509,21 @@ function cancelEdit(){
 }
 
 document.getElementById('btn-cancel-edit').addEventListener('click',cancelEdit);
-
 document.getElementById('btn-submit').addEventListener('click',()=>{
   const title=document.getElementById('f-title').value.trim();
   const date=document.getElementById('f-date').value;
   if(!title||!date){alert('Title and Date are required.');return;}
-  const ev={
-    title,
-    date,
-    time:document.getElementById('f-time').value.trim()||'',
-    location:document.getElementById('f-location').value.trim()||'',
-    url:document.getElementById('f-url').value.trim()||'',
-    source:document.getElementById('f-source').value,
-  };
+  const ev={title,date,time:document.getElementById('f-time').value.trim()||'',location:document.getElementById('f-location').value.trim()||'',url:document.getElementById('f-url').value.trim()||'',source:document.getElementById('f-source').value};
   const idx=parseInt(document.getElementById('edit-index').value);
-  if(idx>=0){
-    EVENTS[idx]=ev;
-  } else {
-    EVENTS.push(ev);
-  }
-  cancelEdit();
-  renderCalendar();
-  populateMonthFilter();
+  if(idx>=0){EVENTS[idx]=ev;}else{EVENTS.push(ev);}
+  cancelEdit();renderCalendar();populateMonthFilter();
 });
 
 function deleteEvent(idx){
   if(!confirm('Delete "'+EVENTS[idx].title+'"?'))return;
-  EVENTS.splice(idx,1);
-  renderCalendar();
-  populateMonthFilter();
+  EVENTS.splice(idx,1);renderCalendar();populateMonthFilter();
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 renderCalendar();
 </script>
 </body>
