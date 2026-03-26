@@ -28,7 +28,7 @@ OVERRIDE_FILE = "internal-events.json"
 TIMEZONE      = "America/Chicago"
 CALENDAR_NAME = "Dell Med Events"
 CALENDAR_DESC = "Events from Dell Medical School at UT Austin"
-GITHUB_BASE   = "https://michael-dean22.github.io/Dell_Med_Internal_Events"
+GITHUB_BASE   = "https://michael-dean22.github.io/Dell_Med_Events"
 # ─────────────────────────────────────────────────────────────────────────────
 
 MONTH_MAP = {
@@ -185,65 +185,80 @@ def fetch_public_events():
 # ── Source 2: Internal events from index.html ticker ────────────────────────
 
 def extract_internal_events_from_ticker():
-    """Read RAW_EVENTS from index.html and convert to standard event dicts."""
+    """Read RAW_EVENTS from index.html. Uses bracket-depth counting to extract
+    the full array, then regex-parses each event object. Respects the source
+    field so public events in the ticker stay marked as public."""
     try:
         with open(TICKER_FILE, "r", encoding="utf-8") as f:
-            content = f.read()
+            ticker_content = f.read()
     except FileNotFoundError:
-        print("  ⚠ index.html not found — skipping internal events")
+        print("  ⚠ index.html not found — skipping ticker events")
         return []
 
-    # Extract the RAW_EVENTS array from the JS
-    m = re.search(r'const RAW_EVENTS\s*=\s*(\[[\s\S]*?\]);', content)
+    m = re.search(r'const RAW_EVENTS\s*=\s*\[', ticker_content)
     if not m:
-        print("  ⚠ Could not find RAW_EVENTS in index.html")
+        print("  ⚠ RAW_EVENTS not found in index.html")
         return []
 
-    raw_js = m.group(1)
+    # Bracket-depth walk to find the closing ]
+    sp = m.end() - 1
+    depth = 0
+    ep = sp
+    for i, ch in enumerate(ticker_content[sp:], sp):
+        if ch == '[':  depth += 1
+        elif ch == ']':
+            depth -= 1
+            if depth == 0:
+                ep = i + 1
+                break
+    raw_array = ticker_content[sp:ep]
 
-    # Convert JS object literals to JSON:
-    # 1. Add quotes around unquoted keys
-    raw_js = re.sub(r'(\{|,)\s*(\w+)\s*:', r'\1"\2":', raw_js)
-    # 2. Replace single quotes with double quotes for values
-    raw_js = re.sub(r"'([^']*)'", r'"\1"', raw_js)
-    # 3. Remove trailing commas before ] or }
-    raw_js = re.sub(r',\s*([\]}])', r'\1', raw_js)
+    month_names = ["","January","February","March","April","May","June",
+                   "July","August","September","October","November","December"]
 
-    try:
-        items = json.loads(raw_js)
-    except json.JSONDecodeError as e:
-        print(f"  ⚠ Could not parse RAW_EVENTS JSON: {e}")
-        return []
+    def get_field(field, text):
+        # Match: field: "value"
+        pat = r'["\']?' + field + r'["\']?\s*:\s*"([^"]*)"'
+        hit = re.search(pat, text)
+        if hit: return hit.group(1)
+        # Match: field: 'value'
+        pat2 = r"[\"']?" + field + r"[\"']?\s*:\s*'([^']*)'"
+        hit2 = re.search(pat2, text)
+        if hit2: return hit2.group(1)
+        return ""
 
     events = []
-    for item in items:
-        # Convert ticker format {date, time, title, url, location}
-        # to standard format {date_str, time_str, title, url, location, source}
-        date_val = item.get("date","")
-        # date is already YYYY-MM-DD — convert to "Month DD, YYYY" for parse_date_time
+    for obj_m in re.finditer(r'\{([^{}]+)\}', raw_array, re.DOTALL):
+        obj = obj_m.group(1)
+        date_ymd = get_field("date",     obj)
+        if not date_ymd: continue
+        title    = get_field("title",    obj).replace('\\"', '"')
+        url      = get_field("url",      obj)
+        time_str = get_field("time",     obj)
+        location = get_field("location", obj)
+        source   = get_field("source",   obj) or "internal"
+
         try:
-            y, mo, d = date_val.split("-")
-            month_names = ["","January","February","March","April","May","June",
-                           "July","August","September","October","November","December"]
+            y, mo, d = date_ymd.split("-")
             date_str = f"{month_names[int(mo)]} {int(d)}, {y}"
         except Exception:
-            date_str = date_val
+            continue
 
+        desc = "Dell Med event\\n\\nEvent page: " + url
         events.append({
-            "title":       item.get("title",""),
-            "url":         item.get("url",""),
+            "title":       title,
+            "url":         url,
             "date_str":    date_str,
-            "time_str":    item.get("time",""),
-            "location":    item.get("location",""),
-            "description": f"Internal Dell Med event\\n\\nEvent page: {item.get('url','')}",
-            "source":      "internal",
+            "time_str":    time_str,
+            "location":    location,
+            "description": desc,
+            "source":      source,
         })
 
-    print(f"   ✓ {len(events)} internal events extracted from index.html")
+    n_int = sum(1 for e in events if e["source"] == "internal")
+    n_pub = sum(1 for e in events if e["source"] == "public")
+    print(f"   ✓ {len(events)} events from index.html ({n_int} internal, {n_pub} public)")
     return events
-
-
-# ── Source 3: Manual override file ──────────────────────────────────────────
 
 def load_manual_overrides():
     """Load internal-events.json if it exists."""
