@@ -376,22 +376,21 @@ def ev_to_html_json(ev):
     month = MONTH_MAP.get(month_name.lower())
     if not month:
         return None
-    date_iso = f"{int(year):04d}-{month:02d}-{int(day):02d}"
     return {
-        "date":     date_iso,
+        "date":     f"{int(year):04d}-{month:02d}-{int(day):02d}",
         "time":     ev.get("time_str",""),
         "title":    ev["title"],
         "location": ev.get("location",""),
-        "url":      ev["url"],
+        "url":      ev.get("url",""),
         "source":   ev.get("source","public"),
     }
 
 
 def build_calendar_html(events):
-    updated    = datetime.now(timezone.utc).strftime("%B %d, %Y at %I:%M %p UTC")
-    ics_url    = f"{GITHUB_BASE}/dell-med-events.ics"
-    ev_list    = []
-    skipped    = 0
+    updated     = datetime.now(timezone.utc).strftime("%B %d, %Y at %I:%M %p UTC")
+    ics_url     = f"{GITHUB_BASE}/dell-med-events.ics"
+    ev_list     = []
+    skipped     = 0
 
     for ev in events:
         d = ev_to_html_json(ev)
@@ -400,9 +399,13 @@ def build_calendar_html(events):
         else:
             skipped += 1
 
-    print(f"  → HTML: {len(ev_list)} events included, {skipped} skipped (no date)")
+    n_pub = sum(1 for e in ev_list if e["source"] == "public")
+    n_int = sum(1 for e in ev_list if e["source"] == "internal")
+    print(f"  → HTML: {len(ev_list)} events ({n_pub} public, {n_int} internal), {skipped} skipped")
+
     events_json = json.dumps(ev_list, indent=2, ensure_ascii=False)
 
+    # The HTML template uses {{ }} for CSS/JS braces to escape Python's f-string
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -412,261 +415,398 @@ def build_calendar_html(events):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{{--orange:#BF5700;--orange-dark:#8C3E00;--orange-light:#FDF0E6;--cream:#FDFAF6;--charcoal:#1A1A1A;--gray:#6B6B6B;--border:#E5D8CC;--white:#FFFFFF;--internal:#E8F4FD;--internal-accent:#1a73e8;}}
+  :root {{
+    --orange:#BF5700; --od:#8C3E00; --ol:#FDF0E6;
+    --cream:#FDFAF6; --ch:#1A1A1A; --gray:#6B6B6B;
+    --border:#E5D8CC; --white:#FFFFFF;
+    --blue:#1a73e8; --blue-light:#EBF3FE;
+  }}
   *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0;}}
-  body{{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);min-height:100vh;}}
-  .site-header{{background:var(--orange);position:relative;overflow:hidden;}}
-  .site-header::before{{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.06);}}
-  .header-inner{{max-width:960px;margin:0 auto;padding:36px 24px 32px;position:relative;z-index:1;}}
-  .header-eyebrow{{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:8px;}}
-  .header-title{{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:10px;}}
-  .header-sub{{font-size:0.9rem;color:rgba(255,255,255,0.75);font-weight:300;max-width:520px;}}
-  .subscribe-section{{background:var(--orange-dark);border-bottom:3px solid rgba(0,0,0,0.15);}}
-  .subscribe-inner{{max-width:960px;margin:0 auto;padding:20px 24px 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}}
-  .subscribe-icon{{width:36px;height:36px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
-  .subscribe-text{{flex:1;min-width:200px;}}
-  .subscribe-label{{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:2px;}}
-  .subscribe-url{{font-family:monospace;font-size:0.78rem;color:#fff;word-break:break-all;}}
-  .copy-btn{{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:8px 16px;border-radius:6px;font-size:0.78rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;white-space:nowrap;flex-shrink:0;}}
+  body{{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ch);min-height:100vh;}}
+  .hdr{{background:var(--orange);position:relative;overflow:hidden;}}
+  .hdr::before{{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.06);}}
+  .hi{{max-width:1100px;margin:0 auto;padding:32px 24px 28px;position:relative;z-index:1;}}
+  .eyebrow{{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px;}}
+  .htitle{{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px;}}
+  .hsub{{font-size:0.88rem;color:rgba(255,255,255,0.72);font-weight:300;}}
+  .sub-bar{{background:var(--od);border-bottom:3px solid rgba(0,0,0,0.15);}}
+  .sub-inner{{max-width:1100px;margin:0 auto;padding:16px 24px 0;}}
+  .sub-row{{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.12);}}
+  .sub-icon{{width:32px;height:32px;background:rgba(255,255,255,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}}
+  .sub-text{{flex:1;min-width:180px;}}
+  .sub-lbl{{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:2px;}}
+  .sub-url{{font-family:monospace;font-size:0.76rem;color:#fff;word-break:break-all;}}
+  .copy-btn{{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:7px 14px;border-radius:6px;font-size:0.75rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;white-space:nowrap;}}
   .copy-btn:hover{{background:rgba(255,255,255,0.25);}}
   .copy-btn.copied{{background:rgba(127,219,138,0.3);border-color:#7FDB8A;}}
-  .how-to{{max-width:960px;margin:0 auto;padding:18px 24px 20px;}}
-  .how-to-title{{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:12px;}}
-  .how-to-steps{{display:flex;gap:0;flex-wrap:wrap;}}
-  .how-step{{display:flex;align-items:flex-start;gap:8px;flex:1;min-width:160px;padding:0 16px 0 0;position:relative;}}
-  .how-step:not(:last-child)::after{{content:'→';position:absolute;right:4px;top:2px;color:rgba(255,255,255,0.3);font-size:0.8rem;}}
-  .how-step-num{{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.2);color:#fff;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}}
-  .how-step-text{{flex:1;}}
-  .how-step-title{{font-size:0.72rem;font-weight:600;color:#fff;margin-bottom:2px;}}
-  .how-step-desc{{font-size:0.65rem;color:rgba(255,255,255,0.65);line-height:1.4;}}
-  .filter-bar{{max-width:960px;margin:0 auto;padding:16px 24px 0;display:flex;gap:8px;flex-wrap:wrap;}}
-  .filter-btn{{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}}
-  .filter-btn.active{{background:var(--orange);color:#fff;border-color:var(--orange);}}
-  .filter-btn.internal-btn.active{{background:var(--internal-accent);border-color:var(--internal-accent);}}
-  .main{{max-width:960px;margin:0 auto;padding:24px 24px 60px;display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start;}}
-  @media(max-width:720px){{.main{{grid-template-columns:1fr;}}.sidebar{{order:-1;}}}}
-  .events-header{{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;border-bottom:2px solid var(--orange);padding-bottom:10px;}}
-  .events-title{{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;}}
-  .events-count{{font-size:0.72rem;color:var(--gray);}}
-  .updated-note{{font-size:0.65rem;color:var(--gray);margin-bottom:16px;font-style:italic;}}
-  .month-group{{margin-bottom:32px;}}
-  .month-label{{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;padding-left:4px;}}
-  .event-card{{display:flex;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;text-decoration:none;color:inherit;transition:box-shadow 0.2s,transform 0.2s;}}
-  .event-card.internal{{background:#F0F7FF;border-color:#C5DCEF;}}
-  .event-card:hover{{box-shadow:0 4px 20px rgba(191,87,0,0.12);transform:translateY(-1px);}}
-  .event-card.internal:hover{{box-shadow:0 4px 20px rgba(26,115,232,0.12);}}
-  .event-date-col{{width:56px;flex-shrink:0;background:var(--orange-light);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 6px;text-align:center;}}
-  .event-card.internal .event-date-col{{background:#D6EAFF;border-right-color:#C5DCEF;}}
-  .event-date-col.today-col{{background:var(--orange)!important;}}
-  .ev-month{{font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);line-height:1;display:block;}}
-  .event-card.internal .ev-month{{color:var(--internal-accent);}}
-  .today-col .ev-month{{color:rgba(255,255,255,0.8)!important;}}
-  .ev-day{{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--charcoal);line-height:1.1;display:block;}}
-  .today-col .ev-day{{color:#fff;}}
-  .ev-dow{{font-size:0.55rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.06em;display:block;}}
-  .today-col .ev-dow{{color:rgba(255,255,255,0.7);}}
-  .event-body{{flex:1;padding:12px 14px;min-width:0;}}
-  .ev-title{{font-size:0.88rem;font-weight:600;color:var(--charcoal);line-height:1.35;margin-bottom:5px;}}
-  .event-card:hover .ev-title{{color:var(--orange);}}
-  .event-card.internal:hover .ev-title{{color:var(--internal-accent);}}
-  .ev-meta{{font-size:0.72rem;color:var(--gray);display:flex;flex-wrap:wrap;gap:8px;}}
-  .ev-meta-item{{display:flex;align-items:center;gap:4px;}}
-  .source-badge{{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;}}
-  .badge-internal{{background:#1a73e8;color:#fff;}}
-  .badge-today{{background:var(--orange);color:#fff;}}
-  .ev-arrow{{display:flex;align-items:center;padding:0 12px;color:var(--border);flex-shrink:0;transition:color 0.2s;}}
-  .event-card:hover .ev-arrow{{color:var(--orange);}}
-  .event-card.internal:hover .ev-arrow{{color:var(--internal-accent);}}
-  .sidebar-card{{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;}}
-  .sidebar-card-header{{background:var(--orange-light);border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:8px;}}
-  .sidebar-card-title{{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--orange-dark);}}
-  .sidebar-card-body{{padding:18px;}}
-  .step{{display:flex;gap:12px;margin-bottom:18px;}}
-  .step:last-child{{margin-bottom:0;}}
-  .step-num{{width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}}
-  .step-content{{flex:1;}}
-  .step-title{{font-size:0.82rem;font-weight:600;color:var(--charcoal);margin-bottom:3px;}}
-  .step-desc{{font-size:0.75rem;color:var(--gray);line-height:1.5;}}
-  .step-desc code{{background:var(--orange-light);color:var(--orange-dark);padding:1px 5px;border-radius:3px;font-size:0.7rem;font-family:monospace;}}
-  .platform-tab{{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:14px;}}
-  .tab-btn{{flex:1;padding:7px 6px;font-size:0.68rem;font-weight:500;background:var(--white);border:none;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);border-right:1px solid var(--border);}}
-  .tab-btn:last-child{{border-right:none;}}
-  .tab-btn.active{{background:var(--orange);color:#fff;}}
-  .tab-panel{{display:none;}}
-  .tab-panel.active{{display:block;}}
-  .info-note{{background:var(--orange-light);border-left:3px solid var(--orange);border-radius:0 6px 6px 0;padding:10px 12px;font-size:0.74rem;color:var(--orange-dark);line-height:1.5;margin-top:14px;}}
-  .divider{{height:1px;background:var(--border);margin:14px 0;}}
-  .site-footer{{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:0.72rem;color:var(--gray);}}
-  .site-footer a{{color:var(--orange);text-decoration:none;}}
-  .site-footer a:hover{{text-decoration:underline;}}
-  .no-events{{text-align:center;padding:40px;color:var(--gray);font-size:0.9rem;}}
+  .how-row{{display:flex;gap:0;flex-wrap:wrap;padding:14px 0;}}
+  .how-lbl{{font-size:0.62rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-right:16px;align-self:center;white-space:nowrap;}}
+  .how-step{{display:flex;align-items:flex-start;gap:7px;flex:1;min-width:140px;padding-right:14px;position:relative;}}
+  .how-step:not(:last-child)::after{{content:'→';position:absolute;right:3px;top:1px;color:rgba(255,255,255,0.25);font-size:0.75rem;}}
+  .how-num{{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.2);color:#fff;font-size:0.62rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}}
+  .how-title{{font-size:0.7rem;font-weight:600;color:#fff;margin-bottom:1px;}}
+  .how-desc{{font-size:0.62rem;color:rgba(255,255,255,0.6);line-height:1.35;}}
+  .toolbar{{max-width:1100px;margin:0 auto;padding:18px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}}
+  .filters{{display:flex;gap:6px;flex-wrap:wrap;}}
+  .fb{{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}}
+  .fb.on{{background:var(--orange);color:#fff;border-color:var(--orange);}}
+  .fb.blue-btn.on{{background:var(--blue);border-color:var(--blue);}}
+  .right-tools{{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}}
+  .legend{{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}}
+  .leg-item{{display:flex;align-items:center;gap:5px;font-size:0.7rem;color:var(--gray);}}
+  .leg-dot{{width:10px;height:10px;border-radius:2px;flex-shrink:0;}}
+  .leg-dot.internal{{background:var(--ol);border:1px solid #E5C9A8;}}
+  .leg-dot.public{{background:var(--blue-light);border:1px solid #C5DCEF;}}
+  .month-nav{{display:flex;align-items:center;gap:10px;}}
+  .nav-btn{{background:none;border:1px solid var(--border);border-radius:6px;padding:5px 11px;cursor:pointer;font-size:0.82rem;color:var(--gray);font-family:'DM Sans',sans-serif;transition:all 0.15s;}}
+  .nav-btn:hover{{background:var(--ol);border-color:var(--orange);color:var(--orange);}}
+  .month-display{{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--ch);min-width:150px;text-align:center;}}
+  .admin-btn{{padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);font-size:0.72rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--gray);transition:all 0.15s;}}
+  .admin-btn:hover{{background:#F3F4F6;border-color:#999;}}
+  .upd-note{{max-width:1100px;margin:0 auto;padding:8px 24px 0;font-size:0.65rem;color:var(--gray);font-style:italic;}}
+  .cal-wrap{{max-width:1100px;margin:0 auto;padding:12px 24px 60px;}}
+  .cal-grid{{display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid var(--border);border-top:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,0.06);}}
+  .day-header{{background:var(--orange);color:rgba(255,255,255,0.92);font-size:0.67rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:9px 4px;text-align:center;border-right:1px solid rgba(255,255,255,0.15);border-bottom:1px solid var(--border);}}
+  .cal-cell{{border-right:1px solid var(--border);border-bottom:1px solid var(--border);height:130px;padding:6px 5px 5px;background:var(--white);position:relative;overflow:hidden;}}
+  .cal-cell.other-month{{background:#F9F6F3;}}
+  .cal-cell.today{{background:#FFF8F4;}}
+  .cal-cell.today .cell-num{{background:var(--orange);color:#fff;}}
+  .cell-num{{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:0.75rem;font-weight:600;color:var(--gray);margin-bottom:3px;}}
+  .cal-cell.other-month .cell-num{{color:#C8BFB7;}}
+  .ev-pill{{display:block;font-size:0.6rem;font-weight:500;border-radius:3px;padding:2px 5px;margin-bottom:2px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;transition:opacity 0.15s;line-height:1.35;}}
+  .ev-pill:hover{{opacity:0.78;}}
+  .ev-pill.internal{{background:var(--ol);color:var(--od);}}
+  .ev-pill.public{{background:var(--blue-light);color:#1558c0;}}
+  .ev-pill.more{{background:var(--border);color:var(--gray);cursor:pointer;font-style:italic;}}
+  .popover{{display:none;position:fixed;z-index:999;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.15);width:310px;overflow:hidden;}}
+  .popover.show{{display:block;}}
+  .pop-header{{padding:12px 14px 10px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}}
+  .pop-date{{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray);}}
+  .pop-close{{background:none;border:none;cursor:pointer;color:var(--gray);font-size:1.1rem;line-height:1;padding:0;flex-shrink:0;}}
+  .pop-events{{padding:10px 14px 14px;max-height:280px;overflow-y:auto;}}
+  .pop-ev{{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border);}}
+  .pop-ev:last-child{{border-bottom:none;}}
+  .pop-dot{{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;}}
+  .pop-dot.internal{{background:var(--orange);}}
+  .pop-dot.public{{background:var(--blue);}}
+  .pop-info{{flex:1;min-width:0;}}
+  .pop-title a{{font-size:0.82rem;font-weight:600;color:var(--ch);text-decoration:none;line-height:1.3;display:block;margin-bottom:3px;}}
+  .pop-title a:hover{{color:var(--orange);}}
+  .pop-meta{{font-size:0.7rem;color:var(--gray);line-height:1.4;}}
+  .pop-badge{{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-top:3px;}}
+  .pop-badge.internal{{background:var(--ol);color:var(--od);}}
+  .pop-badge.public{{background:var(--blue-light);color:#1558c0;}}
+  .admin-panel{{display:none;position:fixed;top:0;right:0;bottom:0;width:420px;background:var(--white);border-left:2px solid var(--border);box-shadow:-4px 0 24px rgba(0,0,0,0.12);z-index:1000;overflow-y:auto;flex-direction:column;}}
+  .admin-panel.open{{display:flex;flex-direction:column;}}
+  .ap-header{{background:var(--orange);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}}
+  .ap-title{{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#fff;}}
+  .ap-close{{background:none;border:none;color:rgba(255,255,255,0.8);font-size:1.3rem;cursor:pointer;line-height:1;}}
+  .ap-body{{flex:1;padding:18px;overflow-y:auto;}}
+  .ap-section{{margin-bottom:24px;}}
+  .ap-section-title{{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);}}
+  .form-row{{margin-bottom:12px;}}
+  .form-label{{font-size:0.72rem;font-weight:600;color:var(--ch);margin-bottom:4px;display:block;}}
+  .form-input,.form-select{{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:6px;font-size:0.8rem;font-family:'DM Sans',sans-serif;color:var(--ch);background:var(--white);transition:border-color 0.15s;}}
+  .form-input:focus,.form-select:focus{{outline:none;border-color:var(--orange);}}
+  .form-row-2{{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}}
+  .btn-add{{width:100%;padding:9px;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.15s;margin-top:4px;}}
+  .btn-add:hover{{background:var(--od);}}
+  .ev-list-item{{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;background:#FAFAFA;}}
+  .ev-list-dot{{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;}}
+  .ev-list-dot.internal{{background:var(--orange);}}
+  .ev-list-dot.public{{background:var(--blue);}}
+  .ev-list-info{{flex:1;min-width:0;}}
+  .ev-list-title{{font-size:0.78rem;font-weight:600;color:var(--ch);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}
+  .ev-list-meta{{font-size:0.68rem;color:var(--gray);}}
+  .ev-list-del{{background:none;border:none;color:#CC3333;cursor:pointer;font-size:0.9rem;padding:2px 4px;border-radius:3px;flex-shrink:0;}}
+  .ev-list-del:hover{{background:#FFF0F0;}}
+  .ev-list-edit{{background:none;border:none;color:var(--blue);cursor:pointer;font-size:0.75rem;padding:2px 6px;border-radius:3px;flex-shrink:0;font-family:'DM Sans',sans-serif;}}
+  .ev-list-edit:hover{{background:var(--blue-light);}}
+  .ap-empty{{font-size:0.78rem;color:var(--gray);text-align:center;padding:20px 0;font-style:italic;}}
+  .ap-notice{{font-size:0.7rem;color:var(--gray);background:#F3F4F6;border-radius:6px;padding:10px 12px;line-height:1.5;margin-top:8px;}}
+  .ap-notice strong{{color:var(--ch);}}
+  .month-filter-row{{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}}
+  .month-filter-row label{{font-size:0.72rem;font-weight:600;color:var(--ch);}}
+  .month-filter-row select{{padding:4px 8px;border:1px solid var(--border);border-radius:5px;font-size:0.75rem;font-family:'DM Sans',sans-serif;}}
+  footer{{border-top:1px solid var(--border);padding:16px 24px;text-align:center;font-size:0.7rem;color:var(--gray);}}
+  footer a{{color:var(--orange);text-decoration:none;}}
+  footer a:hover{{text-decoration:underline;}}
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-eyebrow">Department of Medicine</div>
-    <h1 class="header-title">Events Calendar</h1>
-    <p class="header-sub">Upcoming public and internal events from Dell Med. Subscribe to add all events to your Outlook calendar.</p>
+<header class="hdr">
+  <div class="hi">
+    <div class="eyebrow">Department of Medicine</div>
+    <h1 class="htitle">Events Calendar</h1>
+    <p class="hsub">Upcoming public and internal events. Subscribe to add all events to your Outlook calendar.</p>
   </div>
 </header>
-<div class="subscribe-section">
-  <div class="subscribe-inner">
-    <div class="subscribe-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-    <div class="subscribe-text">
-      <div class="subscribe-label">Calendar Subscribe URL</div>
-      <div class="subscribe-url" id="ics-url">{ics_url}</div>
-    </div>
-    <button class="copy-btn" id="copy-btn">Copy Link</button>
-  </div>
-  <div class="how-to">
-    <div class="how-to-title">How to subscribe in Outlook</div>
-    <div class="how-to-steps">
-      <div class="how-step"><div class="how-step-num">1</div><div class="how-step-text"><div class="how-step-title">Copy the URL</div><div class="how-step-desc">Click Copy Link above</div></div></div>
-      <div class="how-step"><div class="how-step-num">2</div><div class="how-step-text"><div class="how-step-title">Open Account Settings</div><div class="how-step-desc">File → Account Settings → Account Settings</div></div></div>
-      <div class="how-step"><div class="how-step-num">3</div><div class="how-step-text"><div class="how-step-title">Add Internet Calendar</div><div class="how-step-desc">Internet Calendars tab → New → paste URL → Add</div></div></div>
-      <div class="how-step"><div class="how-step-num">4</div><div class="how-step-text"><div class="how-step-title">Done!</div><div class="how-step-desc">Events appear under Other Calendars and sync daily</div></div></div>
-    </div>
-  </div>
-</div>
-<div class="filter-bar">
-  <button class="filter-btn active" onclick="setFilter('all')" id="filter-all">All Events</button>
-  <button class="filter-btn active" onclick="setFilter('public')" id="filter-public">🌐 Public</button>
-  <button class="filter-btn internal-btn active" onclick="setFilter('internal')" id="filter-internal">🔒 Internal</button>
-</div>
-<div class="main">
-  <div class="events-col">
-    <div class="events-header">
-      <h2 class="events-title">Upcoming Events</h2>
-      <span class="events-count" id="events-count"></span>
-    </div>
-    <div class="updated-note">Last updated: {updated}</div>
-    <div id="events-container"></div>
-  </div>
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-card-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C3E00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="sidebar-card-title">Event Sources</div></div>
-      <div class="sidebar-card-body">
-        <div style="font-size:0.78rem;color:var(--gray);line-height:1.6;">
-          <div style="margin-bottom:8px;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">🌐</span><span><strong style="color:var(--charcoal);">Public Events</strong><br>dellmed.utexas.edu/events — auto-updated daily</span></div>
-          <div class="divider"></div>
-          <div style="display:flex;gap:8px;align-items:flex-start;"><span style="color:#1a73e8;font-weight:700;flex-shrink:0;">🔒</span><span><strong style="color:var(--charcoal);">Internal Events</strong><br>Cerebrum intranet — updated when ticker is refreshed</span></div>
-        </div>
+<div class="sub-bar">
+  <div class="sub-inner">
+    <div class="sub-row">
+      <div class="sub-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="sub-text">
+        <div class="sub-lbl">Calendar Subscribe URL</div>
+        <div class="sub-url" id="ics-url">https://michael-dean22.github.io/Dell_Med_Events/dell-med-events.ics</div>
       </div>
+      <button class="copy-btn" id="copy-btn">Copy Link</button>
     </div>
-  </aside>
+    <div class="how-row">
+      <span class="how-lbl">How to subscribe in Outlook</span>
+      <div class="how-step"><div class="how-num">1</div><div class="how-text"><div class="how-title">Copy the URL</div><div class="how-desc">Click Copy Link above</div></div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-text"><div class="how-title">Open Account Settings</div><div class="how-desc">File → Account Settings → Account Settings</div></div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-text"><div class="how-title">Add Internet Calendar</div><div class="how-desc">Internet Calendars → New → paste URL → Add</div></div></div>
+      <div class="how-step"><div class="how-num">4</div><div class="how-text"><div class="how-title">Done!</div><div class="how-desc">Events appear under Other Calendars</div></div></div>
+    </div>
+  </div>
 </div>
-<footer class="site-footer">
-  <p>Dell Medical School · The University of Texas at Austin &nbsp;|&nbsp;
+<div class="toolbar">
+  <div class="filters">
+    <button class="fb on"          id="f-all"      onclick="setFilter('all')">All Events</button>
+    <button class="fb on"          id="f-public"   onclick="setFilter('public')">🌐 Public</button>
+    <button class="fb blue-btn on" id="f-internal" onclick="setFilter('internal')">🔒 Internal</button>
+  </div>
+  <div class="right-tools">
+    <div class="legend">
+      <div class="leg-item"><div class="leg-dot internal"></div> Internal</div>
+      <div class="leg-item"><div class="leg-dot public"></div> Public</div>
+    </div>
+    <button class="admin-btn" id="admin-toggle">⚙ Edit Events</button>
+    <div class="month-nav">
+      <button class="nav-btn" id="prev-btn">&#8592;</button>
+      <div class="month-display" id="month-display"></div>
+      <button class="nav-btn" id="next-btn">&#8594;</button>
+    </div>
+  </div>
+</div>
+<div class="upd-note">Last updated: {updated}</div>
+<div class="cal-wrap">
+  <div class="cal-grid" id="cal-grid">
+    <div class="day-header">Mon</div>
+    <div class="day-header">Tue</div>
+    <div class="day-header">Wed</div>
+    <div class="day-header">Thu</div>
+    <div class="day-header">Fri</div>
+  </div>
+</div>
+<div class="popover" id="popover">
+  <div class="pop-header">
+    <div class="pop-date" id="pop-date"></div>
+    <button class="pop-close" id="pop-close">✕</button>
+  </div>
+  <div class="pop-events" id="pop-events"></div>
+</div>
+<div class="admin-panel" id="admin-panel">
+  <div class="ap-header">
+    <div class="ap-title">Edit Events</div>
+    <button class="ap-close" id="ap-close">✕</button>
+  </div>
+  <div class="ap-body">
+    <div class="ap-section">
+      <div class="ap-section-title" id="form-section-title">Add New Event</div>
+      <input type="hidden" id="edit-index" value="-1">
+      <div class="form-row"><label class="form-label">Event Title *</label><input class="form-input" id="f-title" type="text" placeholder="e.g. Grand Rounds: Topic Name"></div>
+      <div class="form-row-2">
+        <div><label class="form-label">Date *</label><input class="form-input" id="f-date" type="date"></div>
+        <div><label class="form-label">Source *</label><select class="form-select" id="f-source"><option value="internal">🔒 Internal</option><option value="public">🌐 Public</option></select></div>
+      </div>
+      <div class="form-row"><label class="form-label">Time</label><input class="form-input" id="f-time" type="text" placeholder="e.g. 12:00pm – 1:00pm"></div>
+      <div class="form-row"><label class="form-label">Location</label><input class="form-input" id="f-location" type="text" placeholder="e.g. Zoom, HDB 1.208"></div>
+      <div class="form-row"><label class="form-label">URL</label><input class="form-input" id="f-url" type="url" placeholder="https://..."></div>
+      <button class="btn-add" id="btn-submit">Add Event</button>
+      <button class="btn-add" id="btn-cancel-edit" style="display:none;background:var(--gray);margin-top:6px;">Cancel Edit</button>
+    </div>
+    <div class="ap-section">
+      <div class="ap-section-title">Manage Events</div>
+      <div class="month-filter-row">
+        <label>Filter by month:</label>
+        <select id="ap-month-filter" onchange="renderAdminList()"><option value="all">All upcoming</option></select>
+      </div>
+      <div id="ap-ev-list"></div>
+    </div>
+    <div class="ap-notice"><strong>Note:</strong> Changes here update the calendar immediately on this page. To make them permanent, update the <code>EVENTS</code> array in the HTML file on GitHub and commit.</div>
+  </div>
+</div>
+<footer>
+  Department of Medicine · Dell Medical School · UT Austin &nbsp;|&nbsp;
   <a href="https://dellmed.utexas.edu/events" target="_blank">Public events →</a> &nbsp;|&nbsp;
-  <a href="https://intranet.dellmed.utexas.edu/events" target="_blank">Internal events (login required) →</a></p>
+  <a href="https://intranet.dellmed.utexas.edu/events" target="_blank">Internal events (login required) →</a>
 </footer>
 <script>
-const EVENTS = {events_json};
+let EVENTS = {events_json};
 
-const DAYS  = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-const MS    = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-const ML    = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const MONTHS_LONG=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const today=new Date();today.setHours(0,0,0,0);
+let currentYear=today.getFullYear(),currentMonth=today.getMonth(),activeFilter='all';
 
-let activeFilter = 'all';
+function pd(s){{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d);}}
+function filteredEvents(){{return EVENTS.filter(e=>activeFilter==='all'||(activeFilter==='public'&&e.source==='public')||(activeFilter==='internal'&&e.source==='internal'));}}
+function eventsForDate(y,m,d){{const iso=`${{y}}-${{String(m+1).padStart(2,'0')}}-${{String(d).padStart(2,'0')}}`;return filteredEvents().filter(e=>e.date===iso).sort((a,b)=>a.time.localeCompare(b.time));}}
 
-document.getElementById('copy-btn').addEventListener('click', function(){{
+document.getElementById('copy-btn').addEventListener('click',function(){{
   navigator.clipboard.writeText(document.getElementById('ics-url').textContent).then(()=>{{
-    this.textContent='✓ Copied!'; this.classList.add('copied');
-    setTimeout(()=>{{ this.textContent='Copy Link'; this.classList.remove('copied'); }}, 2500);
+    this.textContent='✓ Copied!';this.classList.add('copied');
+    setTimeout(()=>{{this.textContent='Copy Link';this.classList.remove('copied');}},2500);
   }});
 }});
 
 function setFilter(f){{
-  activeFilter = f;
-  ['all','public','internal'].forEach(id=>{{
-    document.getElementById('filter-'+id).classList.toggle('active', f===id||f==='all'||(f!=='all'&&id==='all'&&false));
+  activeFilter=f;
+  document.getElementById('f-all').classList.toggle('on',f==='all');
+  document.getElementById('f-public').classList.toggle('on',f==='all'||f==='public');
+  document.getElementById('f-internal').classList.toggle('on',f==='all'||f==='internal');
+  renderCalendar();
+}}
+
+document.getElementById('prev-btn').addEventListener('click',()=>{{currentMonth--;if(currentMonth<0){{currentMonth=11;currentYear--;}}renderCalendar();}});
+document.getElementById('next-btn').addEventListener('click',()=>{{currentMonth++;if(currentMonth>11){{currentMonth=0;currentYear++;}}renderCalendar();}});
+
+const popover=document.getElementById('popover');
+document.getElementById('pop-close').addEventListener('click',()=>popover.classList.remove('show'));
+document.addEventListener('click',e=>{{if(!popover.contains(e.target)&&!e.target.closest('.cal-cell'))popover.classList.remove('show');}});
+
+function openPopover(cell,evs,label){{
+  document.getElementById('pop-date').textContent=label;
+  const pe=document.getElementById('pop-events');pe.innerHTML='';
+  evs.forEach(ev=>{{
+    const div=document.createElement('div');div.className='pop-ev';
+    const dot=document.createElement('div');dot.className=`pop-dot ${{ev.source}}`;
+    const info=document.createElement('div');info.className='pop-info';
+    info.innerHTML=`<div class="pop-title"><a href="${{ev.url||'#'}}" target="_blank" rel="noopener">${{ev.title}}</a></div><div class="pop-meta">${{ev.time}}${{ev.location?' · '+ev.location:''}}</div><span class="pop-badge ${{ev.source}}">${{ev.source==='internal'?'Internal':'Public'}}</span>`;
+    div.append(dot,info);pe.appendChild(div);
   }});
-  document.getElementById('filter-all').classList.toggle('active', f==='all');
-  document.getElementById('filter-public').classList.toggle('active', f==='all'||f==='public');
-  document.getElementById('filter-internal').classList.toggle('active', f==='all'||f==='internal');
-  render();
+  popover.classList.add('show');
+  const r=cell.getBoundingClientRect(),pw=popover.offsetWidth,ph=popover.offsetHeight;
+  let left=r.left+window.scrollX,top=r.bottom+window.scrollY+4;
+  if(left+pw>window.innerWidth-12)left=window.innerWidth-pw-12;
+  if(top+ph>window.scrollY+window.innerHeight-12)top=r.top+window.scrollY-ph-4;
+  popover.style.left=left+'px';popover.style.top=top+'px';
 }}
 
-function render(){{
-  const today = new Date(); today.setHours(0,0,0,0);
-  const todayStr = today.toDateString();
+function renderCalendar(){{
+  const grid=document.getElementById('cal-grid');
+  while(grid.children.length>5)grid.removeChild(grid.lastChild);
+  document.getElementById('month-display').textContent=MONTHS_LONG[currentMonth]+' '+currentYear;
 
-  function pd(s){{ const[y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }}
+  const firstOfMonth=new Date(currentYear,currentMonth,1);
+  const dow0=firstOfMonth.getDay();
+  const offsetToMon=dow0===0?6:dow0-1;
+  const gridStart=new Date(firstOfMonth);gridStart.setDate(gridStart.getDate()-offsetToMon);
 
-  const upcoming = EVENTS
-    .map(e=>( {{...e, dt:pd(e.date)}} ))
-    .filter(e=>{{
-      if (e.dt < today) return false;
-      if (activeFilter === 'public')   return e.source !== 'internal';
-      if (activeFilter === 'internal') return e.source === 'internal';
-      return true;
-    }})
-    .sort((a,b)=>a.dt-b.dt);
+  const lastOfMonth=new Date(currentYear,currentMonth+1,0);
+  const dowLast=lastOfMonth.getDay();
+  const offsetToFri=dowLast===6?6:dowLast===0?5:5-dowLast;
+  const gridEnd=new Date(lastOfMonth);gridEnd.setDate(gridEnd.getDate()+offsetToFri);
 
-  document.getElementById('events-count').textContent =
-    upcoming.length + ' upcoming event' + (upcoming.length!==1?'s':'');
-
-  const groups={{}};
-  for(const ev of upcoming){{
-    const k=ev.dt.getFullYear()+'-'+ev.dt.getMonth();
-    if(!groups[k]) groups[k]={{label:ML[ev.dt.getMonth()]+' '+ev.dt.getFullYear(),events:[]}};
-    groups[k].events.push(ev);
-  }}
-
-  const c = document.getElementById('events-container');
-  c.innerHTML = '';
-  if(!upcoming.length){{c.innerHTML='<div class="no-events">No upcoming events found.</div>';return;}}
-
-  const arrowSVG='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
-  const clockSVG='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
-  const pinSVG='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
-
-  for(const g of Object.values(groups)){{
-    const ge=document.createElement('div'); ge.className='month-group';
-    const le=document.createElement('div'); le.className='month-label'; le.textContent=g.label;
-    ge.appendChild(le);
-
-    for(const ev of g.events){{
-      const isToday=ev.dt.toDateString()===todayStr;
-      const isInternal=ev.source==='internal';
-
-      const card=document.createElement('a');
-      card.className='event-card'+(isInternal?' internal':'');
-      card.href=ev.url; card.target='_blank'; card.rel='noopener noreferrer';
-
-      const dc=document.createElement('div');
-      dc.className='event-date-col'+(isToday?' today-col':'');
-      const mo=document.createElement('span'); mo.className='ev-month'; mo.textContent=MS[ev.dt.getMonth()];
-      const da=document.createElement('span'); da.className='ev-day';   da.textContent=ev.dt.getDate();
-      const dw=document.createElement('span'); dw.className='ev-dow';   dw.textContent=DAYS[ev.dt.getDay()];
-      dc.append(mo,da,dw);
-
-      const body=document.createElement('div'); body.className='event-body';
-      const title=document.createElement('div'); title.className='ev-title'; title.textContent=ev.title;
-      if(isInternal){{ const b=document.createElement('span'); b.className='source-badge badge-internal'; b.textContent='Internal'; title.appendChild(b); }}
-      if(isToday){{    const b=document.createElement('span'); b.className='source-badge badge-today';    b.textContent='Today';    title.appendChild(b); }}
-
-      const meta=document.createElement('div'); meta.className='ev-meta';
-      if(ev.time){{    const t=document.createElement('span'); t.className='ev-meta-item'; t.innerHTML=clockSVG+' '+ev.time;     meta.appendChild(t); }}
-      if(ev.location){{const l=document.createElement('span'); l.className='ev-meta-item'; l.innerHTML=pinSVG+' '+ev.location;  meta.appendChild(l); }}
-
-      body.append(title, meta);
-      const arrow=document.createElement('div'); arrow.className='ev-arrow'; arrow.innerHTML=arrowSVG;
-      card.append(dc, body, arrow);
-      ge.appendChild(card);
+  const cur=new Date(gridStart);
+  while(cur<=gridEnd){{
+    const dow=cur.getDay();
+    if(dow!==0&&dow!==6){{
+      const y=cur.getFullYear(),m=cur.getMonth(),d=cur.getDate();
+      const cell=document.createElement('div');cell.className='cal-cell';
+      if(m!==currentMonth||y!==currentYear)cell.classList.add('other-month');
+      const cd=new Date(y,m,d);cd.setHours(0,0,0,0);
+      if(cd.getTime()===today.getTime())cell.classList.add('today');
+      const numEl=document.createElement('div');numEl.className='cell-num';numEl.textContent=d;cell.appendChild(numEl);
+      const dayEvs=eventsForDate(y,m,d);
+      dayEvs.slice(0,3).forEach(ev=>{{
+        const pill=document.createElement('a');pill.className=`ev-pill ${{ev.source}}`;
+        pill.href=ev.url||'#';pill.target='_blank';pill.rel='noopener noreferrer';
+        pill.textContent=ev.title;pill.title=ev.title+'\n'+ev.time+(ev.location?' · '+ev.location:'');
+        pill.addEventListener('click',e=>e.stopPropagation());cell.appendChild(pill);
+      }});
+      if(dayEvs.length>3){{
+        const more=document.createElement('span');more.className='ev-pill more';
+        more.textContent=`+${{dayEvs.length-3}} more`;
+        more.addEventListener('click',e=>{{e.stopPropagation();const d2=new Date(y,m,d);const lbl=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+', '+MONTHS_LONG[m]+' '+d+', '+y;openPopover(cell,dayEvs,lbl);}});
+        cell.appendChild(more);
+      }}
+      if(dayEvs.length>0){{
+        cell.style.cursor='pointer';
+        cell.addEventListener('click',()=>{{const d2=new Date(y,m,d);const lbl=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d2.getDay()]+', '+MONTHS_LONG[m]+' '+d+', '+y;openPopover(cell,dayEvs,lbl);}});
+      }}
+      grid.appendChild(cell);
     }}
-    c.appendChild(ge);
+    cur.setDate(cur.getDate()+1);
   }}
 }}
 
-render();
+const adminPanel=document.getElementById('admin-panel');
+document.getElementById('admin-toggle').addEventListener('click',()=>{{adminPanel.classList.toggle('open');if(adminPanel.classList.contains('open'))populateMonthFilter();}});
+document.getElementById('ap-close').addEventListener('click',()=>adminPanel.classList.remove('open'));
+
+function populateMonthFilter(){{
+  const sel=document.getElementById('ap-month-filter'),cur=sel.value;
+  sel.innerHTML='<option value="all">All upcoming</option>';
+  const months=new Set(),t=new Date();t.setHours(0,0,0,0);
+  EVENTS.filter(e=>pd(e.date)>=t).forEach(e=>{{const[y,m]=e.date.split('-');months.add(y+'-'+m);}});
+  [...months].sort().forEach(ym=>{{const[y,m]=ym.split('-');const opt=document.createElement('option');opt.value=ym;opt.textContent=MONTHS_LONG[parseInt(m)-1]+' '+y;sel.appendChild(opt);}});
+  sel.value=cur;renderAdminList();
+}}
+
+function renderAdminList(){{
+  const list=document.getElementById('ap-ev-list'),filter=document.getElementById('ap-month-filter').value;
+  const t=new Date();t.setHours(0,0,0,0);
+  let evs=EVENTS.map((e,i)=>( {{...e,_i:i}} )).filter(e=>pd(e.date)>=t).sort((a,b)=>a.date.localeCompare(b.date)||a.time.localeCompare(b.time));
+  if(filter!=='all')evs=evs.filter(e=>e.date.startsWith(filter));
+  list.innerHTML='';
+  if(!evs.length){{list.innerHTML='<div class="ap-empty">No upcoming events found.</div>';return;}}
+  evs.forEach(ev=>{{
+    const item=document.createElement('div');item.className='ev-list-item';
+    const dot=document.createElement('div');dot.className=`ev-list-dot ${{ev.source}}`;
+    const info=document.createElement('div');info.className='ev-list-info';
+    info.innerHTML=`<div class="ev-list-title">${{ev.title}}</div><div class="ev-list-meta">${{ev.date}} · ${{ev.time}}${{ev.location?' · '+ev.location:''}}</div>`;
+    const editBtn=document.createElement('button');editBtn.className='ev-list-edit';editBtn.textContent='Edit';editBtn.addEventListener('click',()=>startEdit(ev._i));
+    const delBtn=document.createElement('button');delBtn.className='ev-list-del';delBtn.textContent='✕';delBtn.addEventListener('click',()=>deleteEvent(ev._i));
+    item.append(dot,info,editBtn,delBtn);list.appendChild(item);
+  }});
+}}
+
+function startEdit(idx){{
+  const ev=EVENTS[idx];
+  document.getElementById('edit-index').value=idx;
+  document.getElementById('f-title').value=ev.title;
+  document.getElementById('f-date').value=ev.date;
+  document.getElementById('f-time').value=ev.time;
+  document.getElementById('f-location').value=ev.location||'';
+  document.getElementById('f-url').value=ev.url||'';
+  document.getElementById('f-source').value=ev.source;
+  document.getElementById('form-section-title').textContent='Edit Event';
+  document.getElementById('btn-submit').textContent='Save Changes';
+  document.getElementById('btn-cancel-edit').style.display='block';
+  adminPanel.querySelector('.ap-body').scrollTop=0;
+}}
+
+function cancelEdit(){{
+  document.getElementById('edit-index').value='-1';
+  ['f-title','f-date','f-time','f-location','f-url'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('f-source').value='internal';
+  document.getElementById('form-section-title').textContent='Add New Event';
+  document.getElementById('btn-submit').textContent='Add Event';
+  document.getElementById('btn-cancel-edit').style.display='none';
+}}
+
+document.getElementById('btn-cancel-edit').addEventListener('click',cancelEdit);
+document.getElementById('btn-submit').addEventListener('click',()=>{{
+  const title=document.getElementById('f-title').value.trim();
+  const date=document.getElementById('f-date').value;
+  if(!title||!date){{alert('Title and Date are required.');return;}}
+  const ev={{title,date,time:document.getElementById('f-time').value.trim()||'',location:document.getElementById('f-location').value.trim()||'',url:document.getElementById('f-url').value.trim()||'',source:document.getElementById('f-source').value}};
+  const idx=parseInt(document.getElementById('edit-index').value);
+  if(idx>=0){{EVENTS[idx]=ev;}}else{{EVENTS.push(ev);}}
+  cancelEdit();renderCalendar();populateMonthFilter();
+}});
+
+function deleteEvent(idx){{
+  if(!confirm('Delete "'+EVENTS[idx].title+'"?'))return;
+  EVENTS.splice(idx,1);renderCalendar();populateMonthFilter();
+}}
+
+renderCalendar();
 </script>
 </body>
 </html>"""
 
-
-# ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     # 1. Public events from RSS scraping
