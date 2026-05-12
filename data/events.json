@@ -1,8 +1,8 @@
 {
-  "updated": "2026-05-12T20:22:43.610854+00:00",
+  "updated": "2026-05-12T20:33:29.211772+00:00",
   "counts": {
     "public": 12,
-    "internal": 0,
+    "internal": 2,
     "ut": 1166
   },
   "events": [
@@ -2892,6 +2892,16 @@
       "location": null
     },
     {
+      "source": "internal",
+      "title": "Department of Medicine Faculty Meeting",
+      "url": "https://intranet.dellmed.utexas.edu/events/some-event-page",
+      "start": "2026-06-15",
+      "time": "12:00 PM - 1:00 PM",
+      "location": "HDB 1.208",
+      "speaker": "Dr. Jane Smith",
+      "end": null
+    },
+    {
       "source": "ut",
       "title": "Ice Age in the Wild",
       "url": "https://calendar.utexas.edu/event/ice-age-in-the-wild",
@@ -3661,6 +3671,16 @@
       "url": "https://calendar.utexas.edu/event/web-content-management-office-hours-june-30-2026",
       "start": "2026-06-30",
       "location": "Microsoft Teams"
+    },
+    {
+      "source": "internal",
+      "title": "Another internal event",
+      "url": "https://intranet.dellmed.utexas.edu/events",
+      "start": "2026-07-01",
+      "time": null,
+      "location": null,
+      "speaker": null,
+      "end": null
     },
     {
       "source": "ut",
