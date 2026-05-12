@@ -6,21 +6,25 @@
 <title>Dell Med Events Ticker</title>
 <style>
   :root {
+    /* UT Austin official palette */
     --burnt-orange: #bf5700;
     --burnt-orange-dark: #9a4600;
-    --dark-bg: #1a1a1a;
-    --panel-bg: #242424;
-    --text: #f4f4f4;
-    --text-muted: #b8b8b8;
-    --border: #333;
-    --public: #bf5700;
-    --internal: #2c7fb8;
-    --ut: #4a4a4a;
+    --bg: #ffffff;
+    --panel-bg: #f8f6f3;       /* warm off-white for panels */
+    --ticker-bg: #faf7f2;      /* slightly warmer for the ticker bar */
+    --text: #1a1a1a;
+    --text-muted: #5f5f5f;
+    --border: #d9d6d1;
+    --border-light: #ebe8e3;
+    /* source-coded accents */
+    --public: #bf5700;          /* UT burnt orange */
+    --internal: #005f86;        /* UT secondary blue */
+    --ut: #333f48;              /* UT charcoal */
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: var(--dark-bg);
+    background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     display: flex;
@@ -30,7 +34,7 @@
     background: linear-gradient(135deg, var(--burnt-orange) 0%, var(--burnt-orange-dark) 100%);
     padding: 20px 32px;
     border-bottom: 3px solid var(--burnt-orange-dark);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 8px rgba(191, 87, 0, 0.15);
   }
   header h1 {
     font-size: 24px;
@@ -91,14 +95,14 @@
     color: var(--text-muted);
   }
   .ticker-wrap {
-    background: #111;
+    background: var(--ticker-bg);
     border-bottom: 1px solid var(--border);
     overflow: hidden;
     position: relative;
     height: 56px;
   }
   .ticker-track {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     height: 100%;
     white-space: nowrap;
@@ -112,7 +116,7 @@
     gap: 10px;
     padding: 0 28px;
     font-size: 15px;
-    border-right: 1px solid #2a2a2a;
+    border-right: 1px solid var(--border-light);
   }
   .ticker-item a {
     color: var(--text);
@@ -151,7 +155,7 @@
   }
   .event-list { list-style: none; margin-top: 8px; }
   .event-card {
-    background: var(--panel-bg);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-left: 4px solid var(--burnt-orange);
     border-radius: 5px;
@@ -161,6 +165,12 @@
     grid-template-columns: 140px 1fr auto;
     gap: 16px;
     align-items: start;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .event-card:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
   }
   .event-card[data-source="internal"] { border-left-color: var(--internal); }
   .event-card[data-source="ut"] { border-left-color: var(--ut); }
@@ -185,7 +195,7 @@
   }
   .event-card .badge {
     font-size: 10px;
-    background: #333;
+    background: #e8e4dd;
     color: var(--text-muted);
     padding: 3px 8px;
     border-radius: 3px;
@@ -317,8 +327,12 @@ function renderTicker() {
     </span>
   `).join('');
   track.innerHTML = items + items;
+  // Scale animation speed to content length; ~7s per item, 60s minimum
   const baseDuration = Math.max(60, tickerEvents.length * 7);
-  track.style.animationDuration = baseDuration + 's';
+  // Restart animation cleanly so the new duration takes effect
+  track.style.animation = 'none';
+  track.offsetHeight; // force reflow
+  track.style.animation = `scroll-left ${baseDuration}s linear infinite`;
 }
 
 function renderList() {
