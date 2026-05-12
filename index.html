@@ -251,7 +251,13 @@
 </div>
 
 <main>
-  <h2>Upcoming Events</h2>
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;gap:12px;">
+    <h2>Upcoming Events</h2>
+    <label style="font-size:13px;color:var(--text-muted);cursor:pointer;user-select:none;">
+      <input type="checkbox" id="compactToggle" checked style="margin-right:6px;accent-color:var(--burnt-orange);vertical-align:middle;">
+      Next 30 days only
+    </label>
+  </div>
   <ul class="event-list" id="eventList">
     <li class="empty">Loading events…</li>
   </ul>
@@ -268,6 +274,7 @@
 const STATE = {
   events: [],
   filters: { public: true, internal: true, ut: true },
+  compactList: true,
 };
 
 function formatDate(iso) {
@@ -292,7 +299,17 @@ function renderTicker() {
     track.innerHTML = '<span class="ticker-item"><span class="ticker-date">--</span> No events match your filters.</span>';
     return;
   }
-  const items = events.map(e => `
+  // Dedupe by title: events are already sorted ascending by start date,
+  // so the first one seen is the next upcoming instance.
+  const seenTitles = new Set();
+  const tickerEvents = [];
+  for (const e of events) {
+    const key = e.title.trim().toLowerCase();
+    if (seenTitles.has(key)) continue;
+    seenTitles.add(key);
+    tickerEvents.push(e);
+  }
+  const items = tickerEvents.map(e => `
     <span class="ticker-item" data-source="${e.source}">
       <span class="ticker-date">${formatDate(e.start)}</span>
       <a href="${e.url}" target="_blank" rel="noopener">${escapeHtml(e.title)}</a>
@@ -300,13 +317,20 @@ function renderTicker() {
     </span>
   `).join('');
   track.innerHTML = items + items;
-  const baseDuration = Math.max(60, events.length * 7);
+  const baseDuration = Math.max(60, tickerEvents.length * 7);
   track.style.animationDuration = baseDuration + 's';
 }
 
 function renderList() {
   const list = document.getElementById('eventList');
-  const events = getFilteredEvents();
+  let events = getFilteredEvents();
+  // Optional 30-day cap on the list view
+  if (STATE.compactList) {
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() + 30);
+    const cutoffStr = cutoff.toISOString().slice(0, 10);
+    events = events.filter(e => e.start <= cutoffStr);
+  }
   if (events.length === 0) {
     list.innerHTML = '<li class="empty">No events match your filters.</li>';
     return;
@@ -347,6 +371,11 @@ document.getElementById('pauseBtn').addEventListener('click', (e) => {
   const track = document.getElementById('tickerTrack');
   track.classList.toggle('paused');
   e.target.textContent = track.classList.contains('paused') ? '▶ Resume' : '⏸ Pause';
+});
+
+document.getElementById('compactToggle').addEventListener('change', (e) => {
+  STATE.compactList = e.target.checked;
+  renderList();
 });
 
 fetch('data/events.json?ts=' + Date.now())
