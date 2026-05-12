@@ -1,0 +1,155 @@
+{
+  "updated": "2026-05-11T17:30:01.564753+00:00",
+  "counts": {
+    "public": 12,
+    "internal": 0,
+    "ut": 5
+  },
+  "events": [
+    {
+      "source": "ut",
+      "title": "Disruptive Innovation Summit",
+      "url": "https://calendar.utexas.edu/event/disruptive-innovation-summit",
+      "start": "2026-05-12",
+      "location": "Virtual Livestream"
+    },
+    {
+      "source": "public",
+      "title": "Neurology Grand Rounds: When Pathology Fails Prognosis",
+      "url": "https://dellmed.utexas.edu/events/neurology-grand-rounds-when-pathology-fails-prognosis",
+      "start": "2026-05-12",
+      "time": "7:30-8:30 a.m.",
+      "location": "Hybrid: Health Discovery Building (HDB 1.208) & Zoom",
+      "speaker": "Joshua Chang, M.D., Ph.D."
+    },
+    {
+      "source": "ut",
+      "title": "Open Scholarship Crash Course",
+      "url": "https://calendar.utexas.edu/event/open-scholarship-crash-course-3435",
+      "start": "2026-05-12",
+      "time": "10am-2pm",
+      "location": "Perry-Casta\u00f1eda Library, Scholars Lab (PCL 2.200)"
+    },
+    {
+      "source": "ut",
+      "title": "Annual Center for Biomedical Research Support 2026 Research Showcase",
+      "url": "https://calendar.utexas.edu/event/annual-center-for-biomedical-research-support-2026-research-showcase",
+      "start": "2026-05-13",
+      "time": "9am-5pm",
+      "location": "Mulva Auditorium"
+    },
+    {
+      "source": "public",
+      "title": "Internal Medicine Grand Rounds: Chief Residents Presentations",
+      "url": "https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-residents-051326",
+      "start": "2026-05-13",
+      "time": "12-1 p.m.",
+      "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom",
+      "speaker": "Syed Hamzah Ali, M.D."
+    },
+    {
+      "source": "ut",
+      "title": "American Heart Association (AHA) Basic Life Support Instructor Candidate Training",
+      "url": "https://calendar.utexas.edu/event/american-heart-association-aha-basic-life-support-bls-instructor-candidate-training-1493",
+      "start": "2026-05-14",
+      "time": "8:30am-5pm",
+      "location": "School of Nursing, NUR 1.106"
+    },
+    {
+      "source": "public",
+      "title": "Ophthalmology CME Series: The Importance of the Gut Microbiome in Uveitis and AMD",
+      "url": "https://dellmed.utexas.edu/events/ophthalmology-continuing-medical-education-series-the-importance-of-the-gut-microbiome-in-uveitis-and-age-related-macular-degeneration",
+      "start": "2026-05-14",
+      "time": "5:30-7 p.m.",
+      "location": "Health Discovery Building Auditorium (HDB 1.208)",
+      "speaker": "Phoebe Lin, M.D., Ph.D."
+    },
+    {
+      "source": "ut",
+      "title": "Office of Sponsored Projects Meet, Greet, & Connect",
+      "url": "https://calendar.utexas.edu/event/office-of-sponsored-projects-meet-greet-connect",
+      "start": "2026-05-18",
+      "time": "1:30-3:30pm",
+      "location": "WCP Student Activity Center, 2.410 Ballroom"
+    },
+    {
+      "source": "public",
+      "title": "City-Wide Infectious Diseases Case Conference",
+      "url": "https://dellmed.utexas.edu/events/city-wide-infectious-disease-case-conference-051926",
+      "start": "2026-05-19",
+      "time": "12-1 p.m.",
+      "location": "Hybrid: Health Learning Building Auditorium (HLB 1.111) & Zoom",
+      "speaker": "Kelli Bagwell, M.D., Ting-Yi Chen, M.D., MPH, and Stephanie Cobb, D.O."
+    },
+    {
+      "source": "public",
+      "title": "Neurology Grand Rounds: Non-Opioid Therapeutics for Chronic Pain",
+      "url": "https://dellmed.utexas.edu/events/neurology-grand-rounds-non-opioid-therapeutics-for-chronic-pain",
+      "start": "2026-05-26",
+      "time": "7:30-8:30 a.m.",
+      "location": "Hybrid: Health Discovery Building (HDB 1.208) & Zoom",
+      "speaker": "Robert O. Messing, M.D."
+    },
+    {
+      "source": "public",
+      "title": "Internal Medicine Grand Rounds: Chief Residents Presentations",
+      "url": "https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-residents-052726",
+      "start": "2026-05-27",
+      "time": "12-1 p.m.",
+      "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom",
+      "speaker": "Priyanka Jagannathan, M.D., MBA, Huynh Pham, M.D."
+    },
+    {
+      "source": "public",
+      "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+      "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-060326",
+      "start": "2026-06-03",
+      "time": "8-11 a.m.",
+      "location": "Virtual"
+    },
+    {
+      "source": "public",
+      "title": "Neurology Grand Rounds: Benign Behavior of Big Lesions",
+      "url": "https://dellmed.utexas.edu/events/neurology-grand-rounds-benign-behavior-of-big-lesions-06092026",
+      "start": "2026-06-09",
+      "time": "7:30-8:30 a.m.",
+      "location": "Hybrid: Health Learning Building (HTB 1.208) & Zoom",
+      "speaker": "Mahboobeh Fereidan Esfahani, M.D."
+    },
+    {
+      "source": "public",
+      "title": "IMPRES Conference - Innovative Minds: Pediatric Research in Epilepsy Surgery",
+      "url": "https://dellmed.utexas.edu/events/impres-conference-innovative-minds-pediatric-research-in-epilepsy-surgery",
+      "start": "2026-06-26",
+      "end": "2026-06-28",
+      "time": "6 a.m. - 1 p.m.",
+      "location": "Hotel Van Zandt"
+    },
+    {
+      "source": "public",
+      "title": "Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2",
+      "url": "https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-080726",
+      "start": "2026-08-07",
+      "time": "8-11 a.m.",
+      "location": "Virtual"
+    },
+    {
+      "source": "public",
+      "title": "Health Social Work Visiting Speaker: Between What's Right and What's Possible",
+      "url": "https://dellmed.utexas.edu/events/health-social-work-visiting-speaker-between-whats-right-and-whats-possible",
+      "start": "2026-08-10",
+      "time": "12-1 p.m.",
+      "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom",
+      "speaker": "Fran\u00e7oise Mathieu, M.Ed., RP, CCC"
+    },
+    {
+      "source": "public",
+      "title": "AMPATH/MAPAS M\u00e9xico Monthly Seminar: Gerontology",
+      "url": "https://dellmed.utexas.edu/events/ampath-mapas-m\u00e9xico-monthly-seminar-gerontology",
+      "start": "2026-08-27",
+      "time": "6-7:30 p.m.",
+      "location": "Zoom",
+      "speaker": "Erica Garcia Pittman & Luis Mario Fern\u00e1ndez Loyo"
+    }
+  ]
+}
