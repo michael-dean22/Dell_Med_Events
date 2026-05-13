@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-13T08:50:12.293257+00:00",
+  "updated": "2026-05-13T20:01:22.727085+00:00",
   "counts": {
     "public": 11,
     "internal": 2,
@@ -7571,6 +7571,13 @@
     },
     {
       "source": "ut",
+      "title": "Planet KPOP - The Ultimate KPOP Tribute Concert",
+      "url": "https://calendar.utexas.edu/event/planet-kpop-the-ultimate-kpop-tribute-concert",
+      "start": "2026-10-15",
+      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
+    },
+    {
+      "source": "ut",
       "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
       "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
       "start": "2026-10-15",
@@ -8219,13 +8226,6 @@
       "url": "https://calendar.utexas.edu/event/university-of-texas-football-at-lsu",
       "start": "2026-11-14",
       "location": "Baton Rouge\\, La.\\, Tiger Stadium"
-    },
-    {
-      "source": "ut",
-      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
-      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
-      "start": "2026-11-15",
-      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
     }
   ]
 }
