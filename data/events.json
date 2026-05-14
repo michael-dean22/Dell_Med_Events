@@ -1,7 +1,7 @@
 {
-  "updated": "2026-05-14T08:43:28.421310+00:00",
+  "updated": "2026-05-14T19:54:42.823678+00:00",
   "counts": {
-    "public": 10,
+    "public": 12,
     "internal": 2,
     "ut": 1193
   },
@@ -1499,6 +1499,15 @@
       "location": "NUR - various"
     },
     {
+      "source": "public",
+      "title": "Best Practices in Medical Education Grand Rounds: From Patient to Population",
+      "url": "https://dellmed.utexas.edu/events/best-practices-in-medical-education-grand-rounds-patient-to-population052826",
+      "start": "2026-05-28",
+      "time": "12\u20131 p.m.",
+      "location": "Zoom",
+      "speaker": "Mrinalini Kulkarni-Date, M.D."
+    },
+    {
       "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
@@ -2690,6 +2699,14 @@
       "url": "https://calendar.utexas.edu/event/murals-at-vac-codex-two-thousand-twenty-six",
       "start": "2026-06-12",
       "location": "Art Building (ART)\\, Kayem Lobby\\, Art Building (outside of VAC&#039\\;s east entrance)"
+    },
+    {
+      "source": "public",
+      "title": "Pediatric Grand Rounds: Pediatric Jeopardy",
+      "url": "https://dellmed.utexas.edu/events/pediatric-grand-rounds-pediatric-jeopardy-061226",
+      "start": "2026-06-12",
+      "time": "7:30\u20138:30 a.m.",
+      "speaker": "Isaih Favela, M.D., Matthew Owens, D.O., Joel Rose-Kamprath, M.D., Vikram Siberry, M.D."
     },
     {
       "source": "ut",
@@ -7492,6 +7509,13 @@
     },
     {
       "source": "ut",
+      "title": "Be Like Blippi Tour",
+      "url": "https://calendar.utexas.edu/event/be-like-blippi-tour",
+      "start": "2026-10-16",
+      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-10-16",
@@ -8150,6 +8174,13 @@
     },
     {
       "source": "ut",
+      "title": "Nurse John -  Against Medical Advice Tour",
+      "url": "https://calendar.utexas.edu/event/nurse-john-against-medical-advice-tour",
+      "start": "2026-11-15",
+      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
+    },
+    {
+      "source": "ut",
       "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
       "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
       "start": "2026-11-15",
@@ -8444,24 +8475,10 @@
     },
     {
       "source": "ut",
-      "title": "Career Storytelling Workshop",
-      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
-      "start": "2026-11-29",
-      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
-    },
-    {
-      "source": "ut",
       "title": "Outlander in Concert",
       "url": "https://calendar.utexas.edu/event/outlander-in-concert",
       "start": "2026-11-29",
       "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
-    },
-    {
-      "source": "ut",
-      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
-      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
-      "start": "2026-11-29",
-      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
     }
   ]
 }
