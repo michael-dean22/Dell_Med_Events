@@ -1,139 +1,11 @@
 {
-  "updated": "2026-05-13T20:01:22.727085+00:00",
+  "updated": "2026-05-14T08:43:28.421310+00:00",
   "counts": {
-    "public": 11,
+    "public": 10,
     "internal": 2,
-    "ut": 1158
+    "ut": 1193
   },
   "events": [
-    {
-      "source": "ut",
-      "title": "$20 Interview- Young adults\u2019 emotion coping using AI chatbots",
-      "url": "https://calendar.utexas.edu/event/20-interview-young-adults-emotion-coping-using-ai-chatbots",
-      "start": "2026-05-13",
-      "location": null
-    },
-    {
-      "source": "ut",
-      "title": "AHA BLS Provider (CPR)",
-      "url": "https://calendar.utexas.edu/event/aha-bls-provider-cpr",
-      "start": "2026-05-13",
-      "location": "NUR 1.106"
-    },
-    {
-      "source": "ut",
-      "title": "Annual Center for Biomedical Research Support 2026 Research Showcase",
-      "url": "https://calendar.utexas.edu/event/annual-center-for-biomedical-research-support-2026-research-showcase",
-      "start": "2026-05-13",
-      "location": "Mulva Auditorium"
-    },
-    {
-      "source": "ut",
-      "title": "Apply: Summer ESL classes",
-      "url": "https://calendar.utexas.edu/event/apply-summer-esl-classes-9588",
-      "start": "2026-05-13",
-      "location": "Texas Global"
-    },
-    {
-      "source": "ut",
-      "title": "Assembly Committee Meetings",
-      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
-      "start": "2026-05-13",
-      "location": "WCP 2.302"
-    },
-    {
-      "source": "ut",
-      "title": "CONNECT Student Applications Open",
-      "url": "https://calendar.utexas.edu/event/connect-student-applications-open",
-      "start": "2026-05-13",
-      "location": "Virtual"
-    },
-    {
-      "source": "ut",
-      "title": "Career Storytelling Workshop",
-      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
-      "start": "2026-05-13",
-      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
-    },
-    {
-      "source": "ut",
-      "title": "Farmers  v.  Longhorns",
-      "url": "https://calendar.utexas.edu/event/farmers-v-longhorns",
-      "start": "2026-05-13",
-      "location": "The H.J. Lutcher Stark Center for Physical Culture and Sports\\, NEZ 5.700"
-    },
-    {
-      "source": "ut",
-      "title": "Feasting Together: 20th Century Community Cookbooks from the PCL Collections",
-      "url": "https://calendar.utexas.edu/event/feasting-together-20th-century-community-cookbooks-from-the-pcl-collections",
-      "start": "2026-05-13",
-      "location": "Perry-Casta\u00f1eda Library (PCL)"
-    },
-    {
-      "source": "ut",
-      "title": "General Meetings: Spring 2026",
-      "url": "https://calendar.utexas.edu/event/general-meetings-spring-2026",
-      "start": "2026-05-13",
-      "location": null
-    },
-    {
-      "source": "ut",
-      "title": "Ice Age in the Wild",
-      "url": "https://calendar.utexas.edu/event/ice-age-in-the-wild",
-      "start": "2026-05-13",
-      "location": "Lady Bird Johnson Wildflower Center"
-    },
-    {
-      "source": "public",
-      "title": "Internal Medicine Grand Rounds: Chief Residents Presentations",
-      "url": "https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-residents-051326",
-      "start": "2026-05-13",
-      "time": "12\u20131 p.m.",
-      "location": "Hybrid: Health Discovery Building Auditorium (HDB 1.208) &amp; Zoom",
-      "speaker": "Syed Hamzah Ali, M.D."
-    },
-    {
-      "source": "ut",
-      "title": "Murals at VAC: Codex Two Thousand Twenty-Six",
-      "url": "https://calendar.utexas.edu/event/murals-at-vac-codex-two-thousand-twenty-six",
-      "start": "2026-05-13",
-      "location": "Art Building (ART)\\, Kayem Lobby\\, Art Building (outside of VAC&#039\\;s east entrance)"
-    },
-    {
-      "source": "ut",
-      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
-      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
-      "start": "2026-05-13",
-      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
-    },
-    {
-      "source": "ut",
-      "title": "SMART Recovery",
-      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
-      "start": "2026-05-13",
-      "location": "Center for Students in Recovery\\, WCP 2.112"
-    },
-    {
-      "source": "ut",
-      "title": "The Wiz",
-      "url": "https://calendar.utexas.edu/event/the-wiz",
-      "start": "2026-05-13",
-      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
-    },
-    {
-      "source": "ut",
-      "title": "University of Texas Women's Golf vs NCAA Regional Championship",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-womens-golf-vs-ncaa-regional-championship-9892",
-      "start": "2026-05-13",
-      "location": "Chapel Hill\\, N.C.\\, UNC Finley Golf Course"
-    },
-    {
-      "source": "ut",
-      "title": "What's Cookin'? PCL 5th Floor Display",
-      "url": "https://calendar.utexas.edu/event/whats-cookin-pcl-5th-floor-display",
-      "start": "2026-05-13",
-      "location": "Perry-Casta\u00f1eda Library (PCL)\\, 5th Floor"
-    },
     {
       "source": "ut",
       "title": "$20 Interview- Young adults\u2019 emotion coping using AI chatbots",
@@ -230,7 +102,7 @@
       "title": "Ophthalmology Continuing Medical Education Series: The Importance of the Gut Microbiome in Uveitis and Age-Related Macular Degeneration",
       "url": "https://dellmed.utexas.edu/events/ophthalmology-continuing-medical-education-series-the-importance-of-the-gut-microbiome-in-uveitis-and-age-related-macular-degeneration",
       "start": "2026-05-14",
-      "time": "12\u20131 p.m.",
+      "time": "5:30\u20137 p.m.",
       "location": "Health Discovery Building Auditorium (HDB 1.208)",
       "speaker": "Phoebe Lin, M.D., Ph.D."
     },
@@ -1099,6 +971,13 @@
     },
     {
       "source": "ut",
+      "title": "Spring Cleaning Your Finances",
+      "url": "https://calendar.utexas.edu/event/spring-cleaning-your-finances",
+      "start": "2026-05-21",
+      "location": "Virtual Event"
+    },
+    {
+      "source": "ut",
       "title": "UT Staff Toastmasters Meeting - 2nd\\, 3rd\\, 4th Thursdays via Zoom",
       "url": "https://calendar.utexas.edu/event/ut-staff-toastmasters-meeting-2nd-3rd-4th-thursdays-via-zoom",
       "start": "2026-05-21",
@@ -1734,7 +1613,7 @@
     {
       "source": "ut",
       "title": "University of Texas Men's Golf vs NCAA Championship Stroke Play",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-stroke-play-3958",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-stroke-play-9655",
       "start": "2026-05-29",
       "location": "Carlsbad\\, Calif."
     },
@@ -3045,6 +2924,13 @@
       "url": "https://calendar.utexas.edu/event/ice-age-in-the-wild",
       "start": "2026-06-16",
       "location": "Lady Bird Johnson Wildflower Center"
+    },
+    {
+      "source": "ut",
+      "title": "Is TRS Enough?",
+      "url": "https://calendar.utexas.edu/event/is-trs-enough",
+      "start": "2026-06-16",
+      "location": "Virtual Event"
     },
     {
       "source": "ut",
@@ -4984,6 +4870,13 @@
     },
     {
       "source": "ut",
+      "title": "SHRM Certification Prep+ Program Information Session",
+      "url": "https://calendar.utexas.edu/event/shrm-certification-prep-program-information-session",
+      "start": "2026-07-23",
+      "location": null
+    },
+    {
+      "source": "ut",
       "title": "Summer Stock Austin 2026 - Cinderella",
       "url": "https://calendar.utexas.edu/event/summer-stock-austin-2026-cinderella",
       "start": "2026-07-23",
@@ -6261,6 +6154,13 @@
     },
     {
       "source": "ut",
+      "title": "Texas Area Planetary Sciences Conference",
+      "url": "https://calendar.utexas.edu/event/texas-area-planetary-sciences-conference",
+      "start": "2026-08-20",
+      "location": "Commons Conference Center"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-08-21",
@@ -6637,6 +6537,13 @@
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-09-03",
       "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Medicare 101",
+      "url": "https://calendar.utexas.edu/event/medicare-101",
+      "start": "2026-09-03",
+      "location": "Virtual Event"
     },
     {
       "source": "ut",
@@ -7893,6 +7800,13 @@
     },
     {
       "source": "ut",
+      "title": "Foundations of Financial Wellness",
+      "url": "https://calendar.utexas.edu/event/foundations-of-financial-wellness",
+      "start": "2026-10-30",
+      "location": "Virtual Event"
+    },
+    {
+      "source": "ut",
       "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
       "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
       "start": "2026-10-30",
@@ -8226,6 +8140,328 @@
       "url": "https://calendar.utexas.edu/event/university-of-texas-football-at-lsu",
       "start": "2026-11-14",
       "location": "Baton Rouge\\, La.\\, Tiger Stadium"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-15",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-15",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-16",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-16",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-17",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-17",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "TAMALES",
+      "url": "https://calendar.utexas.edu/event/tamales",
+      "start": "2026-11-17",
+      "location": null
+    },
+    {
+      "source": "ut",
+      "title": "TAMALES - Texas Assistive Technology Makers Alliance",
+      "url": "https://calendar.utexas.edu/event/tamales-texas-assistive-technology-makers-alliance",
+      "start": "2026-11-17",
+      "location": null
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2026-11-18",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2026-11-18",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-18",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Public Assembly",
+      "url": "https://calendar.utexas.edu/event/public-assembly",
+      "start": "2026-11-18",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-18",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2026-11-18",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Tea & Tawla",
+      "url": "https://calendar.utexas.edu/event/tea-tawla",
+      "start": "2026-11-18",
+      "location": "Patton Hall (RLP)\\, 1.302D"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-19",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-19",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-20",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-20",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-21",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Reel Science: How Deep is Your Love",
+      "url": "https://calendar.utexas.edu/event/reel-science-how-deep-is-your-love",
+      "start": "2026-11-21",
+      "location": "Long Center for the Performing Arts\\, Rollins Theatre"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-21",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "University of Texas Football vs Arkansas - presented by H-E-B",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-football-vs-arkansas-presented-by-h-e-b",
+      "start": "2026-11-21",
+      "location": "Austin\\, Texas\\, DKR-Texas Memorial Stadium"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-22",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "H-E-B Free Fourth Sunday",
+      "url": "https://calendar.utexas.edu/event/h-e-b-free-fourth-sunday-4810",
+      "start": "2026-11-22",
+      "location": "Texas Science & Natural History Museum"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-22",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-23",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-23",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-24",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-24",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2026-11-25",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2026-11-25",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-25",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Public Assembly",
+      "url": "https://calendar.utexas.edu/event/public-assembly",
+      "start": "2026-11-25",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-25",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2026-11-25",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-26",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-26",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-27",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-27",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "University of Texas Football at Texas A&M - Cotton Holdings Lone Star Showdown",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-football-at-texas-am-cotton-holdings-lone-star-showdown",
+      "start": "2026-11-27",
+      "location": "College Station\\, Texas\\, Kyle Field"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-28",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-28",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-11-29",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Outlander in Concert",
+      "url": "https://calendar.utexas.edu/event/outlander-in-concert",
+      "start": "2026-11-29",
+      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
+    },
+    {
+      "source": "ut",
+      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
+      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
+      "start": "2026-11-29",
+      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
     }
   ]
 }
