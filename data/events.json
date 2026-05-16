@@ -1,144 +1,11 @@
 {
-  "updated": "2026-05-15T19:44:15.590297+00:00",
+  "updated": "2026-05-16T08:10:02.305214+00:00",
   "counts": {
     "public": 12,
     "internal": 2,
-    "ut": 1242
+    "ut": 1284
   },
   "events": [
-    {
-      "source": "ut",
-      "title": "$20 Interview- Young adults\u2019 emotion coping using AI chatbots",
-      "url": "https://calendar.utexas.edu/event/20-interview-young-adults-emotion-coping-using-ai-chatbots",
-      "start": "2026-05-15",
-      "location": null
-    },
-    {
-      "source": "ut",
-      "title": "Apply: Summer ESL classes",
-      "url": "https://calendar.utexas.edu/event/apply-summer-esl-classes-9588",
-      "start": "2026-05-15",
-      "location": "Texas Global"
-    },
-    {
-      "source": "ut",
-      "title": "CONNECT Student Applications Open",
-      "url": "https://calendar.utexas.edu/event/connect-student-applications-open",
-      "start": "2026-05-15",
-      "location": "Virtual"
-    },
-    {
-      "source": "ut",
-      "title": "Career Storytelling Workshop",
-      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
-      "start": "2026-05-15",
-      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
-    },
-    {
-      "source": "ut",
-      "title": "Drama for Schools Symposium",
-      "url": "https://calendar.utexas.edu/event/drama-for-schools-symposium",
-      "start": "2026-05-15",
-      "location": "F. Loren Winship Drama Building at The University of Texas at Austin"
-    },
-    {
-      "source": "ut",
-      "title": "Farmers  v.  Longhorns",
-      "url": "https://calendar.utexas.edu/event/farmers-v-longhorns",
-      "start": "2026-05-15",
-      "location": "The H.J. Lutcher Stark Center for Physical Culture and Sports\\, NEZ 5.700"
-    },
-    {
-      "source": "ut",
-      "title": "Feasting Together: 20th Century Community Cookbooks from the PCL Collections",
-      "url": "https://calendar.utexas.edu/event/feasting-together-20th-century-community-cookbooks-from-the-pcl-collections",
-      "start": "2026-05-15",
-      "location": "Perry-Casta\u00f1eda Library (PCL)"
-    },
-    {
-      "source": "ut",
-      "title": "General Meetings: Spring 2026",
-      "url": "https://calendar.utexas.edu/event/general-meetings-spring-2026",
-      "start": "2026-05-15",
-      "location": null
-    },
-    {
-      "source": "ut",
-      "title": "Ice Age in the Wild",
-      "url": "https://calendar.utexas.edu/event/ice-age-in-the-wild",
-      "start": "2026-05-15",
-      "location": "Lady Bird Johnson Wildflower Center"
-    },
-    {
-      "source": "ut",
-      "title": "McCombs+ Partner Info Session",
-      "url": "https://calendar.utexas.edu/event/mccombs-partner-info-session-1881",
-      "start": "2026-05-15",
-      "location": "Virtual Event"
-    },
-    {
-      "source": "ut",
-      "title": "Murals at VAC: Codex Two Thousand Twenty-Six",
-      "url": "https://calendar.utexas.edu/event/murals-at-vac-codex-two-thousand-twenty-six",
-      "start": "2026-05-15",
-      "location": "Art Building (ART)\\, Kayem Lobby\\, Art Building (outside of VAC&#039\\;s east entrance)"
-    },
-    {
-      "source": "ut",
-      "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
-      "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
-      "start": "2026-05-15",
-      "location": "Benson Latin American Collection\\, Ann Hartness Reading Room (SRH 1.106)"
-    },
-    {
-      "source": "ut",
-      "title": "The Wiz",
-      "url": "https://calendar.utexas.edu/event/the-wiz",
-      "start": "2026-05-15",
-      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
-    },
-    {
-      "source": "ut",
-      "title": "University of Texas Baseball vs Missouri",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-baseball-vs-missouri-3089",
-      "start": "2026-05-15",
-      "location": "Austin\\, Texas\\, UFCU Disch-Falk Field"
-    },
-    {
-      "source": "ut",
-      "title": "University of Texas Softball vs Wagner",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-softball-vs-wagner",
-      "start": "2026-05-15",
-      "location": "Austin\\, Texas\\, Red & Charline McCombs Field"
-    },
-    {
-      "source": "ut",
-      "title": "University of Texas Track & Field / Cross Country at SEC Outdoor Championships",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-track-field-cross-country-at-sec-outdoor-championships-5336",
-      "start": "2026-05-15",
-      "location": "Auburn\\, Ala."
-    },
-    {
-      "source": "ut",
-      "title": "University of Texas Women's Tennis vs NCAA Championships",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-womens-tennis-vs-ncaa-championships-6920",
-      "start": "2026-05-15",
-      "location": "Athens\\, Ga."
-    },
-    {
-      "source": "ut",
-      "title": "Voya Financial Friday Webinar: Investing 201",
-      "url": "https://calendar.utexas.edu/event/voya-financial-friday-webinar-investing-201",
-      "start": "2026-05-15",
-      "location": "Virtual Event"
-    },
-    {
-      "source": "ut",
-      "title": "What's Cookin'? PCL 5th Floor Display",
-      "url": "https://calendar.utexas.edu/event/whats-cookin-pcl-5th-floor-display",
-      "start": "2026-05-15",
-      "location": "Perry-Casta\u00f1eda Library (PCL)\\, 5th Floor"
-    },
     {
       "source": "ut",
       "title": "$20 Interview- Young adults\u2019 emotion coping using AI chatbots",
@@ -1550,7 +1417,7 @@
     {
       "source": "ut",
       "title": "University of Texas Men's Golf vs NCAA Championship Stroke Play",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-stroke-play-6173",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-stroke-play-3782",
       "start": "2026-05-30",
       "location": "Carlsbad\\, Calif."
     },
@@ -1790,7 +1657,7 @@
     {
       "source": "ut",
       "title": "University of Texas Men's Golf vs NCAA Championship Match Play",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-match-play-5255",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-match-play-7426",
       "start": "2026-06-02",
       "location": "Carlsbad\\, Calif."
     },
@@ -1828,6 +1695,13 @@
       "url": "https://calendar.utexas.edu/event/cpe-project-management-certificate-program-info-session",
       "start": "2026-06-03",
       "location": null
+    },
+    {
+      "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-06-03",
+      "location": "Cactus Cafe"
     },
     {
       "source": "ut",
@@ -1896,7 +1770,7 @@
     {
       "source": "ut",
       "title": "University of Texas Men's Golf vs NCAA Championship Match Play",
-      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-match-play-4325",
+      "url": "https://calendar.utexas.edu/event/university-of-texas-mens-golf-vs-ncaa-championship-match-play-3972",
       "start": "2026-06-03",
       "location": "Carlsbad\\, Calif."
     },
@@ -2356,6 +2230,13 @@
       "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
       "start": "2026-06-10",
       "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-06-10",
+      "location": "Cactus Cafe"
     },
     {
       "source": "ut",
@@ -2875,6 +2756,13 @@
     },
     {
       "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-06-17",
+      "location": "Cactus Cafe"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-06-17",
@@ -3253,6 +3141,13 @@
     },
     {
       "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-06-24",
+      "location": "Cactus Cafe"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-06-24",
@@ -3362,6 +3257,13 @@
       "url": "https://calendar.utexas.edu/event/center-for-autonomy-and-aeop-summer-2026-internship",
       "start": "2026-06-26",
       "location": null
+    },
+    {
+      "source": "ut",
+      "title": "Huey and Kat Deal with Lilly Dabbs Live at The Cactus Cafe!",
+      "url": "https://calendar.utexas.edu/event/huey-and-kat-deal-with-lilly-dabbs-live-at-the-cactus-cafe",
+      "start": "2026-06-26",
+      "location": "Cactus Cafe"
     },
     {
       "source": "public",
@@ -3670,6 +3572,13 @@
     },
     {
       "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-07-01",
+      "location": "Cactus Cafe"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-07-01",
@@ -3954,6 +3863,13 @@
       "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
       "start": "2026-07-08",
       "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-07-08",
+      "location": "Cactus Cafe"
     },
     {
       "source": "ut",
@@ -4276,6 +4192,13 @@
       "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
       "start": "2026-07-15",
       "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-07-15",
+      "location": "Cactus Cafe"
     },
     {
       "source": "ut",
@@ -4685,6 +4608,13 @@
     },
     {
       "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-07-22",
+      "location": "Cactus Cafe"
+    },
+    {
+      "source": "ut",
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-07-22",
@@ -5088,6 +5018,13 @@
       "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
       "start": "2026-07-29",
       "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Cactus Cafe Songwriters&#039\\; Open Mic Hosted by Jake Farr",
+      "url": "https://calendar.utexas.edu/event/cactus-cafe-songwriters039-open-mic-hosted-by-jake-farr",
+      "start": "2026-07-29",
+      "location": "Cactus Cafe"
     },
     {
       "source": "ut",
@@ -6957,6 +6894,13 @@
     },
     {
       "source": "ut",
+      "title": "Chris Duarte Live at The Cactus Cafe!",
+      "url": "https://calendar.utexas.edu/event/chris-duarte-live-at-the-cactus-cafe",
+      "start": "2026-09-26",
+      "location": "Cactus Cafe"
+    },
+    {
+      "source": "ut",
       "title": "Revolutions and Constitutions: Nation-Building in the Americas after 1776",
       "url": "https://calendar.utexas.edu/event/revolutions-and-constitutions-nation-building-in-the-americas-after-1776",
       "start": "2026-09-26",
@@ -7381,13 +7325,6 @@
       "url": "https://calendar.utexas.edu/event/ipsa-rc09-interim-meeting-court-roles-in-the-current-authoritarian-moment",
       "start": "2026-10-15",
       "location": "National Autonomous University of Mexico\\, Mexico City\\, Mexico \u2014 University of Texas at Austin"
-    },
-    {
-      "source": "ut",
-      "title": "Planet KPOP - The Ultimate KPOP Tribute Concert",
-      "url": "https://calendar.utexas.edu/event/planet-kpop-the-ultimate-kpop-tribute-concert",
-      "start": "2026-10-15",
-      "location": "Bass Concert Hall\\, Performing Arts Center (PAC)"
     },
     {
       "source": "ut",
@@ -8822,6 +8759,363 @@
       "title": "Career Storytelling Workshop",
       "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
       "start": "2026-12-28",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-12-29",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2026-12-30",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2026-12-30",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-12-30",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2026-12-30",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2026-12-31",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-01",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-02",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-03",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-04",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-05",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2027-01-06",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2027-01-06",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-06",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2027-01-06",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-07",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-08",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-09",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-10",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-11",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-12",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2027-01-13",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2027-01-13",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-13",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2027-01-13",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-14",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-15",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-16",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-17",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "TAMALES",
+      "url": "https://calendar.utexas.edu/event/tamales",
+      "start": "2027-01-17",
+      "location": null
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-18",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-19",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "TAMALES - Texas Assistive Technology Makers Alliance",
+      "url": "https://calendar.utexas.edu/event/tamales-texas-assistive-technology-makers-alliance",
+      "start": "2027-01-19",
+      "location": null
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2027-01-20",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2027-01-20",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-20",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2027-01-20",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-21",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-22",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-23",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-24",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-25",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-26",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Assembly Committee Meetings",
+      "url": "https://calendar.utexas.edu/event/assembly-committee-meetings",
+      "start": "2027-01-27",
+      "location": "WCP 2.302"
+    },
+    {
+      "source": "ut",
+      "title": "Campus Open Recovery",
+      "url": "https://calendar.utexas.edu/event/campus_open_recovery",
+      "start": "2027-01-27",
+      "location": "L. Theo Bellmont Hall (BEL)\\, 222"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-27",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "SMART Recovery",
+      "url": "https://calendar.utexas.edu/event/smart-recovery-1188",
+      "start": "2027-01-27",
+      "location": "Center for Students in Recovery\\, WCP 2.112"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-28",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-29",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-30",
+      "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
+    },
+    {
+      "source": "ut",
+      "title": "Career Storytelling Workshop",
+      "url": "https://calendar.utexas.edu/event/career-storytelling-workshop",
+      "start": "2027-01-31",
       "location": "Peter T. Flawn Academic Center (FAC) 2.134 Conference Room"
     }
   ]
