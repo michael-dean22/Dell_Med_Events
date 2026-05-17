@@ -1,147 +1,130 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Dell Med Events Ticker//EN
+PRODID:-//Dell Medical School//Dell Med Events//EN
+X-WR-CALNAME:Dell Med Events
+X-WR-CALDESC:Events from Dell Medical School at UT Austin
+X-WR-TIMEZONE:America/Chicago
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Dell Med Events
-X-WR-CALDESC:Aggregated events from Dell Medical School and UT Austin
 BEGIN:VEVENT
-UID:0-20260519-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260519
-DTEND;VALUE=DATE:20260520
-SUMMARY:City-Wide Infectious Diseases Case Conference (12–1 p.m.)
-DESCRIPTION:Speaker: Kelli Bagwell\, M.D.\, Ting-Yi Chen\, M.D.\, MPH\, and Stephanie Cobb\, D.O.\nTime: 12–1 p.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/city-wide-infectious-disease-case-conference-051926
-LOCATION:Hybrid: Health Learning Building Auditorium (HLB 1.111) &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/city-wide-infectious-disease-case-conference-051926
+UID:1b3e385b-dbf9-5e90-ad85-ae797ffc5aa6
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260602T083000
+DTEND;TZID=America/Chicago:20260602T093000
+SUMMARY:Neurology Grand Rounds: Neurocritical Care Management
+LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom
+DESCRIPTION:In this installment of Neurology Grand Rounds\, Toossi Shahed \
+ , M.D.\, presents “The Neurocritical Care Management of Aneurysmal Subarac
+ hnoid Hemorrhage.” Dr. Shahed is an assistant professor in the Department 
+ of Neurology and an assistant professor in the Department of Neurosurgery 
+ at Dell Medical School. In-person attendees should arrive by 7:15 a.m. Bre
+ akfast will be available. Email Sharon Green for the Zoom information.\\n\
+ \nEvent page: https://dellmed.utexas.edu/events/neurology-grand-rounds--ne
+ urocritical-care-management060226
+URL:https://dellmed.utexas.edu/events/neurology-grand-rounds--neurocritical
+ -care-management060226
 END:VEVENT
 BEGIN:VEVENT
-UID:1-20260526-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260526
-DTEND;VALUE=DATE:20260527
-SUMMARY:Neurology Grand Rounds: Non-Opioid Therapeutics for Chronic Pain (12–1 p.m.)
-DESCRIPTION:Speaker: Robert O. Messing\, M.D.\nTime: 12–1 p.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/neurology-grand-rounds-non-opioid-therapeutics-for-chronic-pain
-LOCATION:Hybrid: Health Discovery Building (HDB 1.208) &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/neurology-grand-rounds-non-opioid-therapeutics-for-chronic-pain
-END:VEVENT
-BEGIN:VEVENT
-UID:2-20260527-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260527
-DTEND;VALUE=DATE:20260528
-SUMMARY:Internal Medicine Grand Rounds: Chief Residents Presentations (7:30–8:30 a.m.)
-DESCRIPTION:Speaker: Priyanka Jagannathan\, M.D.\, MBA\, Huynh Pham\, M.D.\nTime: 7:30–8:30 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-residents-052726
-LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-residents-052726
-END:VEVENT
-BEGIN:VEVENT
-UID:3-20260528-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260528
-DTEND;VALUE=DATE:20260529
-SUMMARY:Best Practices in Medical Education Grand Rounds: From Patient to Population (12–1 p.m.)
-DESCRIPTION:Speaker: Mrinalini Kulkarni-Date\, M.D.\nTime: 12–1 p.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/best-practices-in-medical-education-grand-rounds-patient-to-population052826
-LOCATION:Zoom
-URL:https://dellmed.utexas.edu/events/best-practices-in-medical-education-grand-rounds-patient-to-population052826
-END:VEVENT
-BEGIN:VEVENT
-UID:4-20260602-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260602
-DTEND;VALUE=DATE:20260603
-SUMMARY:Neurology Grand Rounds: Neurocritical Care Management (7:30–8:30 a.m.)
-DESCRIPTION:Speaker: Toossi Shahed\, M.D.\nTime: 7:30–8:30 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/neurology-grand-rounds--neurocritical-care-management060226
-LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/neurology-grand-rounds--neurocritical-care-management060226
-END:VEVENT
-BEGIN:VEVENT
-UID:5-20260603-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260603
-DTEND;VALUE=DATE:20260604
-SUMMARY:Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2 (7:30–8:30 a.m.)
-DESCRIPTION:Time: 7:30–8:30 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-060326
-LOCATION:Virtual
-URL:https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-060326
-END:VEVENT
-BEGIN:VEVENT
-UID:6-20260609-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260609
-DTEND;VALUE=DATE:20260610
-SUMMARY:Neurology Grand Rounds: Benign Behavior of Big Lesions (8–11 a.m.)
-DESCRIPTION:Speaker: Mahboobeh Fereidan Esfahani\, M.D.\nTime: 8–11 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/neurology-grand-rounds-benign-behavior-of-big-lesions-06092026
-LOCATION:Hybrid: Health Learning Building (HTB 1.208)  &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/neurology-grand-rounds-benign-behavior-of-big-lesions-06092026
-END:VEVENT
-BEGIN:VEVENT
-UID:7-20260612-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260612
-DTEND;VALUE=DATE:20260613
-SUMMARY:Pediatric Grand Rounds: Pediatric Jeopardy (7:30–8:30 a.m.)
-DESCRIPTION:Speaker: Isaih Favela\, M.D.\, Matthew Owens\, D.O.\, Joel Rose-Kamprath\, M.D.\, Vikram Siberry\, M.D.\nTime: 7:30–8:30 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/pediatric-grand-rounds-pediatric-jeopardy-061226
+UID:f4433220-2c2d-5fd9-b31c-37fc078dac4e
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260612T083000
+DTEND;TZID=America/Chicago:20260612T093000
+SUMMARY:Pediatric Grand Rounds: Pediatric Jeopardy
 LOCATION:Dell Children’s Medical Center Signe Auditorium
-URL:https://dellmed.utexas.edu/events/pediatric-grand-rounds-pediatric-jeopardy-061226
+DESCRIPTION:In this installment of Pediatric Grand Rounds\, chief residents
+  of the Pediatric Residency Program at Dell Medical School present “Pediat
+ ric Jeopardy:” Isaih Favela\, M.D. Matthew Owens\, D.O. Joel Rose-Kamprath
+ \, M.D. Vikram Siberry\, M.D.\\n\\nEvent page: https://dellmed.utexas.edu/
+ events/pediatric-grand-rounds-pediatric-jeopardy-061226
+URL:https://dellmed.utexas.edu/events/pediatric-grand-rounds-pediatric-jeop
+ ardy-061226
 END:VEVENT
 BEGIN:VEVENT
-UID:8-20260615-internal@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260615
-DTEND;VALUE=DATE:20260616
-SUMMARY:Department of Medicine Faculty Meeting (12:00 PM - 1:00 PM)
-DESCRIPTION:Speaker: Dr. Jane Smith\nTime: 12:00 PM - 1:00 PM\nSource: internal\nMore info: https://intranet.dellmed.utexas.edu/events/some-event-page
-LOCATION:HDB 1.208
-URL:https://intranet.dellmed.utexas.edu/events/some-event-page
-END:VEVENT
-BEGIN:VEVENT
-UID:9-20260626-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260626
-DTEND;VALUE=DATE:20260627
-SUMMARY:IMPRES Conference - Innovative Minds: Pediatric Research in Epilepsy Surgery (7:30–8:30 a.m.)
-DESCRIPTION:Time: 7:30–8:30 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/impres-conference-innovative-minds-pediatric-research-in-epilepsy-surgery
-LOCATION:Hotel Van Zandt
-URL:https://dellmed.utexas.edu/events/impres-conference-innovative-minds-pediatric-research-in-epilepsy-surgery
-END:VEVENT
-BEGIN:VEVENT
-UID:10-20260701-internal@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260701
-DTEND;VALUE=DATE:20260702
-SUMMARY:Another internal event
-DESCRIPTION:Source: internal\nMore info: https://intranet.dellmed.utexas.edu/events
-URL:https://intranet.dellmed.utexas.edu/events
-END:VEVENT
-BEGIN:VEVENT
-UID:11-20260807-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260807
-DTEND;VALUE=DATE:20260808
-SUMMARY:Suicide Prevention Training for Pediatric Health Clinicians: SAFETY-A Level 2 (6–1 p.m.)
-DESCRIPTION:Time: 6–1 p.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-080726
-LOCATION:Virtual
-URL:https://dellmed.utexas.edu/events/suicide-prevention-training-for-pediatric-health-clinicians-safety-a-level-2-080726
-END:VEVENT
-BEGIN:VEVENT
-UID:12-20260810-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260810
-DTEND;VALUE=DATE:20260811
-SUMMARY:Health Social Work Visiting Speaker: Between What’s Right and What’s Possible (8–11 a.m.)
-DESCRIPTION:Speaker: Françoise Mathieu\, M.Ed.\, RP\, CCC\nTime: 8–11 a.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/health-social-work-visiting-speaker-between-whats-right-and-whats-possible
-LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) &amp\; Zoom
-URL:https://dellmed.utexas.edu/events/health-social-work-visiting-speaker-between-whats-right-and-whats-possible
-END:VEVENT
-BEGIN:VEVENT
-UID:13-20260827-public@dell-med-events
-DTSTAMP:20260516T191150Z
-DTSTART;VALUE=DATE:20260827
-DTEND;VALUE=DATE:20260828
-SUMMARY:AMPATH/MAPAS México Monthly Seminar: Gerontology (12–1 p.m.)
-DESCRIPTION:Time: 12–1 p.m.\nSource: public\nMore info: https://dellmed.utexas.edu/events/ampath-mapas-méxico-monthly-seminar-gerontology
+UID:b4ffcb6b-99b3-5a31-b326-8779110d3326
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260528T083000
+DTEND;TZID=America/Chicago:20260528T093000
+SUMMARY:Best Practices in Medical Education Grand Rounds: From Patient to P
+ opulation
 LOCATION:Zoom
-URL:https://dellmed.utexas.edu/events/ampath-mapas-méxico-monthly-seminar-gerontology
+DESCRIPTION:In this installment of Best Practices in Medical Education Gran
+ d Rounds\, Mrinalini Kulkarni-Date \, M.D.\, presents “From Patient to Pop
+ ulation: Teaching Chronic Disease Management Through a Longitudinal Virtua
+ l Family Case in Pre-Clerkship Medical Education.” Dr. Kulkarni-Date is Ch
+ ief of the Division of Endocrinology and a clinical professor in the Depar
+ tment of Internal Medicine. Email Jennifer Braham for the Zoom information
+ . Best Practices in Medical Education Grand Rounds is generously supported
+  by the Massey Family Endowed Excellence Fund for Dell Medical School.\\n\
+ \nEvent page: https://dellmed.utexas.edu/events/best-practices-in-medical-
+ education-grand-rounds-patient-to-population052826
+URL:https://dellmed.utexas.edu/events/best-practices-in-medical-education-g
+ rand-rounds-patient-to-population052826
+END:VEVENT
+BEGIN:VEVENT
+UID:6e772e1c-06b5-5c89-9673-bbc346d84932
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260527T130000
+DTEND;TZID=America/Chicago:20260527T140000
+SUMMARY:Internal Medicine Grand Rounds: Chief Residents Presentations
+LOCATION:Hybrid: Health Discovery Building Auditorium (HDB 1.208) & Zoom
+DESCRIPTION:\\nEvent page: https://dellmed.utexas.edu/events/internal-medic
+ ine-grand-rounds-chief-residents-052726
+URL:https://dellmed.utexas.edu/events/internal-medicine-grand-rounds-chief-
+ residents-052726
+END:VEVENT
+BEGIN:VEVENT
+UID:e34276fe-055a-5483-98a3-b1a26f3c3014
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260519T130000
+DTEND;TZID=America/Chicago:20260519T140000
+SUMMARY:City-Wide Infectious Diseases Case Conference
+LOCATION:Hybrid: Health Learning Building Auditorium (HLB 1.111) & Zoom
+DESCRIPTION:Dell Medical School’s Division of Infectious Disease has identi
+ fied many new and challenging issues in the management of inpatient and ou
+ tpatient infectious diseases. This city-wide case conference is presented 
+ three times a year. This session’s presenters: Kelli Bagwell \, M.D.\, Inf
+ ectious Disease Specialist\, Ascension Seton Ting-Yi Chen \, M.D.\, MPH\, 
+ Assistant Professor\, Department of Internal Medicine\, Dell Medical Schoo
+ l Stephanie Cobb \, D.O.\, Infectious Disease Specialist\, Ascension Seton
+  Email Rama Thyagarajan for more information. Upon request\, Dell Medical 
+ School will provide interpretation services at this event. Please notify T
+ atiana Artis by May 12 if interpretation is needed.\\n\\nEvent page: https
+ ://dellmed.utexas.edu/events/city-wide-infectious-disease-case-conference-
+ 051926
+URL:https://dellmed.utexas.edu/events/city-wide-infectious-disease-case-con
+ ference-051926
+END:VEVENT
+BEGIN:VEVENT
+UID:b25d2254-e447-56a8-a685-e7ff9df3c8dd
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260827T193000
+DTEND;TZID=America/Chicago:20260827T203000
+SUMMARY:AMPATH/MAPAS México Monthly Seminar: Gerontology
+LOCATION:Zoom
+DESCRIPTION:\\nRegister/Regístrese »: https://dellmed-utexas.zoom.us/webina
+ r/register/WN_QUalIlWIRvadEWKTnZAEug\\nRegister: https://dellmed-utexas.zo
+ om.us/webinar/register/WN_QUalIlWIRvadEWKTnZAEug#/registration\\n\\nEvent 
+ page: https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-s
+ eminar-gerontology
+URL:https://dellmed.utexas.edu/events/ampath-mapas-m%C3%A9xico-monthly-semi
+ nar-gerontology
+END:VEVENT
+BEGIN:VEVENT
+UID:76c0b285-e71e-5d46-9b66-4e5cc4aab55f
+DTSTAMP:20260517T081651Z
+DTSTART;TZID=America/Chicago:20260526T083000
+DTEND;TZID=America/Chicago:20260526T093000
+SUMMARY:Neurology Grand Rounds: Non-Opioid Therapeutics for Chronic Pain
+LOCATION:Hybrid: Health Discovery Building (HDB 1.208) & Zoom
+DESCRIPTION:In this installment of Neurology Grand Rounds\, Robert O. Messi
+ ng \, M.D.\, presents “Non-Opioid Therapeutics for Chronic Pain.” Messing 
+ is the director of the Waggoner Center for Alcohol and Addiction Research 
+ and a professor in the Department of Neurology at Dell Medical School. For
+  in-person attendees\, please arrive by 7:15 a.m. Breakfast will be served
+ . Email Sharon Green for the Zoom information.\\n\\nEvent page: https://de
+ llmed.utexas.edu/events/neurology-grand-rounds-non-opioid-therapeutics-for
+ -chronic-pain
+URL:https://dellmed.utexas.edu/events/neurology-grand-rounds-non-opioid-the
+ rapeutics-for-chronic-pain
 END:VEVENT
 END:VCALENDAR
